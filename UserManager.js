@@ -24,9 +24,9 @@ gestorDeUsuarios.create({
 })
 
 gestorDeUsuarios.create({
-    foto : "naza.jpg",
-    email : "naza@gmail.com" ,
-    password : "12345hola"
+    foto : "nazareno.jpg",
+    email : "nazarenolopez35@gmail.com" ,
+    password : "hola123"
 })
 
 console.log(gestorDeUsuarios.read())
