@@ -91,20 +91,20 @@ class ProductManager {
 async function test() {
     try {
         const productManager = new ProductManager(path)
-        // await productManager.create({
-        //     title: "Camisa",
-        //     photo: "camisa.jpg",
-        //     category: "ropa",
-        //     price: 9.99,
-        //     stock: 10
-        // })
-        // await productManager.create({
-        //     title: "Pantalon",
-        //     photo: "pantalon.jpg",
-        //     category: "ropa",
-        //     price: 12.99,
-        //     stock: 10
-        // })
+        await productManager.create({
+            title: "Camisa",
+            photo: "camisa.jpg",
+            category: "ropa",
+            price: 9.99,
+            stock: 10
+        })
+        await productManager.create({
+            title: "Pantalon",
+            photo: "pantalon.jpg",
+            category: "ropa",
+            price: 12.99,
+            stock: 10
+        })
         await productManager.create({
             title: "Horno",
             photo: "horno.jpg",
@@ -112,20 +112,20 @@ async function test() {
             price: 59.99,
             stock: 5
         })
-        // await productManager.create({
-        //     title: "Heladera",
-        //     photo: "heladera.jpg",
-        //     category: "cocina",
-        //     price: 1199.00,
-        //     stock: 7
-        // })
-        // await productManager.create({
-        //     title: "Monitor ViewSonic",
-        //     photo: "monitor.jpg",
-        //     category: "tecnologia",
-        //     price: 169.99,
-        //     stock: 13
-        // })
+        await productManager.create({
+            title: "Heladera",
+            photo: "heladera.jpg",
+            category: "cocina",
+            price: 1199.00,
+            stock: 7
+        })
+        await productManager.create({
+            title: "Monitor ViewSonic",
+            photo: "monitor.jpg",
+            category: "tecnologia",
+            price: 169.99,
+            stock: 13
+        })
         await productManager.read()
         // await productManager.readOne("123") // No hay ninguno con este ID, por lo que tira error
         console.log("\n Read One \n");
