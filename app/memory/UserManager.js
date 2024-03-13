@@ -22,6 +22,7 @@ gestorDeUsuarios.create({
     email : "manueljhoanleonmantilla@gmail.com" ,
     password : "hola1234"
 })
+
 gestorDeUsuarios.create({
     foto : "nazareno.jpg",
     email : "nazarenolopez35@gmail.com" ,
