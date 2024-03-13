@@ -1,0 +1,42 @@
+[
+  {
+    "id": "f26044d480b61db8861ded9c",
+    "title": "Camisa",
+    "photo": "camisa.jpg",
+    "category": "ropa",
+    "price": 9.99,
+    "stock": 10
+  },
+  {
+    "id": "a8a6b5c4958eab4fdc209ff5",
+    "title": "Pantalon",
+    "photo": "pantalon.jpg",
+    "category": "ropa",
+    "price": 12.99,
+    "stock": 10
+  },
+  {
+    "id": "87133cf9a2d30bacae214822",
+    "title": "Heladera",
+    "photo": "heladera.jpg",
+    "category": "cocina",
+    "price": 1199,
+    "stock": 7
+  },
+  {
+    "id": "fb6ff99482236e1937fa765f",
+    "title": "Monitor ViewSonic",
+    "photo": "monitor.jpg",
+    "category": "tecnologia",
+    "price": 169.99,
+    "stock": 13
+  },
+  {
+    "id": "7ba8592b4ea194e2a27ca552",
+    "title": "Horno",
+    "photo": "horno.jpg",
+    "category": "cocina",
+    "price": 59.99,
+    "stock": 5
+  }
+]
