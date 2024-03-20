@@ -93,38 +93,167 @@ const productManager = new ProductManager(path)
 export default productManager
 
 
-// await productManager.create({
-//     title: "Camisa",
-//     photo: "camisa.jpg",
-//     category: "ropa",
-//     price: 9.99,
-//     stock: 10
-// })
-// await productManager.create({
-//     title: "Pantalon",
-//     photo: "pantalon.jpg",
-//     category: "ropa",
-//     price: 12.99,
-//     stock: 10
-// })
-// await productManager.create({
-//     title: "Horno",
-//     photo: "horno.jpg",
-//     category: "cocina",
-//     price: 59.99,
-//     stock: 5
-// })
-// await productManager.create({
-//     title: "Heladera",
-//     photo: "heladera.jpg",
-//     category: "cocina",
-//     price: 1199.00,
-//     stock: 7
-// })
-// await productManager.create({
-//     title: "Monitor ViewSonic",
-//     photo: "monitor.jpg",
-//     category: "tecnologia",
-//     price: 169.99,
-//     stock: 13
-// })
+// 20 PRODUCTOS NUEVOS ABAJO
+// async function test (){
+//     await productManager.create({
+//         title: "Camisa de algodón a rayas",
+//         photo: "/camisa-rayas.jpg",
+//         category: "Ropa",
+//         price: 29.99,
+//         stock: 50
+//     })
+    
+//     await productManager.create({
+//         title: "Zapatillas deportivas para correr",
+//         photo: "/zapatillas-corredor.jpg",
+//         category: "Calzado",
+//         price: 49.99,
+//         stock: 40
+//     })
+    
+//     await productManager.create({
+//         title: "Mochila resistente al agua",
+//         photo: "/mochila-resistente.jpg",
+//         category: "Accesorios",
+//         price: 39.99,
+//         stock: 30
+//     })
+    
+//     await productManager.create({
+//         title: "Reloj de pulsera elegante",
+//         photo: "/reloj-elegante.jpg",
+//         category: "Accesorios",
+//         price: 69.99,
+//         stock: 25
+//     })
+    
+//     await productManager.create({
+//         title: "Auriculares inalámbricos Bluetooth",
+//         photo: "/auriculares-bluetooth.jpg",
+//         category: "Electrónica",
+//         price: 59.99,
+//         stock: 35
+//     })
+    
+//     await productManager.create({
+//         title: "Pantalones vaqueros ajustados",
+//         photo: "/pantalones-vaqueros.jpg",
+//         category: "Ropa",
+//         price: 34.99,
+//         stock: 45
+//     })
+    
+//     await productManager.create({
+//         title: "Botella de agua deportiva",
+//         photo: "/botella-deportiva.jpg",
+//         category: "Accesorios",
+//         price: 14.99,
+//         stock: 55
+//     })
+    
+//     await productManager.create({
+//         title: "Chaqueta ligera impermeable",
+//         photo: "/chaqueta-impermeable.jpg",
+//         category: "Ropa",
+//         price: 79.99,
+//         stock: 20
+//     })
+    
+//     await productManager.create({
+//         title: "Mochila para portátil",
+//         photo: "/mochila-portatil.jpg",
+//         category: "Accesorios",
+//         price: 49.99,
+//         stock: 30
+//     })
+    
+//     await productManager.create({
+//         title: "Teléfono inteligente de última generación",
+//         photo: "/telefono-inteligente.jpg",
+//         category: "Electrónica",
+//         price: 699.99,
+//         stock: 15
+//     })
+    
+//     await productManager.create({
+//         title: "Gorra de béisbol ajustable",
+//         photo: "/gorra-beisbol.jpg",
+//         category: "Accesorios",
+//         price: 19.99,
+//         stock: 40
+//     })
+    
+//     await productManager.create({
+//         title: "Sudadera con capucha unisex",
+//         photo: "/sudadera-capucha.jpg",
+//         category: "Ropa",
+//         price: 44.99,
+//         stock: 25
+//     })
+    
+//     await productManager.create({
+//         title: "Bolsa de viaje resistente",
+//         photo: "/bolsa-viaje.jpg",
+//         category: "Accesorios",
+//         price: 59.99,
+//         stock: 35
+//     })
+    
+//     await productManager.create({
+//         title: "Bufanda de lana suave",
+//         photo: "/bufanda-lana.jpg",
+//         category: "Ropa",
+//         price: 24.99,
+//         stock: 50
+//     })
+    
+//     await productManager.create({
+//         title: "Botines de cuero elegantes",
+//         photo: "/botines-cuero.jpg",
+//         category: "Calzado",
+//         price: 89.99,
+//         stock: 20
+//     })
+    
+//     await productManager.create({
+//         title: "Cámara digital compacta",
+//         photo: "/img/camara-digital.jpg",
+//         category: "Electrónica",
+//         price: 199.99,
+//         stock: 10
+//     })
+    
+//     await productManager.create({
+//         title: "Cinturón de cuero genuino",
+//         photo: "/img/cinturon-cuero.jpg",
+//         category: "Accesorios",
+//         price: 29.99,
+//         stock: 45
+//     })
+    
+//     await productManager.create({
+//         title: "Camiseta de algodón básica",
+//         photo: "/img/camiseta-algodon.jpg",
+//         category: "Ropa",
+//         price: 14.99,
+//         stock: 60
+//     })
+    
+//     await productManager.create({
+//         title: "Maletín ejecutivo de cuero",
+//         photo: "/img/maletin-cuero.jpg",
+//         category: "Accesorios",
+//         price: 129.99,
+//         stock: 15
+//     })
+    
+//     await productManager.create({
+//         title: "Gafas de sol polarizadas",
+//         photo: "/gafas-sol.jpg",
+//         category: "Accesorios",
+//         price: 39.99,
+//         stock: 30
+//     })
+// }
+
+// test()
