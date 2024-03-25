@@ -1,5 +1,5 @@
-const fs = require("fs")
-const crypto = require("crypto");
+import fs from "fs"
+import crypto from "crypto"
 const path = "./data/files/users.json"
 
 class UserManager {
@@ -40,11 +40,11 @@ class UserManager {
             throw error         
         }
     }
-    async read() {
+    async read(query) {
         try {
             let fileUsers = await fs.promises.readFile(this.path, "utf-8")
-            fileUsers = JSON.parse(fileUsers)
-            console.log(fileUsers);
+            fileUsers ? fileUsers = JSON.parse(fileUsers) : fileUsers;
+            query ? fileUsers = fileUsers.filter((user) => user.role == query) : fileUsers
             return fileUsers
         } catch (error) {
             throw error
@@ -72,7 +72,7 @@ class UserManager {
             fileUsers = JSON.parse(fileUsers)
             const userFound =fileUsers.find((user)  => user.id == id )
             if(!userFound){
-                const error = new Error("No se encontro ningun usuario registrado con ese id")
+                const error = new Error("USER WITH THIS ID NOT FOUND")
                 throw error 
             } else {
                 fileUsers = fileUsers.filter((user) => user.id != id)
@@ -88,6 +88,11 @@ class UserManager {
     }
 }
 
+const userManager = new UserManager(path)
+export default userManager
+
+
+/*
 async function test() {
     try {
         const userManager = new UserManager(path)
@@ -125,4 +130,4 @@ async function test() {
     }
 }
 
-test()
+test()*/

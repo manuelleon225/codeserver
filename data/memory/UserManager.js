@@ -52,7 +52,7 @@ readOne(id){
 }
 destroy(id){
     try{
-        const prodFound = UserManager.#users.find((user) => user.id == id)
+        const userFound = UserManager.#users.find((user) => user.id == id)
         if(!userFound){
             const error = new Error("No hay ningun usuario registrado con ese id")
             throw error
