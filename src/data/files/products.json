@@ -1,5 +1,4 @@
-[
-  {
+[{
     "id": "d3184ec2096974c5bf33f1b5",
     "title": "Camisa de algodón a rayas",
     "photo": "/camisa-rayas.jpg",
@@ -160,11 +159,143 @@
     "stock": 30
   },
   {
-    "id": "292957ebba9ecdfed1652f49",
-    "title": "Pantalon rayado pijama",
-    "photo": "pijama.jpg",
+    "title": "Vestido de fiesta con lentejuelas",
+    "photo": "/img/vestido-lentejuelas.jpg",
+    "category": "Ropa",
+    "price": 79.99,
+    "stock": 15
+  },
+  {
+    "title": "Mocasines de cuero para hombre",
+    "photo": "/img/mocasines-cuero-hombre.jpg",
+    "category": "Calzado",
+    "price": 59.99,
+    "stock": 20
+  },
+  {
+    "title": "Bolso de mano elegante",
+    "photo": "/img/bolso-mano-elegante.jpg",
+    "category": "Accesorios",
+    "price": 49.99,
+    "stock": 25
+  },
+  {
+    "title": "Smartwatch con monitor de ritmo cardíaco",
+    "photo": "/img/smartwatch-ritmo-cardiaco.jpg",
+    "category": "Electrónica",
+    "price": 129.99,
+    "stock": 30
+  },
+  {
+    "title": "Chaqueta de invierno acolchada",
+    "photo": "/img/chaqueta-invierno-acolchada.jpg",
+    "category": "Ropa",
+    "price": 89.99,
+    "stock": 35
+  },
+  {
+    "title": "Bicicleta de montaña todo terreno",
+    "photo": "/img/bicicleta-montana.jpg",
+    "category": "Deportes",
+    "price": 399.99,
+    "stock": 10
+  },
+  {
+    "title": "Sweater de punto grueso",
+    "photo": "/img/sweater-punto-grueso.jpg",
+    "category": "Ropa",
+    "price": 39.99,
+    "stock": 40
+  },
+  {
+    "title": "Paraguas plegable resistente al viento",
+    "photo": "/img/paraguas-resistente-viento.jpg",
+    "category": "Accesorios",
+    "price": 19.99,
+    "stock": 50
+  },
+  {
+    "title": "Gorra de lana con pompón",
+    "photo": "/img/gorra-lana-pompon.jpg",
+    "category": "Accesorios",
+    "price": 24.99,
+    "stock": 45
+  },
+  {
+    "title": "Portafolio ejecutivo de cuero",
+    "photo": "/img/portafolio-cuero.jpg",
+    "category": "Accesorios",
+    "price": 89.99,
+    "stock": 20
+  },
+  {
+    "title": "Jersey de algodón para niños",
+    "photo": "/img/jersey-algodon-ninos.jpg",
     "category": "Ropa",
     "price": 29.99,
+    "stock": 30
+  },
+  {
+    "title": "Collar de plata con colgante de corazón",
+    "photo": "/img/collar-plata-corazon.jpg",
+    "category": "Accesorios",
+    "price": 49.99,
+    "stock": 25
+  },
+  {
+    "title": "Mochila de senderismo con sistema de hidratación",
+    "photo": "/img/mochila-senderismo-hidratacion.jpg",
+    "category": "Accesorios",
+    "price": 69.99,
+    "stock": 15
+  },
+  {
+    "title": "Pañuelo de seda estampado",
+    "photo": "/img/panuelo-seda-estampado.jpg",
+    "category": "Accesorios",
+    "price": 34.99,
+    "stock": 30
+  },
+  {
+    "title": "Cámara de seguridad WiFi para hogar",
+    "photo": "/img/camara-seguridad-wifi.jpg",
+    "category": "Electrónica",
+    "price": 149.99,
     "stock": 20
+  },
+  {
+    "title": "Bolso bandolera de cuero vintage",
+    "photo": "/img/bolso-bandolera-cuero-vintage.jpg",
+    "category": "Accesorios",
+    "price": 79.99,
+    "stock": 25
+  },
+  {
+    "title": "Sudadera con estampado de logotipo",
+    "photo": "/img/sudadera-estampado-logotipo.jpg",
+    "category": "Ropa",
+    "price": 44.99,
+    "stock": 35
+  },
+  {
+    "title": "Botas de lluvia estampadas para niños",
+    "photo": "/img/botas-lluvia-ninos.jpg",
+    "category": "Calzado",
+    "price": 24.99,
+    "stock": 40
+  },
+  {
+    "title": "Gafas de lectura con estuche",
+    "photo": "/img/gafas-lectura-estuche.jpg",
+    "category": "Accesorios",
+    "price": 14.99,
+    "stock": 50
+  },
+  {
+    "title": "Altavoz Bluetooth portátil resistente al agua",
+    "photo": "/img/altavoz-bluetooth-resistente-agua.jpg",
+    "category": "Electrónica",
+    "price": 79.99,
+    "stock": 15
   }
 ]

@@ -9,9 +9,11 @@ const port = 8080
 const ready = () => (console.log("server ready on port " + port))
 
 server.listen(port, ready)
+
 server.use(express.urlencoded({ extended: true }))
 server.use(express.json())
 server.use(errorHandler)
+// server.use(pathHandler)
 
 server.get("/api/products", read)
 
@@ -20,6 +22,8 @@ server.get("/api/products/:pid", readOne)
 server.post("/api/products", create)
 
 server.put("/api/products/:pid", update)
+
+server.delete("/api/products/:pid", deleteProduct)
 
 async function read (req, res, next){
     try{
@@ -80,6 +84,21 @@ async function update(req, res, next){
         return res.json({
             statusCode: 200,
             message: `Product with ID: ${product.id} updated`
+        })
+    } catch (error) {
+        return next(error)
+    }
+}
+
+async function deleteProduct(req, res, next){
+    try {
+        const { pid } = req.params
+        let allProducts = await productManager.read()
+        const productToDelete = allProducts.find((prod) => prod.id === pid)
+        await productManager.destroy(pid)
+        return res.json({
+            statusCode: 200,
+            response: productToDelete
         })
     } catch (error) {
         return next(error)
