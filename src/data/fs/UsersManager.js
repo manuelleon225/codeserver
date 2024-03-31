@@ -1,6 +1,6 @@
 import fs from "fs"
 import crypto from "crypto"
-const path = "./data/files/users.json"
+const path = "./src/data/files/users.json"
 
 class UserManager {
     constructor(path) {
@@ -90,44 +90,3 @@ class UserManager {
 
 const userManager = new UserManager(path)
 export default userManager
-
-
-/*
-async function test() {
-    try {
-        const userManager = new UserManager(path)
-        await userManager.create({
-            photo: "default_photo.jpg",
-            email: "manuel_leon@gmail.com",
-            password: "123456",
-            role: "usuario"  
-        })
-        await userManager.create({
-            photo: "default_photo.jpg",
-            email: "dali_98@gmail.com",
-            password: "654321",
-            role: "usuario"  
-        })
-        await userManager.create({
-            photo: "default_photo.jpg",
-            email: "juan_reina@gmail.com",
-            password: "456789",
-            role: "usuario"  
-        })
-        await userManager.create({
-            photo: "default_photo.jpg",
-            email: "jesus_mendina@gmail.com",
-            password: "789456",
-            role: "usuario"  
-        })
-        await userManager.read()
-        console.log("\n Read One \n");
-        await userManager.readOne("3352bc96e4a319b6187722ed")
-        console.log("\n Read One \n");
-        await userManager.destroy("e9aa21d3c7e3ee7210a89909")
-    } catch (error) {
-        throw error
-    }
-}
-
-test()*/

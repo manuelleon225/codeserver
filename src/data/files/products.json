@@ -158,5 +158,13 @@
     "category": "Accesorios",
     "price": 39.99,
     "stock": 30
+  },
+  {
+    "id": "292957ebba9ecdfed1652f49",
+    "title": "Pantalon rayado pijama",
+    "photo": "pijama.jpg",
+    "category": "Ropa",
+    "price": 29.99,
+    "stock": 20
   }
 ]

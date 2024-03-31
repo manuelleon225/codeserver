@@ -1,6 +1,8 @@
-import express, { query } from "express";
-import productManager from "./data/fs/ProductManager.js";
-import usersManager from "./data/fs/UsersManager.js";
+import express from "express";
+import productManager from "./src/data/fs/ProductManager.js";
+import usersManager from "./src/data/fs/UsersManager.js";
+import errorHandler from "./src/middlewares/errorHandler.js";
+import pathHandler from "./src/middlewares/pathHandler.js";
 
 const server = express()
 const port = 8080
@@ -8,8 +10,18 @@ const ready = () => (console.log("server ready on port " + port))
 
 server.listen(port, ready)
 server.use(express.urlencoded({ extended: true }))
+server.use(express.json())
+server.use(errorHandler)
 
-server.get("/api/products", async (req, res) => {
+server.get("/api/products", read)
+
+server.get("/api/products/:pid", readOne)
+
+server.post("/api/products", create)
+
+server.put("/api/products/:pid", update)
+
+async function read (req, res, next){
     try{
         const { category } = req.query
         const allProducts = await productManager.read(category)
@@ -23,15 +35,11 @@ server.get("/api/products", async (req, res) => {
             throw error
         }
     } catch (err) {
-        console.log(err);
-        return res.status(err.statusCode).json({
-            response: null,
-            message: err.message
-        })
+        return next(err)
     }
-})
+}
 
-server.get("/api/products/:pid", async (req, res) => {
+async function readOne (req, res, next){
     try {
         const { pid } = req.params
         const productById = await productManager.readOne(pid)
@@ -45,17 +53,42 @@ server.get("/api/products/:pid", async (req, res) => {
             throw error
         }
     } catch (err) {
-        console.log(err);
-        return res.status(err.statusCode).json({
-            response: null,
-            message: err.message
-        })
+        return next(err)
     }
-})
+}
+
+async function create(req, res, next){
+    try {
+        const data = req.body
+        console.log(data);
+        const newProduct = await productManager.create(data)
+        return res.json({
+            statusCode: 201,
+            response: `PROD ID: ${newProduct.id}`,
+            message: `Product created: Title: ${newProduct.title} || Photo: ${newProduct.photo} || Category: ${newProduct.category} || Price: ${newProduct.price} || Stock: ${newProduct.stock}`
+        })
+    } catch (error) {
+        return next(error)
+    }
+}
+
+async function update(req, res, next){
+    try {
+        const { pid } = req.params
+        const data = req.body
+        const product = await productManager.update(pid, data)
+        return res.json({
+            statusCode: 200,
+            message: `Product with ID: ${product.id} updated`
+        })
+    } catch (error) {
+        return next(error)
+    }
+}
 
 //USERS//
 
-server.get("/api/users", async (req, res) => {
+server.get("/api/users", async (req, res, next) => {
     try{
         const { role } = req.query
         const allUsers = await usersManager.read(role)
@@ -69,15 +102,11 @@ server.get("/api/users", async (req, res) => {
             throw error
         }
     } catch (err) {
-        console.log(err);
-        return res.status(err.statusCode).json({
-            response: null,
-            message: err.message
-        })
+        return next(err)
     }
 })
 
-server.get("/api/users/:uid", async (req, res) => {
+server.get("/api/users/:uid", async (req, res, next) => {
     try {
         const { uid } = req.params
         const usersById = await usersManager.readOne(uid)
@@ -91,10 +120,6 @@ server.get("/api/users/:uid", async (req, res) => {
             throw error
         }
     } catch (err) {
-        console.log(err);
-        return res.status(err.statusCode).json({
-            response: null,
-            message: err.message
-        })
+        return next(err)
     }
 })
