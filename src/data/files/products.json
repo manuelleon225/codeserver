@@ -1,4 +1,5 @@
-[{
+[
+  {
     "id": "d3184ec2096974c5bf33f1b5",
     "title": "Camisa de algodón a rayas",
     "photo": "/camisa-rayas.jpg",
@@ -297,5 +298,75 @@
     "category": "Electrónica",
     "price": 79.99,
     "stock": 15
+  },
+  {
+    "title": "Vestido de verano estampado floral",
+    "photo": "/img/vestido-verano-floral.jpg",
+    "category": "Ropa",
+    "price": 39.99,
+    "stock": 20
+  },
+  {
+    "title": "Sandalias de playa para mujer",
+    "photo": "/img/sandalias-playa-mujer.jpg",
+    "category": "Calzado",
+    "price": 19.99,
+    "stock": 30
+  },
+  {
+    "title": "Bolso cruzado de lona",
+    "photo": "/img/bolso-cruzado-lona.jpg",
+    "category": "Accesorios",
+    "price": 29.99,
+    "stock": 25
+  },
+  {
+    "title": "Cámara de acción resistente al agua",
+    "photo": "/img/camara-accion.jpg",
+    "category": "Electrónica",
+    "price": 79.99,
+    "stock": 15
+  },
+  {
+    "title": "Sombrero de paja estilo fedora",
+    "photo": "/img/sombrero-paja.jpg",
+    "category": "Accesorios",
+    "price": 14.99,
+    "stock": 40
+  },
+  {
+    "title": "Chaqueta de cuero clásica",
+    "photo": "/img/chaqueta-cuero.jpg",
+    "category": "Ropa",
+    "price": 99.99,
+    "stock": 15
+  },
+  {
+    "title": "Bicicleta estática plegable",
+    "photo": "/img/bicicleta-estatica.jpg",
+    "category": "Deportes",
+    "price": 199.99,
+    "stock": 10
+  },
+  {
+    "title": "Mochila urbana con estampado urbano",
+    "photo": "/img/mochila-urbana.jpg",
+    "category": "Accesorios",
+    "price": 34.99,
+    "stock": 20
+  },
+  {
+    "title": "Auriculares con cancelación de ruido",
+    "photo": "/img/auriculares-cancelacion-ruido.jpg",
+    "category": "Electrónica",
+    "price": 149.99,
+    "stock": 10
+  },
+  {
+    "title": "Gorra de béisbol vintage",
+    "photo": "/img/gorra-beisbol-vintage.jpg",
+    "category": "Accesorios",
+    "price": 24.99,
+    "stock": 30
   }
 ]
