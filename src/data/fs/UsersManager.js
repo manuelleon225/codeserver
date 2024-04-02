@@ -1,6 +1,6 @@
 import fs from "fs"
 import crypto from "crypto"
-const path = "./data/files/users.json"
+const path = "./src/data/files/users.json"
 
 class UserManager {
     constructor(path) {
@@ -18,7 +18,7 @@ class UserManager {
     }
     async create(data) {
         try {
-            if(!data.email || !data.password || !data.role){
+            if(!data.email || !data.password){
                 const error = new Error("ERROR: Faltan datos")
                 throw error
             } else {
@@ -27,7 +27,7 @@ class UserManager {
                     photo: data.photo || "user_default.jpg",
                     email: data.email,
                     password: data.password,
-                    role: data.role
+                    role: data.role || "0"
                 }
                 let fileUsers = await fs.promises.readFile(this.path, "utf-8")
                 fileUsers = JSON.parse(fileUsers)
@@ -35,6 +35,7 @@ class UserManager {
                 fileUsers = JSON.stringify(fileUsers, null, 2)
                 await fs.promises.writeFile(this.path, fileUsers)
                 console.log("User created");
+                return newUser;
             }
         } catch (error) {
             throw error         
@@ -86,48 +87,20 @@ class UserManager {
             throw error
         }
     }
+    async update(uid, data){
+        try {
+            let allUsers = await this.read()
+            const userToUpdate = allUsers.find(user => user.id == uid)
+            Object.assign(userToUpdate, data)
+            console.log(userToUpdate);
+            allUsers = JSON.stringify(allUsers, null, 2)
+            await fs.promises.writeFile(this.path, allUsers)
+            return userToUpdate
+        } catch (error) {
+            throw error
+        } 
+    }
 }
 
 const userManager = new UserManager(path)
 export default userManager
-
-
-/*
-async function test() {
-    try {
-        const userManager = new UserManager(path)
-        await userManager.create({
-            photo: "default_photo.jpg",
-            email: "manuel_leon@gmail.com",
-            password: "123456",
-            role: "usuario"  
-        })
-        await userManager.create({
-            photo: "default_photo.jpg",
-            email: "dali_98@gmail.com",
-            password: "654321",
-            role: "usuario"  
-        })
-        await userManager.create({
-            photo: "default_photo.jpg",
-            email: "juan_reina@gmail.com",
-            password: "456789",
-            role: "usuario"  
-        })
-        await userManager.create({
-            photo: "default_photo.jpg",
-            email: "jesus_mendina@gmail.com",
-            password: "789456",
-            role: "usuario"  
-        })
-        await userManager.read()
-        console.log("\n Read One \n");
-        await userManager.readOne("3352bc96e4a319b6187722ed")
-        console.log("\n Read One \n");
-        await userManager.destroy("e9aa21d3c7e3ee7210a89909")
-    } catch (error) {
-        throw error
-    }
-}
-
-test()*/
