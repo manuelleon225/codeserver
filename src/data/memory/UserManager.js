@@ -98,4 +98,4 @@ gestorDeUsuarios.create({
 
 console.log(gestorDeUsuarios.read())
 console.log(gestorDeUsuarios.destroy(2))
-console.log(gestorDeUsuarios.read()) 
+console.log(gestorDeUsuarios.read()) */
