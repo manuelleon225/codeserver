@@ -18,7 +18,7 @@ class UserManager {
     }
     async create(data) {
         try {
-            if(!data.email || !data.password || !data.role){
+            if(!data.email || !data.password){
                 const error = new Error("ERROR: Faltan datos")
                 throw error
             } else {
@@ -27,7 +27,7 @@ class UserManager {
                     photo: data.photo || "user_default.jpg",
                     email: data.email,
                     password: data.password,
-                    role: data.role
+                    role: data.role || "0"
                 }
                 let fileUsers = await fs.promises.readFile(this.path, "utf-8")
                 fileUsers = JSON.parse(fileUsers)
@@ -35,6 +35,7 @@ class UserManager {
                 fileUsers = JSON.stringify(fileUsers, null, 2)
                 await fs.promises.writeFile(this.path, fileUsers)
                 console.log("User created");
+                return newUser;
             }
         } catch (error) {
             throw error         
@@ -85,6 +86,19 @@ class UserManager {
         } catch (error) {
             throw error
         }
+    }
+    async update(uid, data){
+        try {
+            let allUsers = await this.read()
+            const userToUpdate = allUsers.find(user => user.id == uid)
+            Object.assign(userToUpdate, data)
+            console.log(userToUpdate);
+            allUsers = JSON.stringify(allUsers, null, 2)
+            await fs.promises.writeFile(this.path, allUsers)
+            return userToUpdate
+        } catch (error) {
+            throw error
+        } 
     }
 }
 

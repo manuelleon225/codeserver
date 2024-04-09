@@ -3,8 +3,8 @@
     "id": "bc0f07d1519936853262e3c7",
     "photo": "default_photo.jpg",
     "email": "manuelleon@gmail.com",
-    "password": "98765432",
-    "role": "usuario"
+    "password": "123456",
+    "role": "0"
   },
   {
     "id": "702b04f9ac77d284b08d888b",
@@ -21,10 +21,17 @@
     "role": "usuario"
   },
   {
-    "id": "e9aa21d3c7e3ee7210a89909",
-    "photo": "default_photo.jpg",
-    "email": "jesus_mendina@gmail.com",
-    "password": "789456",
-    "role": "usuario"
+    "id": "1f903ec5a79fae8ff8d02045",
+    "photo": "user_default.jpg",
+    "email": "silviafernanda99@gmail.com",
+    "password": "1234567",
+    "role": "0"
+  },
+  {
+    "id": "eb2444b74ead8aa270864e85",
+    "photo": "user_default.jpg",
+    "email": "juanmantilla@gmail.com",
+    "password": "1234567",
+    "role": "0"
   }
 ]
