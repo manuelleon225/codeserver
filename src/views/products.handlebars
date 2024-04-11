@@ -1,0 +1,19 @@
+<div class="container">
+    <h1 class="m-3 w-100 text-center">PRODUCTS</h1>
+    <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+        {{#each allProducts}}
+            <div class="col mb-4">
+                <div class="card">
+                    <img src="{{this.photo}}" class="card-img-top" alt="product-photo">
+                    <div class="card-body">
+                        <h5 class="card-title">Title: {{this.title}}</h5>
+                        <p class="card-text">Category: {{this.category}}</p>
+                        <p class="card-text">Price: {{this.price}}</p>
+                        <p class="card-text">Stock: {{this.stock}}</p>
+                        <p class="card-text">ID: {{this.id}}</p>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>
