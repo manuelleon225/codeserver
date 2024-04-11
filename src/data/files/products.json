@@ -160,6 +160,7 @@
     "stock": 30
   },
   {
+    "id": "5d3e677f5a35a6a91c80a9ec",
     "title": "Vestido de fiesta con lentejuelas",
     "photo": "/img/vestido-lentejuelas.jpg",
     "category": "Ropa",
@@ -167,6 +168,7 @@
     "stock": 15
   },
   {
+    "id": "db5a83083b7d1d9f03e06f25",
     "title": "Mocasines de cuero para hombre",
     "photo": "/img/mocasines-cuero-hombre.jpg",
     "category": "Calzado",
@@ -174,6 +176,7 @@
     "stock": 20
   },
   {
+    "id": "e78515c240b9c82dfaa1f12e",
     "title": "Bolso de mano elegante",
     "photo": "/img/bolso-mano-elegante.jpg",
     "category": "Accesorios",
@@ -181,6 +184,7 @@
     "stock": 25
   },
   {
+    "id": "e3b121f4ed7b73ebe0e60eb0",
     "title": "Smartwatch con monitor de ritmo cardíaco",
     "photo": "/img/smartwatch-ritmo-cardiaco.jpg",
     "category": "Electrónica",
@@ -188,6 +192,7 @@
     "stock": 30
   },
   {
+    "id": "902d8e8763d77758da21fc98",
     "title": "Chaqueta de invierno acolchada",
     "photo": "/img/chaqueta-invierno-acolchada.jpg",
     "category": "Ropa",
@@ -195,6 +200,7 @@
     "stock": 35
   },
   {
+    "id": "fe799b66d16b9cb2e4f17a4f",
     "title": "Bicicleta de montaña todo terreno",
     "photo": "/img/bicicleta-montana.jpg",
     "category": "Deportes",
@@ -202,6 +208,7 @@
     "stock": 10
   },
   {
+    "id": "197fb85f3ebfa7e05d3e2050",
     "title": "Sweater de punto grueso",
     "photo": "/img/sweater-punto-grueso.jpg",
     "category": "Ropa",
@@ -209,6 +216,7 @@
     "stock": 40
   },
   {
+    "id": "5b22b8015daa9e99f3b3a8b3",
     "title": "Paraguas plegable resistente al viento",
     "photo": "/img/paraguas-resistente-viento.jpg",
     "category": "Accesorios",
@@ -216,6 +224,7 @@
     "stock": 50
   },
   {
+    "id": "593bde7bea3da780c702c92c",
     "title": "Gorra de lana con pompón",
     "photo": "/img/gorra-lana-pompon.jpg",
     "category": "Accesorios",
@@ -223,6 +232,7 @@
     "stock": 45
   },
   {
+    "id": "a440f91a1213f8b4f651eb9b",
     "title": "Portafolio ejecutivo de cuero",
     "photo": "/img/portafolio-cuero.jpg",
     "category": "Accesorios",
@@ -230,6 +240,7 @@
     "stock": 20
   },
   {
+    "id": "4d10dfeadec53debf8426f64",
     "title": "Jersey de algodón para niños",
     "photo": "/img/jersey-algodon-ninos.jpg",
     "category": "Ropa",
@@ -237,6 +248,7 @@
     "stock": 30
   },
   {
+    "id": "ba5fc6e10a130dab5e0f2ed6",
     "title": "Collar de plata con colgante de corazón",
     "photo": "/img/collar-plata-corazon.jpg",
     "category": "Accesorios",
@@ -244,6 +256,7 @@
     "stock": 25
   },
   {
+    "id": "e3667ecfc3c7fc1a60d5c172",
     "title": "Mochila de senderismo con sistema de hidratación",
     "photo": "/img/mochila-senderismo-hidratacion.jpg",
     "category": "Accesorios",
@@ -251,6 +264,7 @@
     "stock": 15
   },
   {
+    "id": "71f4e2d5c6f58ed5b4dbb8b3",
     "title": "Pañuelo de seda estampado",
     "photo": "/img/panuelo-seda-estampado.jpg",
     "category": "Accesorios",
@@ -258,6 +272,7 @@
     "stock": 30
   },
   {
+    "id": "d6a9e10c040925ddae4e32ac",
     "title": "Cámara de seguridad WiFi para hogar",
     "photo": "/img/camara-seguridad-wifi.jpg",
     "category": "Electrónica",
@@ -265,6 +280,7 @@
     "stock": 20
   },
   {
+    "id": "31761773f941b66c979f348d",
     "title": "Bolso bandolera de cuero vintage",
     "photo": "/img/bolso-bandolera-cuero-vintage.jpg",
     "category": "Accesorios",
@@ -272,6 +288,7 @@
     "stock": 25
   },
   {
+    "id": "9b21c0de2c4a6d5deccce150",
     "title": "Sudadera con estampado de logotipo",
     "photo": "/img/sudadera-estampado-logotipo.jpg",
     "category": "Ropa",
@@ -279,6 +296,7 @@
     "stock": 35
   },
   {
+    "id": "ca1910a149367361211fcf78",
     "title": "Botas de lluvia estampadas para niños",
     "photo": "/img/botas-lluvia-ninos.jpg",
     "category": "Calzado",
@@ -286,6 +304,7 @@
     "stock": 40
   },
   {
+    "id": "ba1fe848282e3a7f0e6bebe8",
     "title": "Gafas de lectura con estuche",
     "photo": "/img/gafas-lectura-estuche.jpg",
     "category": "Accesorios",
@@ -293,6 +312,7 @@
     "stock": 50
   },
   {
+    "id": "efb7a9c78477700b4c6f002d",
     "title": "Altavoz Bluetooth portátil resistente al agua",
     "photo": "/img/altavoz-bluetooth-resistente-agua.jpg",
     "category": "Electrónica",
@@ -300,6 +320,7 @@
     "stock": 15
   },
   {
+    "id": "be5d2db9f8edac8bae6a0a8c",
     "title": "Vestido de verano estampado floral",
     "photo": "/img/vestido-verano-floral.jpg",
     "category": "Ropa",
@@ -307,6 +328,7 @@
     "stock": 20
   },
   {
+    "id": "3f5155e5f479fca0996e7f71",
     "title": "Sandalias de playa para mujer",
     "photo": "/img/sandalias-playa-mujer.jpg",
     "category": "Calzado",
@@ -314,6 +336,7 @@
     "stock": 30
   },
   {
+    "id": "de118916ba33ec0c3a3b2791",
     "title": "Bolso cruzado de lona",
     "photo": "/img/bolso-cruzado-lona.jpg",
     "category": "Accesorios",
@@ -321,6 +344,7 @@
     "stock": 25
   },
   {
+    "id": "eb497e7e1b4b97f693d4baca",
     "title": "Cámara de acción resistente al agua",
     "photo": "/img/camara-accion.jpg",
     "category": "Electrónica",
@@ -328,6 +352,7 @@
     "stock": 15
   },
   {
+    "id": "85f05f118d1ee491d24e94e1",
     "title": "Sombrero de paja estilo fedora",
     "photo": "/img/sombrero-paja.jpg",
     "category": "Accesorios",
@@ -335,6 +360,7 @@
     "stock": 40
   },
   {
+    "id": "accc9eaf10d3e241090f1a8a",
     "title": "Chaqueta de cuero clásica",
     "photo": "/img/chaqueta-cuero.jpg",
     "category": "Ropa",
@@ -342,6 +368,7 @@
     "stock": 15
   },
   {
+    "id": "78babb87e53d15e8e5976d60",
     "title": "Bicicleta estática plegable",
     "photo": "/img/bicicleta-estatica.jpg",
     "category": "Deportes",
@@ -349,6 +376,7 @@
     "stock": 10
   },
   {
+    "id": "ae7c1f33e117d29e2edba207",
     "title": "Mochila urbana con estampado urbano",
     "photo": "/img/mochila-urbana.jpg",
     "category": "Accesorios",
@@ -356,6 +384,7 @@
     "stock": 20
   },
   {
+    "id": "5c3b870b5d6b3d47ea9f20e3",
     "title": "Auriculares con cancelación de ruido",
     "photo": "/img/auriculares-cancelacion-ruido.jpg",
     "category": "Electrónica",
@@ -363,6 +392,7 @@
     "stock": 10
   },
   {
+    "id": "2da32e7ac749eb4f23fbc36f",
     "title": "Gorra de béisbol vintage",
     "photo": "/img/gorra-beisbol-vintage.jpg",
     "category": "Accesorios",
