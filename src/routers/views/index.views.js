@@ -1,7 +1,6 @@
 import { Router } from "express";
 import productsRouter from "./products.view.js";
 import usersRouter from "./users.views.js";
-import { title } from "process";
 
 const viewsRouter = Router();
 
