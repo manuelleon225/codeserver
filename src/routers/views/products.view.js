@@ -5,9 +5,9 @@ const productsRouter = Router();
 
 productsRouter.get("/", read);
 
-productsRouter.get("/:pid", readOne)
+productsRouter.get("/search/:pid", readOne)
 
-// productsRouter.post("/real", create)
+productsRouter.get("/products/real", create)
 
 async function read (req, res, next){
     try {
@@ -41,6 +41,24 @@ async function readOne (req, res, next){
     } catch (err) {
         return next(err)
     }
+}
+
+async function create (req, res, next){
+  try {
+    const { category } = req.query;
+    const allProducts = await productManager.read(category);
+    if (allProducts.length !== 0) {
+      return res.render("product_register", {
+        allProducts,
+      });
+    } else {
+      const error = new Error("NOT FOUND PRODUCTS");
+      error.statusCode = 404;
+      throw error;
+    }
+  } catch (error) {
+    return next(error);
+  }
 }
 
 export default productsRouter;
