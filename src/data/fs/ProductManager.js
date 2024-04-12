@@ -25,7 +25,7 @@ class ProductManager {
                 const newProduct = {
                     id: crypto.randomBytes(12).toString("hex"),
                     title: data.title,
-                    photo: data.photo || "pic_default.jpg",
+                    photo: data.photo || "https://back.tiendainval.com/backend/admin/backend/web/archivosDelCliente/items/images/20210108100138no_image_product.png",
                     category: data.category || "undefined",
                     price: data.price || 1,
                     stock: data.stock || 1
