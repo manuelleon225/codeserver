@@ -9,7 +9,7 @@
             </div>
             <div class="col-md-6">
                 <label for="photo_url" class="form-label">Product URL:</label>
-                <input type="url" class="form-control" id="photo_url" placeholder="Enter a product URL">
+                <input type="text" class="form-control" id="photo_url" placeholder="Enter a product URL">
             </div>
             <div class="col-md-6">
                 <label for="category" class="form-label">Category:</label>
@@ -51,15 +51,15 @@
                 </div>
             </div>
         </div>
-    `).join("")
+    `).reverse().join("")
     document.getElementById("products").innerHTML = template
     document.getElementById("btn-register-product").addEventListener("click", async ()=> {
         const title = document.getElementById("title").value
-        const photo_url = document.getElementById("photo_url").value
+        const photo = document.getElementById("photo_url").value
         const category = document.getElementById("category").value
         const price = document.getElementById("price").value
         const stock = document.getElementById("stock").value
-        socket.emit("register-product", { title, photo_url, category, price, stock})
+        socket.emit("register-product", { title, photo, category, price, stock})
     })
   })
 </script>

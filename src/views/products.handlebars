@@ -4,26 +4,39 @@
     </div>
 </div>
 <script src="/socket.io/socket.io.js"></script>
+<style>
+    .card {
+        height: 100%;
+    }
+    .card-img-top {
+        max-height: 500px; 
+        object-fit: cover; 
+        width: 100%;
+    }
+</style>
 <script>
-  const socket = io();
-  socket.on("products", (data) => {
-    console.log((data))
-    let template = ``
-    template = data.map(prod => `
-        <div class="col mb-4">
-            <div class="card">
-                <img src="${prod.photo}" class="card-img-top" alt="product-photo">
-                <div class="card-body">
-                    <h5 class="card-title">Title: ${prod.title}</h5>
-                    <p class="card-text">Category: ${prod.category}</p>
-                    <p class="card-text">Price: ${prod.price}</p>
-                    <p class="card-text">Stock: ${prod.stock}</p>
-                    <p class="card-text">ID: ${prod.id}</p>
-                    <button class="btn btn-primary">More details</button>
+    const socket = io();
+    const handleClick = async (prodId) => {
+        await socket.emit("product_detail", prodId);
+        window.location.href=`/search/${prodId}`
+    };
+    socket.on("products", (data) => {
+        let template = ``
+        template = data.map(prod => `
+            <div class="col mb-4">
+                <div class="card">
+                    <img src="${prod.photo}" class="card-img-top img-fluid h-100" alt="product-photo">
+                    <div class="card-body">
+                        <h5 class="card-title">${prod.title}</h5>
+                        <p class="card-text">Category: ${prod.category}</p>
+                        <p class="card-text">Price: ${prod.price}</p>
+                        <p class="card-text">Stock: ${prod.stock}</p>
+                        <p class="card-text">ID: ${prod.id}</p>
+                        <button class="btn btn-primary" onClick={handleClick("${prod.id}")}>More details</button>
+                    </div>
                 </div>
             </div>
-        </div>
-    `).join("")
-    document.getElementById("products").innerHTML = template
-  })
+        `).join("")
+        document.getElementById("products").innerHTML = template
+    })
 </script>

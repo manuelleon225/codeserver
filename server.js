@@ -1,3 +1,4 @@
+import "dotenv/config.js"
 import express from "express";
 import { createServer } from "http";
 import { Server } from "socket.io";
@@ -10,11 +11,15 @@ import socketCb from "./src/routers/index.socket.js"
 import errorHandler from "./src/middlewares/errorHandler.js";
 import pathHandler from "./src/middlewares/pathHandler.js";
 import __dirname from "./utils.js";
+import { dbConnect } from "./src/utils/dbConnect.js";
 
 //http server
 const server = express();
-const port = 8080;
-const ready = () => console.log("server ready on port " + port);
+const port = process.env.PORT || 9000;
+const ready = async () => {
+    await dbConnect()
+    console.log("server ready on port " + port)
+};
 const nodeServer = createServer(server)
 const socketServer = new Server(nodeServer)
 socketServer.on("connection", socketCb);

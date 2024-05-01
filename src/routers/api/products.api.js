@@ -1,16 +1,13 @@
 import { Router } from "express";
-import productManager from "../../data/fs/ProductManager.js";
+// import productManager from "../../data/fs/ProductManager.js";
+import productManager from "../../data/mongo/managers/Products.manager.js";
 
 const productsRouter = Router()
 
 productsRouter.get("/", read)
-
 productsRouter.get("/:pid", readOne)
-
-productsRouter.post("/", create)
-
+productsRouter.post("/real", create)
 productsRouter.put("/:pid", update)
-
 productsRouter.delete("/:pid", deleteProduct)
 
 async function read (req, res, next){
@@ -52,7 +49,6 @@ async function readOne (req, res, next){
 async function create(req, res, next){
     try {
         const data = req.body
-        console.log(data);
         const newProduct = await productManager.create(data)
         return res.json({
             statusCode: 201,

@@ -56,13 +56,12 @@ class ProductManager {
     async readOne(id) {
         try {
             let fileProducts = await fs.promises.readFile(this.path, "utf-8")
-            fileProducts = JSON.parse(fileProducts)
-            const prodFound = fileProducts.find((prod) => prod.id == id)
+            fileProducts = await JSON.parse(fileProducts)
+            const prodFound = await fileProducts.find((prod) => prod.id == id)
             if (!prodFound) {
                 const error = new Error("No hay ningun producto registrado con ese id")
                 throw error
             } else {
-                console.log(prodFound);
                 return prodFound
             }
         } catch (error) {
