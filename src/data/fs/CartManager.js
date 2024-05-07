@@ -25,7 +25,7 @@ class CartManager {
                 const newCart = {
                   id: data.id || crypto.randomBytes(12).toString("hex"),
                   user_id: data.id || crypto.randomBytes(12).toString("hex"),
-                  cartuct_id: data.id || crypto.randomBytes(12).toString("hex"),
+                  product_id: data.id || crypto.randomBytes(12).toString("hex"),
                   quantity: data.id || 1,
                   state: data.id || "reserved",
                 }
@@ -46,7 +46,7 @@ class CartManager {
             let fileCarts = await fs.promises.readFile(this.path, "utf-8")
             // fileCarts = JSON.parse(fileCarts)
             fileCarts ? fileCarts = JSON.parse(fileCarts) : fileCarts; // pregunto si tiene algun dato el fileCarts para que no tire error el parse, ya que si no tiene datos no puede parsear nada y se rompe la app
-            query ? fileCarts = fileCarts.filter((cart) => cart.category == query) : fileCarts
+            query ? fileCarts = fileCarts.filter((cart) => cart.user_id === query) : fileCarts
             return fileCarts
         } catch (error) {
             throw error

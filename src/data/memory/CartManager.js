@@ -9,6 +9,7 @@ class CartManager {
                 throw error
             } else {
                 const newCart = {
+                    id: crypto.randomBytes(12).toString("hex"),
                     user_id: data.id || crypto.randomBytes(12).toString("hex"),
                     product_id: data.id || crypto.randomBytes(12).toString("hex"),
                     quantity: data.id || 1,
@@ -21,13 +22,13 @@ class CartManager {
             throw error
         }
     }
-    read(query){
+    read(){
         try{
             if(CartManager.#carts.length == 0){
                 const error = new Error("No hay carritos registrados")
                 throw error
             } else {
-                const carts = CartManager.#carts.filter((prod) => prod.category == query)
+                //const carts = CartManager.#carts;
                 return CartManager.#carts
             }
         } catch(error){
@@ -36,7 +37,7 @@ class CartManager {
     }
     readOne(id){
         try{
-            const cartFound = CartManager.#carts.find((prod) => prod.id == id)
+            const cartFound = CartManager.#carts.find((cart) => cart.id == id)
             if(!cartFound){
                 const error = new Error("No hay ningun carrito registrado con ese id")
                 throw error
@@ -49,21 +50,21 @@ class CartManager {
     }
     destroy(id){
         try{
-            const cartFound = CartManager.#carts.find((prod) => prod.id == id)
+            const cartFound = CartManager.#carts.find((cart) => cart.id == id)
             if(!cartFound){
                 const error = new Error("No hay ningun carrito registrado con ese id")
                 throw error
             } else {
-                CartManager.#carts = CartManager.#carts.filter((prod) => prod.id != id)
+                CartManager.#carts = CartManager.#carts.filter((cart) => cart.id != id)
                 return CartManager.#carts
             }
         } catch(error){
             throw error
         }
     }
-    update(pid, data){
+    update(uid, data){
         try {
-            const cartToUpdate = CartManager.#carts.find(prod => prod.id == pid) 
+            const cartToUpdate = CartManager.#carts.find(cart => cart.id == uid) 
             if(cartToUpdate){
                 Object.assign(cartToUpdate, data)
                 return cartToUpdate

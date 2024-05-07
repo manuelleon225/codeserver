@@ -4,29 +4,52 @@ import cartManager from "../../data/mongo/managers/Cart.manager.js";
 
 const cartsRouter = Router()
 
+cartsRouter.post("/", create)
+
 cartsRouter.get("/", read)
 
-//cartsRouter.post("/", create)
+cartsRouter.get("/:uid", readOne);
 
-//cartsRouter.put("/:cid", update)
+cartsRouter.put("/:uid", update)
 
-//cartsRouter.delete("/:cid", deleteCart)
+cartsRouter.delete("/:uid", deleteCart)
 
 async function read (req, res, next){
     try{
-        const { user } = req.query
-        const allCarts = await cartManager.read(user)
-        if(allCarts.length !== 0){
+        const { user_id } = req.query
+        if (user_id) {
+            const allCarts = await cartManager.read({ user_id });
+            if(allCarts.length !== 0){
+                return res.status(200).json({
+                    response: allCarts
+                })
+            } else {
+                const error = new Error("NOT FOUND CART")
+                error.statusCode = 404
+                throw error
+            }
+        }
+    } catch (err) {
+        console.log(err);
+        return next(err)
+    }
+}
+
+async function readOne (req, res, next){
+    try {
+        const { uid } = req.params
+        const cartById = await cartManager.readOne(uid)
+        console.log("cartById ------>",cartById);
+        if(cartById) {
             return res.status(200).json({
-                response: allCarts
+                response: cartById
             })
         } else {
-            const error = new Error("NOT FOUND CART")
+            const error = new Error("NOT FOUND PRODUCT")
             error.statusCode = 404
             throw error
         }
     } catch (err) {
-        console.log(err);
         return next(err)
     }
 }
@@ -47,9 +70,9 @@ async function create(req, res, next){
 
 async function update(req, res, next){
     try {
-        const { cid } = req.params
+        const { uid } = req.params
         const data = req.body
-        const cart = await cartManager.update(cid, data)
+        const cart = await cartManager.update(uid, data)
         return res.json({
             statusCode: 200,
             message: `Cart with ID: ${cart.id} updated`
@@ -61,10 +84,10 @@ async function update(req, res, next){
 
 async function deleteCart(req, res, next){
     try {
-        const { cid } = req.params
+        const { uid } = req.params
         let allCarts = await cartManager.read()
-        const cartToDelete = allCarts.find((cart) => cart.id === cid)
-        await cartManager.destroy(cid)
+        const cartToDelete = allCarts.find((cart) => cart.id === uid)
+        await cartManager.destroy(uid)
         return res.json({
             statusCode: 200,
             response: cartToDelete

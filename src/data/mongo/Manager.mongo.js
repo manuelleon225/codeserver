@@ -12,7 +12,7 @@ class MongoManager {
     }
     async read(){
         try {
-            const models = await this.Model.find()
+            const models = await this.Model.find().lean()
             return models
         } catch (error) {
             throw error
