@@ -7,16 +7,10 @@ cartRouter.get("/", read);
 
 async function read(req, res, next) {
     try {
-      const { category } = req.query;
-      const cart= await cartManager.read(category);
-      if (cart.length !== 0) {
-        console.log("carts ------>",cart);
-        return res.render("cart", { cart: cart });
-      } else {
-        const error = new Error("NOT FOUND CART");
-        error.statusCode = 404;
-        throw error;
-      }
+      const { uid } = req.query;
+      const cart= await cartManager.read(uid);
+      return res.render("cart", { cart: cart });
+      
     } catch (error) {
       return next(error);
     }

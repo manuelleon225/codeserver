@@ -85,13 +85,11 @@ async function update(req, res, next){
 async function deleteCart(req, res, next){
     try {
         const { uid } = req.params
-        let allCarts = await cartManager.read()
-        const cartToDelete = allCarts.find((cart) => cart.id === uid)
-        await cartManager.destroy(uid)
-        return res.json({
-            statusCode: 200,
-            response: cartToDelete
-        })
+        const deletedCart = await cartManager.destroy(uid);
+        if (!deletedCart) {
+            return res.json({ statusCode: 404, message: "Cart not found" });
+        }
+        return res.json({ statusCode: 200, response: deletedCart });
     } catch (error) {
         return next(error)
     }

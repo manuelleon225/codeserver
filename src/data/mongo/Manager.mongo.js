@@ -4,7 +4,7 @@ class MongoManager {
     }
     async create(data){
         try {
-            const model = await this.Model.create(data)
+            const model = await this.Model.create(data).lean();
             return model
         } catch (error) {
             throw error
@@ -20,7 +20,7 @@ class MongoManager {
     }
     async readOne(id){
         try {
-            const model = await this.Model.findById(id)
+            const model = await this.Model.findById(id).lean();
             return model
         } catch (error) {
             throw error
@@ -28,7 +28,7 @@ class MongoManager {
     }
     async update(id, data){
         try {
-            const model = await this.Model.findByIdAndUpdate(id, data, {new: true})
+            const model = await this.Model.findByIdAndUpdate(id, data, {new: true}).lean();
             return model
         } catch (error) {
             throw error
@@ -36,7 +36,7 @@ class MongoManager {
     }
     async destroy(id){
         try {
-            const model = await this.Model.findOneAndDelete(id)
+            const model = await this.Model.findByIdAndDelete(id).lean();
             return model
         } catch (error) {
             throw error
