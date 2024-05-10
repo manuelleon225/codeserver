@@ -1,402 +1,558 @@
-[
-  {
-    "id": "d3184ec2096974c5bf33f1b5",
-    "title": "Camisa de algodón a rayas",
-    "photo": "https://gangastore.com.ar/wp-content/uploads/2023/02/47044401_55_B.webp",
-    "category": "Ropa",
-    "price": 29.99,
-    "stock": 50
+[{
+  "_id": "663159c1401d49d5ef0010fc",
+  "id": "d5c0826c2b6bfc82bbf02597",
+  "title": "Mochila resistente al agua",
+  "photo": "https://images.bidcom.com.ar/resize?src=https://www.bidcom.com.ar/publicacionesML/productos/MOCH0128/1000x1000-MOCH0128.jpg&h=400&q=100",
+  "category": "Accesorios",
+  "price": 39.99,
+  "stock": 30
+},
+{
+  "_id": "663159c1401d49d5ef0010fd",
+  "id": "219027b68c72aae9d1f5edab",
+  "title": "Reloj de pulsera elegante",
+  "photo": "https://http2.mlstatic.com/D_NQ_NP_875100-MLA73128766236_122023-O.webp",
+  "category": "Accesorios",
+  "price": 69.99,
+  "stock": 25
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef0010fe"
   },
-  {
-    "id": "db2f75b49defaa1060b94300",
-    "title": "Zapatillas deportivas para correr",
-    "photo": "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1677601990-1011b547-400-sr-rt-glb-copia-1673274911.jpg?crop=1xw:1xh;center,top&resize=980:*",
-    "category": "Calzado",
-    "price": 49.99,
-    "stock": 40
+  "id": "b774a182b62b0304ff249fa5",
+  "title": "Auriculares inalámbricos Bluetooth",
+  "photo": "https://images.fravega.com/f500/dbda7b26b93ee1f8c13c8bd93d49d593.jpg",
+  "category": "Electrónica",
+  "price": 59.99,
+  "stock": 35
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef0010ff"
   },
-  {
-    "id": "d5c0826c2b6bfc82bbf02597",
-    "title": "Mochila resistente al agua",
-    "photo": "https://images.bidcom.com.ar/resize?src=https://www.bidcom.com.ar/publicacionesML/productos/MOCH0128/1000x1000-MOCH0128.jpg&h=400&q=100",
-    "category": "Accesorios",
-    "price": 39.99,
-    "stock": 30
+  "id": "2f553efe3f9b4171f11f6681",
+  "title": "Pantalones vaqueros ajustados",
+  "photo": "https://i.ebayimg.com/images/g/TXwAAOSwIZZhPf8A/s-l1600.jpg",
+  "category": "Ropa",
+  "price": 34.99,
+  "stock": 45
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef001100"
   },
-  {
-    "id": "219027b68c72aae9d1f5edab",
-    "title": "Reloj de pulsera elegante",
-    "photo": "https://http2.mlstatic.com/D_NQ_NP_875100-MLA73128766236_122023-O.webp",
-    "category": "Accesorios",
-    "price": 69.99,
-    "stock": 25
+  "id": "95b97106d6930b74c7b690d9",
+  "title": "Botella de agua deportiva",
+  "photo": "https://http2.mlstatic.com/D_NQ_NP_715612-MLA69764504804_062023-O.webp",
+  "category": "Accesorios",
+  "price": 14.99,
+  "stock": 55
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef001101"
   },
-  {
-    "id": "b774a182b62b0304ff249fa5",
-    "title": "Auriculares inalámbricos Bluetooth",
-    "photo": "https://images.fravega.com/f500/dbda7b26b93ee1f8c13c8bd93d49d593.jpg",
-    "category": "Electrónica",
-    "price": 59.99,
-    "stock": 35
+  "id": "ca44655bf98db71b9e6ad5d7",
+  "title": "Chaqueta de cuero impermeable",
+  "photo": "https://www.aquadelta.com.ar/img/articulos/2021/07/chaqueta_impermeable_freeky_primo_3_imagen4.jpg",
+  "category": "Ropa",
+  "price": 79.99,
+  "stock": 20
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef001102"
   },
-  {
-    "id": "2f553efe3f9b4171f11f6681",
-    "title": "Pantalones vaqueros ajustados",
-    "photo": "https://i.ebayimg.com/images/g/TXwAAOSwIZZhPf8A/s-l1600.jpg",
-    "category": "Ropa",
-    "price": 34.99,
-    "stock": 45
+  "id": "bee66e2ded3351eb9690940c",
+  "title": "Mochila para portátil",
+  "photo": "https://samsonite.com.ar/cdn/shop/files/349150886bbc46acbfc704501c80af9493629f229266562851621b5e43093f97_2000x.jpg?v=1698714356",
+  "category": "Accesorios",
+  "price": 49.99,
+  "stock": 30
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef001103"
   },
-  {
-    "id": "95b97106d6930b74c7b690d9",
-    "title": "Botella de agua deportiva",
-    "photo": "https://http2.mlstatic.com/D_NQ_NP_715612-MLA69764504804_062023-O.webp",
-    "category": "Accesorios",
-    "price": 14.99,
-    "stock": 55
+  "id": "379f9f719ea8cc5cb0b2d77c",
+  "title": "Samsung Galaxy A54",
+  "photo": "https://img.global.news.samsung.com/cl/wp-content/uploads/2023/05/dl5_Galaxy-A54-5G_Awesome-Graphite_Front-e1683749755408.jpg",
+  "category": "Electrónica",
+  "price": 699.99,
+  "stock": 15
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef001104"
   },
-  {
-    "id": "ca44655bf98db71b9e6ad5d7",
-    "title": "Chaqueta de cuero impermeable",
-    "photo": "https://www.aquadelta.com.ar/img/articulos/2021/07/chaqueta_impermeable_freeky_primo_3_imagen4.jpg",
-    "category": "Ropa",
-    "price": 79.99,
-    "stock": 20
+  "id": "9ffe9fc1428f846095315ef7",
+  "title": "Gorra de béisbol ajustable",
+  "photo": "https://http2.mlstatic.com/D_NQ_NP_803273-MLA74446630398_022024-O.webp",
+  "category": "Accesorios",
+  "price": 19.99,
+  "stock": 40
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef001105"
   },
-  {
-    "id": "bee66e2ded3351eb9690940c",
-    "title": "Mochila para portátil",
-    "photo": "https://samsonite.com.ar/cdn/shop/files/349150886bbc46acbfc704501c80af9493629f229266562851621b5e43093f97_2000x.jpg?v=1698714356",
-    "category": "Accesorios",
-    "price": 49.99,
-    "stock": 30
+  "id": "89eebd14c794da076b070e85",
+  "title": "Sudadera con capucha unisex",
+  "photo": "https://http2.mlstatic.com/D_NQ_NP_708545-MLA70839668804_082023-O.webp",
+  "category": "Ropa",
+  "price": 44.99,
+  "stock": 25
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef001106"
   },
-  {
-    "id": "379f9f719ea8cc5cb0b2d77c",
-    "title": "Samsung Galaxy A54",
-    "photo": "https://img.global.news.samsung.com/cl/wp-content/uploads/2023/05/dl5_Galaxy-A54-5G_Awesome-Graphite_Front-e1683749755408.jpg",
-    "category": "Electrónica",
-    "price": 699.99,
-    "stock": 15
+  "id": "aa97addfd8c8e872fd62cafe",
+  "title": "Bolsa de viaje resistente",
+  "photo": "https://http2.mlstatic.com/D_NQ_NP_697030-MLA53133652788_012023-O.webp",
+  "category": "Accesorios",
+  "price": 59.99,
+  "stock": 35
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef001107"
   },
-  {
-    "id": "9ffe9fc1428f846095315ef7",
-    "title": "Gorra de béisbol ajustable",
-    "photo": "https://http2.mlstatic.com/D_NQ_NP_803273-MLA74446630398_022024-O.webp",
-    "category": "Accesorios",
-    "price": 19.99,
-    "stock": 40
+  "id": "e4da6f0e645c2aaba16e8875",
+  "title": "Bufanda de lana suave",
+  "photo": "https://http2.mlstatic.com/D_NQ_NP_778313-MLA69788156594_062023-O.webp",
+  "category": "Ropa",
+  "price": 24.99,
+  "stock": 50
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef001108"
   },
-  {
-    "id": "89eebd14c794da076b070e85",
-    "title": "Sudadera con capucha unisex",
-    "photo": "https://http2.mlstatic.com/D_NQ_NP_708545-MLA70839668804_082023-O.webp",
-    "category": "Ropa",
-    "price": 44.99,
-    "stock": 25
+  "id": "1adaf3158ce5ac41b5ad7f41",
+  "title": "Botas de cuero elegantes",
+  "photo": "https://i.etsystatic.com/47873501/r/il/adacbc/5749710051/il_570xN.5749710051_9kne.jpg",
+  "category": "Calzado",
+  "price": 89.99,
+  "stock": 20
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef001109"
   },
-  {
-    "id": "aa97addfd8c8e872fd62cafe",
-    "title": "Bolsa de viaje resistente",
-    "photo": "https://http2.mlstatic.com/D_NQ_NP_697030-MLA53133652788_012023-O.webp",
-    "category": "Accesorios",
-    "price": 59.99,
-    "stock": 35
+  "id": "eb4816fc415e8314de1803cf",
+  "title": "Cámara digital compacta",
+  "photo": "https://www.sony.com.ar/image/1b60d25d33e53de55e53aa39c4ec63db?fmt=pjpeg&wid=1200&hei=470&bgcolor=F1F5F9&bgc=F1F5F9",
+  "category": "Electrónica",
+  "price": 199.99,
+  "stock": 10
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef00110a"
   },
-  {
-    "id": "e4da6f0e645c2aaba16e8875",
-    "title": "Bufanda de lana suave",
-    "photo": "https://http2.mlstatic.com/D_NQ_NP_778313-MLA69788156594_062023-O.webp",
-    "category": "Ropa",
-    "price": 24.99,
-    "stock": 50
+  "id": "37f47b2fb1b1b03ed9aae0f9",
+  "title": "Cinturón de cuero genuino",
+  "photo": "https://http2.mlstatic.com/D_NQ_NP_813284-MLA52667697974_112022-O.webp",
+  "category": "Accesorios",
+  "price": 29.99,
+  "stock": 45
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef00110b"
   },
-  {
-    "id": "1adaf3158ce5ac41b5ad7f41",
-    "title": "Botas de cuero elegantes",
-    "photo": "https://i.etsystatic.com/47873501/r/il/adacbc/5749710051/il_570xN.5749710051_9kne.jpg",
-    "category": "Calzado",
-    "price": 89.99,
-    "stock": 20
+  "id": "414d4e8cfd340043b24a9d1c",
+  "title": "Camiseta de algodón básica",
+  "photo": "https://torosylunares.es/2670-thickbox_default/camiseta-basica-de-algodon-tamano-adulto.jpg",
+  "category": "Ropa",
+  "price": 14.99,
+  "stock": 60
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef00110c"
   },
-  {
-    "id": "eb4816fc415e8314de1803cf",
-    "title": "Cámara digital compacta",
-    "photo": "https://www.sony.com.ar/image/1b60d25d33e53de55e53aa39c4ec63db?fmt=pjpeg&wid=1200&hei=470&bgcolor=F1F5F9&bgc=F1F5F9",
-    "category": "Electrónica",
-    "price": 199.99,
-    "stock": 10
+  "id": "c0fab7529969921763c92793",
+  "title": "Maletín ejecutivo de cuero",
+  "photo": "https://www.pielesvelasquez.com/wp-content/uploads/2017/08/maletin-ejecutivo-de-cuero-velasquez-3.jpg",
+  "category": "Accesorios",
+  "price": 129.99,
+  "stock": 15
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef00110d"
   },
-  {
-    "id": "37f47b2fb1b1b03ed9aae0f9",
-    "title": "Cinturón de cuero genuino",
-    "photo": "https://http2.mlstatic.com/D_NQ_NP_813284-MLA52667697974_112022-O.webp",
-    "category": "Accesorios",
-    "price": 29.99,
-    "stock": 45
+  "id": "d2bcce95e0f5be58cf0c671e",
+  "title": "Gafas de sol polarizadas",
+  "photo": "https://raw.githubusercontent.com/markngate/images/main/Nota-devlyn-41/PORTADA.jpg",
+  "category": "Accesorios",
+  "price": 39.99,
+  "stock": 30
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef00110e"
   },
-  {
-    "id": "414d4e8cfd340043b24a9d1c",
-    "title": "Camiseta de algodón básica",
-    "photo": "https://torosylunares.es/2670-thickbox_default/camiseta-basica-de-algodon-tamano-adulto.jpg",
-    "category": "Ropa",
-    "price": 14.99,
-    "stock": 60
+  "id": "5d3e677f5a35a6a91c80a9ec",
+  "title": "Vestido de fiesta con lentejuelas",
+  "photo": "https://i.pinimg.com/736x/e9/86/1c/e9861cd011f926fe3adc01824d15aaf2.jpg",
+  "category": "Ropa",
+  "price": 79.99,
+  "stock": 15
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef00110f"
   },
-  {
-    "id": "c0fab7529969921763c92793",
-    "title": "Maletín ejecutivo de cuero",
-    "photo": "https://www.pielesvelasquez.com/wp-content/uploads/2017/08/maletin-ejecutivo-de-cuero-velasquez-3.jpg",
-    "category": "Accesorios",
-    "price": 129.99,
-    "stock": 15
+  "id": "db5a83083b7d1d9f03e06f25",
+  "title": "Mocasines de cuero para hombre",
+  "photo": "https://dorianargentina.com/wp-content/uploads/2023/12/Mocasines-Monaco-Negro-Perfil.jpg",
+  "category": "Calzado",
+  "price": 59.99,
+  "stock": 20
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef001110"
   },
-  {
-    "id": "d2bcce95e0f5be58cf0c671e",
-    "title": "Gafas de sol polarizadas",
-    "photo": "https://raw.githubusercontent.com/markngate/images/main/Nota-devlyn-41/PORTADA.jpg",
-    "category": "Accesorios",
-    "price": 39.99,
-    "stock": 30
+  "id": "e78515c240b9c82dfaa1f12e",
+  "title": "Bolso de mano elegante",
+  "photo": "https://http2.mlstatic.com/D_NQ_NP_673158-MLU72670279356_112023-O.webp",
+  "category": "Accesorios",
+  "price": 49.99,
+  "stock": 25
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef001111"
   },
-  {
-    "id": "5d3e677f5a35a6a91c80a9ec",
-    "title": "Vestido de fiesta con lentejuelas",
-    "photo": "https://i.pinimg.com/736x/e9/86/1c/e9861cd011f926fe3adc01824d15aaf2.jpg",
-    "category": "Ropa",
-    "price": 79.99,
-    "stock": 15
+  "id": "e3b121f4ed7b73ebe0e60eb0",
+  "title": "Smartwatch con monitor de ritmo cardíaco",
+  "photo": "https://www.sevenelectronics.com.ar/images/00000000SMW-SW6496478sevenelectronics-Smartwatch-Match100-1.png",
+  "category": "Electrónica",
+  "price": 129.99,
+  "stock": 30
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef001112"
   },
-  {
-    "id": "db5a83083b7d1d9f03e06f25",
-    "title": "Mocasines de cuero para hombre",
-    "photo": "https://dorianargentina.com/wp-content/uploads/2023/12/Mocasines-Monaco-Negro-Perfil.jpg",
-    "category": "Calzado",
-    "price": 59.99,
-    "stock": 20
+  "id": "902d8e8763d77758da21fc98",
+  "title": "Chaqueta de invierno acolchada",
+  "photo": "https://tequierofashion.com/cdn/shop/products/product-image-447925355_1024x1024.jpg?v=1571720317",
+  "category": "Ropa",
+  "price": 89.99,
+  "stock": 35
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef001113"
   },
-  {
-    "id": "e78515c240b9c82dfaa1f12e",
-    "title": "Bolso de mano elegante",
-    "photo": "https://http2.mlstatic.com/D_NQ_NP_673158-MLU72670279356_112023-O.webp",
-    "category": "Accesorios",
-    "price": 49.99,
-    "stock": 25
+  "id": "fe799b66d16b9cb2e4f17a4f",
+  "title": "Bicicleta de montaña todo terreno",
+  "photo": "https://casalumi.com.ar/wp-content/uploads/2021/06/2911MDIB-8.jpg",
+  "category": "Deportes",
+  "price": 399.99,
+  "stock": 10
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef001114"
   },
-  {
-    "id": "e3b121f4ed7b73ebe0e60eb0",
-    "title": "Smartwatch con monitor de ritmo cardíaco",
-    "photo": "https://www.sevenelectronics.com.ar/images/00000000SMW-SW6496478sevenelectronics-Smartwatch-Match100-1.png",
-    "category": "Electrónica",
-    "price": 129.99,
-    "stock": 30
+  "id": "197fb85f3ebfa7e05d3e2050",
+  "title": "Sweater de punto grueso",
+  "photo": "https://d28hi93gr697ol.cloudfront.net/0656ac0e-2016-8883-2490-23b76f0931d3/img/Producto/bb11856f-3572-0a3d-fe78-d727f12a196d/sg-275-8-65f338c16fed3.jpg",
+  "category": "Ropa",
+  "price": 39.99,
+  "stock": 40
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef001115"
   },
-  {
-    "id": "902d8e8763d77758da21fc98",
-    "title": "Chaqueta de invierno acolchada",
-    "photo": "https://tequierofashion.com/cdn/shop/products/product-image-447925355_1024x1024.jpg?v=1571720317",
-    "category": "Ropa",
-    "price": 89.99,
-    "stock": 35
+  "id": "5b22b8015daa9e99f3b3a8b3",
+  "title": "Paraguas plegable resistente al viento",
+  "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRMC4lBSc2epF8XxHMycrLly8MKaDWrvyyb5C19pIG5g&s",
+  "category": "Accesorios",
+  "price": 19.99,
+  "stock": 50
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef001116"
   },
-  {
-    "id": "fe799b66d16b9cb2e4f17a4f",
-    "title": "Bicicleta de montaña todo terreno",
-    "photo": "https://casalumi.com.ar/wp-content/uploads/2021/06/2911MDIB-8.jpg",
-    "category": "Deportes",
-    "price": 399.99,
-    "stock": 10
+  "id": "593bde7bea3da780c702c92c",
+  "title": "Gorra de lana con pompón",
+  "photo": "https://www.digitalsport.com.ar/files/products/5c2df74d5981d-481669-500x500.jpg",
+  "category": "Accesorios",
+  "price": 24.99,
+  "stock": 45
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef001117"
   },
-  {
-    "id": "197fb85f3ebfa7e05d3e2050",
-    "title": "Sweater de punto grueso",
-    "photo": "https://d28hi93gr697ol.cloudfront.net/0656ac0e-2016-8883-2490-23b76f0931d3/img/Producto/bb11856f-3572-0a3d-fe78-d727f12a196d/sg-275-8-65f338c16fed3.jpg",
-    "category": "Ropa",
-    "price": 39.99,
-    "stock": 40
+  "id": "a440f91a1213f8b4f651eb9b",
+  "title": "Portafolio ejecutivo de cuero",
+  "photo": "https://www.losroblespolotime.com/wp-content/uploads/maletines-portafolios-de-cuero-hombre-mujer-porta-notebook-1206-uso.jpg",
+  "category": "Accesorios",
+  "price": 89.99,
+  "stock": 20
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef001118"
   },
-  {
-    "id": "5b22b8015daa9e99f3b3a8b3",
-    "title": "Paraguas plegable resistente al viento",
-    "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRMC4lBSc2epF8XxHMycrLly8MKaDWrvyyb5C19pIG5g&s",
-    "category": "Accesorios",
-    "price": 19.99,
-    "stock": 50
+  "id": "4d10dfeadec53debf8426f64",
+  "title": "Jersey de algodón para niños",
+  "photo": "https://i.etsystatic.com/13560688/r/il/f0907e/2129582160/il_570xN.2129582160_pola.jpg",
+  "category": "Ropa",
+  "price": 29.99,
+  "stock": 30
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef001119"
   },
-  {
-    "id": "593bde7bea3da780c702c92c",
-    "title": "Gorra de lana con pompón",
-    "photo": "https://www.digitalsport.com.ar/files/products/5c2df74d5981d-481669-500x500.jpg",
-    "category": "Accesorios",
-    "price": 24.99,
-    "stock": 45
+  "id": "ba5fc6e10a130dab5e0f2ed6",
+  "title": "Collar de plata con colgante de corazón",
+  "photo": "https://acdn.mitiendanube.com/stores/001/547/249/products/e105bb38-39d9-48c3-9312-8785610a99801-bd4c50a0f5197253fd16547358393082-1024-1024.jpg",
+  "category": "Accesorios",
+  "price": 49.99,
+  "stock": 25
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef00111a"
   },
-  {
-    "id": "a440f91a1213f8b4f651eb9b",
-    "title": "Portafolio ejecutivo de cuero",
-    "photo": "https://www.losroblespolotime.com/wp-content/uploads/maletines-portafolios-de-cuero-hombre-mujer-porta-notebook-1206-uso.jpg",
-    "category": "Accesorios",
-    "price": 89.99,
-    "stock": 20
+  "id": "e3667ecfc3c7fc1a60d5c172",
+  "title": "Mochila de senderismo con sistema de hidratación",
+  "photo": "https://m.media-amazon.com/images/I/71aRrWtmCiL.jpg",
+  "category": "Accesorios",
+  "price": 69.99,
+  "stock": 15
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef00111b"
   },
-  {
-    "id": "4d10dfeadec53debf8426f64",
-    "title": "Jersey de algodón para niños",
-    "photo": "https://i.etsystatic.com/13560688/r/il/f0907e/2129582160/il_570xN.2129582160_pola.jpg",
-    "category": "Ropa",
-    "price": 29.99,
-    "stock": 30
+  "id": "71f4e2d5c6f58ed5b4dbb8b3",
+  "title": "Pañuelo de seda estampado",
+  "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp_wtO6P9h1CaqvFNk_T3zSWWOC9b-eMoBkb-VSqsa7g&s",
+  "category": "Accesorios",
+  "price": 34.99,
+  "stock": 30
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef00111c"
   },
-  {
-    "id": "ba5fc6e10a130dab5e0f2ed6",
-    "title": "Collar de plata con colgante de corazón",
-    "photo": "https://acdn.mitiendanube.com/stores/001/547/249/products/e105bb38-39d9-48c3-9312-8785610a99801-bd4c50a0f5197253fd16547358393082-1024-1024.jpg",
-    "category": "Accesorios",
-    "price": 49.99,
-    "stock": 25
+  "id": "d6a9e10c040925ddae4e32ac",
+  "title": "Cámara de seguridad WiFi para hogar",
+  "photo": "https://http2.mlstatic.com/D_NQ_NP_973116-MLU75227646206_032024-O.webp",
+  "category": "Electrónica",
+  "price": 149.99,
+  "stock": 20
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef00111d"
   },
-  {
-    "id": "e3667ecfc3c7fc1a60d5c172",
-    "title": "Mochila de senderismo con sistema de hidratación",
-    "photo": "https://m.media-amazon.com/images/I/71aRrWtmCiL.jpg",
-    "category": "Accesorios",
-    "price": 69.99,
-    "stock": 15
+  "id": "31761773f941b66c979f348d",
+  "title": "Bolso bandolera de cuero vintage",
+  "photo": "https://acdn.mitiendanube.com/stores/860/285/products/796283-mla28175597852_092018-o-c736e731943d7882d215496708555017-1024-1024.jpg",
+  "category": "Accesorios",
+  "price": 79.99,
+  "stock": 25
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef00111e"
   },
-  {
-    "id": "71f4e2d5c6f58ed5b4dbb8b3",
-    "title": "Pañuelo de seda estampado",
-    "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp_wtO6P9h1CaqvFNk_T3zSWWOC9b-eMoBkb-VSqsa7g&s",
-    "category": "Accesorios",
-    "price": 34.99,
-    "stock": 30
+  "id": "9b21c0de2c4a6d5deccce150",
+  "title": "Sudadera con estampado de logotipo",
+  "photo": "https://images.missonistore.com/seecommerce/zoomedimage_m/DC23SW01BJ00ED-S729F-1",
+  "category": "Ropa",
+  "price": 44.99,
+  "stock": 35
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef00111f"
   },
-  {
-    "id": "d6a9e10c040925ddae4e32ac",
-    "title": "Cámara de seguridad WiFi para hogar",
-    "photo": "https://http2.mlstatic.com/D_NQ_NP_973116-MLU75227646206_032024-O.webp",
-    "category": "Electrónica",
-    "price": 149.99,
-    "stock": 20
+  "id": "ca1910a149367361211fcf78",
+  "title": "Botas de lluvia estampadas para niños",
+  "photo": "https://acdn.mitiendanube.com/stores/002/141/353/products/f1_35987-525e75d7ca93f4a7be16858086698373-640-0.jpg",
+  "category": "Calzado",
+  "price": 24.99,
+  "stock": 40
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef001120"
   },
-  {
-    "id": "31761773f941b66c979f348d",
-    "title": "Bolso bandolera de cuero vintage",
-    "photo": "https://acdn.mitiendanube.com/stores/860/285/products/796283-mla28175597852_092018-o-c736e731943d7882d215496708555017-1024-1024.jpg",
-    "category": "Accesorios",
-    "price": 79.99,
-    "stock": 25
+  "id": "ba1fe848282e3a7f0e6bebe8",
+  "title": "Gafas de lectura con estuche",
+  "photo": "https://m.media-amazon.com/images/I/514DHvfViuL._AC_UY1000_.jpg",
+  "category": "Accesorios",
+  "price": 14.99,
+  "stock": 50
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef001121"
   },
-  {
-    "id": "9b21c0de2c4a6d5deccce150",
-    "title": "Sudadera con estampado de logotipo",
-    "photo": "https://images.missonistore.com/seecommerce/zoomedimage_m/DC23SW01BJ00ED-S729F-1",
-    "category": "Ropa",
-    "price": 44.99,
-    "stock": 35
+  "id": "efb7a9c78477700b4c6f002d",
+  "title": "Altavoz Bluetooth portátil resistente al agua",
+  "photo": "https://i.blogs.es/108b38/altavoces-bluetooth-resistentes-al-agua/1366_2000.jpg",
+  "category": "Electrónica",
+  "price": 79.99,
+  "stock": 15
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef001122"
   },
-  {
-    "id": "ca1910a149367361211fcf78",
-    "title": "Botas de lluvia estampadas para niños",
-    "photo": "https://acdn.mitiendanube.com/stores/002/141/353/products/f1_35987-525e75d7ca93f4a7be16858086698373-640-0.jpg",
-    "category": "Calzado",
-    "price": 24.99,
-    "stock": 40
+  "id": "be5d2db9f8edac8bae6a0a8c",
+  "title": "Vestido de verano estampado floral",
+  "photo": "https://m.media-amazon.com/images/I/81BvYf+pGmL.jpg",
+  "category": "Ropa",
+  "price": 39.99,
+  "stock": 20
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef001123"
   },
-  {
-    "id": "ba1fe848282e3a7f0e6bebe8",
-    "title": "Gafas de lectura con estuche",
-    "photo": "https://m.media-amazon.com/images/I/514DHvfViuL._AC_UY1000_.jpg",
-    "category": "Accesorios",
-    "price": 14.99,
-    "stock": 50
+  "id": "3f5155e5f479fca0996e7f71",
+  "title": "Sandalias de playa para mujer",
+  "photo": "https://m.media-amazon.com/images/I/61ovSwjg0+L._AC_UF894,1000_QL80_.jpg",
+  "category": "Calzado",
+  "price": 19.99,
+  "stock": 30
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef001124"
   },
-  {
-    "id": "efb7a9c78477700b4c6f002d",
-    "title": "Altavoz Bluetooth portátil resistente al agua",
-    "photo": "https://i.blogs.es/108b38/altavoces-bluetooth-resistentes-al-agua/1366_2000.jpg",
-    "category": "Electrónica",
-    "price": 79.99,
-    "stock": 15
+  "id": "de118916ba33ec0c3a3b2791",
+  "title": "Bolso cruzado de lona",
+  "photo": "https://http2.mlstatic.com/D_NQ_NP_638729-MLA54783823006_032023-O.webp",
+  "category": "Accesorios",
+  "price": 29.99,
+  "stock": 25
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef001125"
   },
-  {
-    "id": "be5d2db9f8edac8bae6a0a8c",
-    "title": "Vestido de verano estampado floral",
-    "photo": "https://m.media-amazon.com/images/I/81BvYf+pGmL.jpg",
-    "category": "Ropa",
-    "price": 39.99,
-    "stock": 20
+  "id": "eb497e7e1b4b97f693d4baca",
+  "title": "Cámara de acción resistente al agua",
+  "photo": "https://images-na.ssl-images-amazon.com/images/I/71O7YNbGsKS._AC_SL1500_.jpg",
+  "category": "Electrónica",
+  "price": 79.99,
+  "stock": 15
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef001126"
   },
-  {
-    "id": "3f5155e5f479fca0996e7f71",
-    "title": "Sandalias de playa para mujer",
-    "photo": "https://m.media-amazon.com/images/I/61ovSwjg0+L._AC_UF894,1000_QL80_.jpg",
-    "category": "Calzado",
-    "price": 19.99,
-    "stock": 30
+  "id": "85f05f118d1ee491d24e94e1",
+  "title": "Sombrero de paja estilo fedora",
+  "photo": "https://i.vimeocdn.com/video/1482553999-1f23526339b9259d4c8b77dc91b6369bb2245f09c13b4e47756d3be23cccb138-d_750x421.875?q=60",
+  "category": "Accesorios",
+  "price": 14.99,
+  "stock": 40
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef001127"
   },
-  {
-    "id": "de118916ba33ec0c3a3b2791",
-    "title": "Bolso cruzado de lona",
-    "photo": "https://http2.mlstatic.com/D_NQ_NP_638729-MLA54783823006_032023-O.webp",
-    "category": "Accesorios",
-    "price": 29.99,
-    "stock": 25
+  "id": "accc9eaf10d3e241090f1a8a",
+  "title": "Chaqueta de cuero clásica",
+  "photo": "https://sejuc.com/cdn/shop/products/zx.webp?v=1704930099",
+  "category": "Ropa",
+  "price": 99.99,
+  "stock": 15
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef001128"
   },
-  {
-    "id": "eb497e7e1b4b97f693d4baca",
-    "title": "Cámara de acción resistente al agua",
-    "photo": "https://images-na.ssl-images-amazon.com/images/I/71O7YNbGsKS._AC_SL1500_.jpg",
-    "category": "Electrónica",
-    "price": 79.99,
-    "stock": 15
+  "id": "78babb87e53d15e8e5976d60",
+  "title": "Bicicleta estática plegable",
+  "photo": "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1688831912-51OqNgq2orL.jpg?crop=1xw:1.00xh;center,top&resize=980:*",
+  "category": "Deportes",
+  "price": 199.99,
+  "stock": 10
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef001129"
   },
-  {
-    "id": "85f05f118d1ee491d24e94e1",
-    "title": "Sombrero de paja estilo fedora",
-    "photo": "https://i.vimeocdn.com/video/1482553999-1f23526339b9259d4c8b77dc91b6369bb2245f09c13b4e47756d3be23cccb138-d_750x421.875?q=60",
-    "category": "Accesorios",
-    "price": 14.99,
-    "stock": 40
+  "id": "ae7c1f33e117d29e2edba207",
+  "title": "Mochila urbana con estampado urbano",
+  "photo": "https://http2.mlstatic.com/D_NQ_NP_631958-MLU73675455475_122023-O.webp",
+  "category": "Accesorios",
+  "price": 34.99,
+  "stock": 20
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef00112a"
   },
-  {
-    "id": "accc9eaf10d3e241090f1a8a",
-    "title": "Chaqueta de cuero clásica",
-    "photo": "https://sejuc.com/cdn/shop/products/zx.webp?v=1704930099",
-    "category": "Ropa",
-    "price": 99.99,
-    "stock": 15
+  "id": "5c3b870b5d6b3d47ea9f20e3",
+  "title": "Auriculares con cancelación de ruido",
+  "photo": "https://http2.mlstatic.com/D_NQ_NP_949691-MLA54777232861_032023-O.webp",
+  "category": "Electrónica",
+  "price": 149.99,
+  "stock": 10
+},
+{
+  "_id": {
+    "$oid": "663159c1401d49d5ef00112b"
   },
-  {
-    "id": "78babb87e53d15e8e5976d60",
-    "title": "Bicicleta estática plegable",
-    "photo": "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1688831912-51OqNgq2orL.jpg?crop=1xw:1.00xh;center,top&resize=980:*",
-    "category": "Deportes",
-    "price": 199.99,
-    "stock": 10
+  "id": "2da32e7ac749eb4f23fbc36f",
+  "title": "Gorra de béisbol vintage",
+  "photo": "https://http2.mlstatic.com/D_NQ_NP_848228-MLA45713254239_042021-O.webp",
+  "category": "Accesorios",
+  "price": 24.99,
+  "stock": 30
+},
+{
+  "_id": {
+    "$oid": "66318a1726c291b46ce2f8f0"
   },
-  {
-    "id": "ae7c1f33e117d29e2edba207",
-    "title": "Mochila urbana con estampado urbano",
-    "photo": "https://http2.mlstatic.com/D_NQ_NP_631958-MLU73675455475_122023-O.webp",
-    "category": "Accesorios",
-    "price": 34.99,
-    "stock": 20
+  "title": "Pantalon rayado pijama",
+  "photo": "https://static.vecteezy.com/system/resources/previews/003/814/707/non_2x/striped-pajama-pants-of-blue-color-from-isolated-on-white-top-view-sleep-pants-close-up-photo.jpg",
+  "category": "Ropa",
+  "price": 29.99,
+  "stock": 20,
+  "createdAt": {
+    "$date": "2024-05-01T00:17:27.859Z"
   },
-  {
-    "id": "5c3b870b5d6b3d47ea9f20e3",
-    "title": "Auriculares con cancelación de ruido",
-    "photo": "https://http2.mlstatic.com/D_NQ_NP_949691-MLA54777232861_032023-O.webp",
-    "category": "Electrónica",
-    "price": 149.99,
-    "stock": 10
+  "updatedAt": {
+    "$date": "2024-05-01T00:17:27.859Z"
   },
-  {
-    "id": "2da32e7ac749eb4f23fbc36f",
-    "title": "Gorra de béisbol vintage",
-    "photo": "https://http2.mlstatic.com/D_NQ_NP_848228-MLA45713254239_042021-O.webp",
-    "category": "Accesorios",
-    "price": 24.99,
-    "stock": 30
-  }
-]
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66318a4926c291b46ce2f8f5"
+  },
+  "title": "Pantalon rayado pijama",
+  "photo": "https://static.vecteezy.com/system/resources/previews/003/814/707/non_2x/striped-pajama-pants-of-blue-color-from-isolated-on-white-top-view-sleep-pants-close-up-photo.jpg",
+  "category": "Ropa",
+  "price": 29.99,
+  "stock": 20,
+  "createdAt": {
+    "$date": "2024-05-01T00:18:17.055Z"
+  },
+  "updatedAt": {
+    "$date": "2024-05-01T00:18:17.055Z"
+  },
+  "__v": 0
+}]

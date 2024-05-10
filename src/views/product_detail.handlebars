@@ -1,33 +1,11 @@
 <div class="container">
     <h1 class="m-3 w-100 text-center">PRODUCT DETAILS</h1>
     <div id="product" class="justify-content-center">
+      <h2>{{productById.title}}</h2>
+
     </div>
 </div>
-<script src="/socket.io/socket.io.js"></script>
-<script>
-  const socket = io();
-    console.log("log de prueba HANDLEBAR DETAIL")
-  
-  socket.on("productDetail", ( prod ) => {
-    console.log("ACA DATA DESDE HANDLEBAR DETAIL")
-    console.log(prod)
-    let template =`
-        <div class="col mb-4">
-            <div class="card">
-                <h2 class="card-body">ID: ${prod.id}</h2>
-                <div class="card-body">
-                    <img src="${prod.photo}" class="card border" alt="product-photo">
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title"> ${prod.title}</h3>
-                    <h4 class="card-text">Category: ${prod.category}</h4>
-                    <h4 class="card-text">Price: ${prod.price}</h4>
-                    <h5 class="card-text">Stock: ${prod.stock}</h5>
-                    <button class="btn btn-primary">Purchase</button>
-                </div>
-            </div>
-        </div>
-    `
-    document.getElementById("product").innerHTML = template
-  })
+<script src="/socket.io/socket.io.js">
+  console.log(location)
 </script>
+<script></script>
