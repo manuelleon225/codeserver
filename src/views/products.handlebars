@@ -15,6 +15,7 @@
     }
     a { 
         text-decoration: none;
+        color: black;
     }
 </style>
 <script>
@@ -23,19 +24,21 @@
         let template = ``
         template = data.map(prod => `
             <div class="col mb-4">
-                <a href="/search/${prod._id}">
-                    <div class="card">
-                        <img src="${prod.photo}" class="card-img-top img-fluid h-100" alt="product-photo">
-                        <div class="card-body">
-                            <h5 class="card-title">${prod.title}</h5>
-                            <p class="card-text">Category: ${prod.category}</p>
-                            <p class="card-text">Price: ${prod.price}</p>
-                            <p class="card-text">Stock: ${prod.stock}</p>
-                            <p class="card-text">ID: ${prod._id}</p>
-                            <button class="btn btn-primary">Add to cart</button>
-                        </div>
+                <div class="card">
+                    <img src="${prod.photo}" class="card-img-top img-fluid h-100" alt="product-photo">
+                    <div class="card-body">
+                        <h5 class="card-title">${prod.title}</h5>
+                        <p class="card-text">Category: ${prod.category}</p>
+                        <p class="card-text">Price: ${prod.price}</p>
+                        <p class="card-text">Stock: ${prod.stock}</p>
+                        <p class="card-text">ID: ${prod._id}</p>
                     </div>
-                </a>
+                <div class="card-footer">
+                    <a href="/search/${prod._id}">
+                        <button class="btn btn-primary w-100">Add to cart</button>
+                    </a>
+                </div>
+            </div>
             </div>
         `).join("")
         document.getElementById("products").innerHTML = template

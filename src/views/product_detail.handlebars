@@ -1,11 +1,77 @@
-<div class="container">
-    <h1 class="m-3 w-100 text-center">PRODUCT DETAILS</h1>
-    <div id="product" class="justify-content-center">
-      <h2>{{productById.title}}</h2>
-
+<div
+  class="container-fluid d-flex text-center align-items-center justify-content-center mx-auto"
+>
+  <div class="w-100">
+    <div class="mx-auto m-5">
+      <div class="card m-2" style="height: 100%;">
+        <div class="card-body mx-auto h-80">
+          <h2 class="m-2">{{productById.title}}</h2>
+          <img
+            style="width: 100%; height: 60vh; border: 1px solid black; border-radius: 10px;"
+            src="{{productById.photo}}"
+            alt="{{productById._id}}"
+          />
+          <h3 class="m-2">Precio: ${{productById.price}}</h3>
+          <h4>Stock: {{productById.stock}}</h4>
+          <div
+            class="d-flex flex-row justify-content-evenly align-items-center"
+          >
+            <div class="input-group-prepend">
+              <button
+                type="button"
+                class="btn btn-dark p-2"
+                style="width:2rem;"
+                id="decrementBtn"
+              > - </button>
+            </div>
+            <span id="itemCount"></span>
+            <div class="input-group-append">
+              <button
+                type="button"
+                class="btn btn-dark p-2"
+                style="width:2rem;"
+                id="incrementBtn"
+              > + </button>
+            </div>
+          </div>
+          <button
+            type="submit"
+            class="m-3 p-2 text-center btn btn-primary bg-dark text-light"
+            id="addCart"
+          ><h4>ADD TO CART</h4></button>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
-<script src="/socket.io/socket.io.js">
-  console.log(location)
+<script>
+const urlParams = new URL(location.href);
+const pid = urlParams.searchParams.get("id");
+const addCart = document.getElementById("addCart");
+let prod = {};
+const addButton = document.getElementById("incrementBtn");
+const decButton = document.getElementById("decrementBtn");
+const itemCount = document.getElementById("itemCount");
+let count = 1;
+
+const itemCountPrint = () => {
+    itemCount.innerHTML = `
+        <h5>${count}</h5>
+    `;
+};
+itemCountPrint()
+addButton.addEventListener("click", () => {
+  if (count < {{productById.stock}}) {
+    count++;
+  }
+  itemCountPrint()
+});
+
+decButton.addEventListener("click", () => {
+  if (count && count>1) {
+    count--;
+  }
+  itemCountPrint();
+});
+
 </script>
-<script></script>
