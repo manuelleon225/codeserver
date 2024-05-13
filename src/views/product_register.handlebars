@@ -23,7 +23,7 @@
                 <label for="stock" class="form-label">Stock:</label>
                 <input type="number" class="form-control" id="stock" placeholder="Enter stock">
             </div>
-            <div class="col-md-12 text-center">
+            <div class="col-md-12 text-center mb-4">
                 <button id="btn-register-product" type="submit" class="btn btn-primary">Create</button>
             </div>
         </form>
@@ -46,8 +46,12 @@
                     <p class="card-text">Category: ${prod.category}</p>
                     <p class="card-text">Price: ${prod.price}</p>
                     <p class="card-text">Stock: ${prod.stock}</p>
-                    <p class="card-text">ID: ${prod.id}</p>
-                    <button class="btn btn-primary">More details</button>
+                    <p class="card-text">ID: ${prod._id}</p>
+                </div>
+                <div class="card-footer">
+                    <a style="text-decoration: none;" href="/search/${prod._id}">
+                        <button class="btn btn-primary w-100">More details</button>
+                    </a>
                 </div>
             </div>
         </div>

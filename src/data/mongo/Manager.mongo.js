@@ -10,9 +10,9 @@ class MongoManager {
             throw error
         }
     }
-    async read(){
+    async read(filter){
         try {
-            const models = await this.Model.find().lean()
+            const models = await this.Model.find(filter).lean();
             return models
         } catch (error) {
             throw error
