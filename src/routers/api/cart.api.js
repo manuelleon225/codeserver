@@ -6,7 +6,7 @@ const cartsRouter = Router()
 
 cartsRouter.post("/", create)
 
-cartsRouter.get("/", read)
+cartsRouter.get("/", read)  
 
 cartsRouter.get("/:uid", readOne);
 
@@ -16,18 +16,15 @@ cartsRouter.delete("/:uid", deleteCart)
 
 async function read (req, res, next){
     try{
-        const { user_id } = req.query
-        if (user_id) {
-            const allCarts = await cartManager.read({ user_id });
-            if(allCarts.length !== 0){
-                return res.status(200).json({
-                    response: allCarts
-                })
-            } else {
-                const error = new Error("NOT FOUND CART")
-                error.statusCode = 404
-                throw error
-            }
+        const allCarts = await cartManager.read();
+        if(allCarts.length !== 0){
+            return res.status(200).json({
+                response: allCarts
+            })
+        } else {
+            const error = new Error("NOT FOUND CART")
+            error.statusCode = 404
+            throw error
         }
     } catch (err) {
         console.log(err);

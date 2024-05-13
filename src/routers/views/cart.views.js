@@ -9,8 +9,8 @@ async function read(req, res, next) {
     try {
       const { uid } = req.query;
       const cart= await cartManager.read(uid);
-      return res.render("cart", { cart: cart });
-      
+      console.log(cart);
+      return res.render("cart", { title: "Cart", cart });
     } catch (error) {
       return next(error);
     }

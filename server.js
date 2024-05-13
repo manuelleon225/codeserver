@@ -35,8 +35,7 @@ server.use(express.urlencoded({ extended: true }));
 server.use(express.json());
 server.use(morgan("dev"));
 
-const publicPath = path.join(__dirname, 'public');
-server.use(express.static(publicPath));
+server.use(express.static(path.join(__dirname, 'public')));
 
 //endpoints
 server.use("/", indexRouter);
