@@ -12,7 +12,12 @@ productsRouter.get("/products/real", create);
 async function read(req, res, next) {
   try {
     const { category } = req.query;
-    const allProducts = await productManager.read(category);
+    let filter = {}
+    if (category) {
+      filter.category = category
+    }
+    const allProducts = await productManager.read(filter);
+    console.log(allProducts);
     if (allProducts.length !== 0) {
       return res.render("products", {
         title: "Products",

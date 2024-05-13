@@ -8,7 +8,7 @@ cartRouter.get("/", read);
 async function read(req, res, next) {
     try {
       const { uid } = req.query;
-      const cart= await cartManager.read(uid);
+      const cart = await cartManager.read(uid);
       console.log(cart);
       return res.render("cart", { title: "Cart", cart });
     } catch (error) {

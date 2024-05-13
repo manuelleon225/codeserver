@@ -1,9 +1,53 @@
 <div class="container">
     <h1 class="m-3 w-100 text-center">PRODUCTS</h1>
+    <div class="input-group mb-3 w-100">
+        <div class="input-group-prepend">
+            <label class="input-group-text">Filter by category</label>
+        </div>
+        <select class="custom-select mx-4 px-1" id="select-category">
+            <option value="allCategories">All categories</option>
+            <option value="Clothes">Clothes</option>
+            <option value="Shoes">Shoes</option>
+            <option value="Accesories">Accesories</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Sports">Sports</option>
+        </select>
+         <div class="input-group-prepend">
+            <button id="search-btn" class="btn btn-outline-secondary px-4" type="button">Search</button>
+        </div>
+    </div>
     <div id="products" class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+        {{#each allProducts}}
+        <div class="col mb-4">
+            <div class="card">
+                <img src="{{this.photo}}" class="card-img-top img-fluid h-100" alt="product-photo">
+                <div class="card-body">
+                    <h5 class="card-title">{{this.title}}</h5>
+                    <p class="card-text">Category: {{this.category}}</p>
+                    <p class="card-text">Price: ${{this.price}}</p>
+                    <p class="card-text">Stock: {{this.stock}}</p>
+                    <p class="card-text">ID: {{this._id}}</p>
+                </div>
+                <div class="card-footer">
+                    <a href="/search/{{this._id}}">
+                        <button class="btn btn-primary w-100">Add to cart</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
     </div>
 </div>
-<script src="/socket.io/socket.io.js"></script>
+<script>
+    document.getElementById("search-btn").addEventListener("click", async () => {
+        const categorySelect = document.getElementById("select-category").value;
+        if(categorySelect != "allCategories"){
+            window.location = `/?category=${categorySelect}`
+        } else{
+            window.location = "/"
+        }
+    })
+</script>
 <style>
     .card {
         height: 100%;
@@ -18,29 +62,3 @@
         color: black;
     }
 </style>
-<script>
-    const socket = io();
-    socket.on("products", (data) => {
-        let template = ``
-        template = data.map(prod => `
-        <div class="col mb-4">
-            <div class="card">
-                <img src="${prod.photo}" class="card-img-top img-fluid h-100" alt="product-photo">
-                <div class="card-body">
-                    <h5 class="card-title">${prod.title}</h5>
-                    <p class="card-text">Category: ${prod.category}</p>
-                    <p class="card-text">Price: ${prod.price}</p>
-                    <p class="card-text">Stock: ${prod.stock}</p>
-                    <p class="card-text">ID: ${prod._id}</p>
-                </div>
-                <div class="card-footer">
-                    <a href="/search/${prod._id}">
-                        <button class="btn btn-primary w-100">Add to cart</button>
-                    </a>
-                </div>
-            </div>
-        </div>
-        `).join("")
-        document.getElementById("products").innerHTML = template
-    })
-</script>
