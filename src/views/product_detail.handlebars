@@ -47,12 +47,28 @@
 <script>
 const urlParams = new URL(location.href);
 const pid = urlParams.searchParams.get("id");
-const addCart = document.getElementById("addCart");
+const addCartButton = document.getElementById("addCart");
 let prod = {};
 const addButton = document.getElementById("incrementBtn");
 const decButton = document.getElementById("decrementBtn");
 const itemCount = document.getElementById("itemCount");
 let count = 1;
+
+addCartButton.addEventListener("click", async () => {
+  try {
+    const product_id = "{{productById._id}}"
+    const user_id = "{{userTemporal_id}}"
+    const response = await fetch("http://localhost:8080/api/cart", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ product_id, user_id, quantity:count })
+    });
+    const responseBody = await response.json()
+    console.log(responseBody)
+  } catch (error) {
+    console.error("Error:", error);
+  }
+})
 
 const itemCountPrint = () => {
     itemCount.innerHTML = `
