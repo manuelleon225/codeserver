@@ -13,7 +13,13 @@
             </div>
             <div class="col-md-6">
                 <label for="category" class="form-label">Category:</label>
-                <input type="text" class="form-control" id="category" placeholder="Enter a category">
+                <select class="form-control" id="category" aria-placeholder="Enter a category">
+                    <option value="Clothes">Clothes</option>
+                    <option value="Shoes">Shoes</option>
+                    <option value="Accesories">Accesories</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Sports">Sports</option>
+                </select>
             </div>
             <div class="col-md-6">
                 <label for="price" class="form-label">Price:</label>
@@ -29,41 +35,36 @@
         </form>
     </div>
     <div id="products" class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
-    </div>
-</div>
-<script src="/socket.io/socket.io.js"></script>
-<script>
-  const socket = io();
-  socket.on("products", (data) => {
-    console.log((data))
-    let template = ``
-    template = data.map(prod => `
+        {{#each allProducts}}
         <div class="col mb-4">
             <div class="card">
-                <img src="${prod.photo}" class="card-img-top" alt="product-photo">
+                <img src="{{this.photo}}" class="card-img-top" alt="product-photo">
                 <div class="card-body">
-                    <h5 class="card-title">Title: ${prod.title}</h5>
-                    <p class="card-text">Category: ${prod.category}</p>
-                    <p class="card-text">Price: ${prod.price}</p>
-                    <p class="card-text">Stock: ${prod.stock}</p>
-                    <p class="card-text">ID: ${prod._id}</p>
+                    <h5 class="card-title">Title: {{this.title}}</h5>
+                    <p class="card-text">Category: {{this.category}}</p>
+                    <p class="card-text">Price: ${{this.price}}</p>
+                    <p class="card-text">Stock: {{this.stock}}</p>
+                    <p class="card-text">ID: {{this._id}}</p>
                 </div>
                 <div class="card-footer">
-                    <a style="text-decoration: none;" href="/search/${prod._id}">
+                    <a style="text-decoration: none;" href="/search/{{this._id}}">
                         <button class="btn btn-primary w-100">More details</button>
                     </a>
                 </div>
             </div>
         </div>
-    `).reverse().join("")
-    document.getElementById("products").innerHTML = template
+        {{/each}}
+    </div>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    const socket = io()
     document.getElementById("btn-register-product").addEventListener("click", async ()=> {
         const title = document.getElementById("title").value
         const photo = document.getElementById("photo_url").value
         const category = document.getElementById("category").value
         const price = document.getElementById("price").value
         const stock = document.getElementById("stock").value
-        socket.emit("register-product", { title, photo, category, price, stock})
+        socket.emit("register-product", { title, photo, category, price, stock })
     })
-  })
 </script>

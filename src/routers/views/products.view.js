@@ -17,7 +17,6 @@ async function read(req, res, next) {
       filter.category = category
     }
     const allProducts = await productManager.read(filter);
-    console.log(allProducts);
     if (allProducts.length !== 0) {
       return res.render("products", {
         title: "Products",
@@ -47,6 +46,7 @@ async function create(req, res, next) {
   try {
     const { category } = req.query;
     const allProducts = await productManager.read(category);
+    allProducts.reverse()
     if (allProducts.length !== 0) {
       return res.render("product_register", {
         title: "Register a new product",

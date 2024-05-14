@@ -4,7 +4,6 @@ import { createServer } from "http";
 import { Server } from "socket.io";
 import morgan from "morgan";
 import { engine } from "express-handlebars";
-import path from "path";
 
 import indexRouter from "./src/routers/index.router.js";
 import socketCb from "./src/routers/index.socket.js"
@@ -32,10 +31,10 @@ server.set("views", __dirname + "/src/views");
 
 //middlewares
 server.use(express.urlencoded({ extended: true }));
+server.use(express.static(__dirname + 'public'));
 server.use(express.json());
 server.use(morgan("dev"));
 
-server.use(express.static(path.join(__dirname, 'public')));
 
 //endpoints
 server.use("/", indexRouter);
