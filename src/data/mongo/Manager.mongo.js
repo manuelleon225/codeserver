@@ -18,9 +18,26 @@ class MongoManager {
             throw error
         }
     }
+    async paginate({filter, opts}){
+        try {
+            const models = await this.Model.paginate(filter, opts);
+            return models
+        } catch (error) {
+            throw error
+        }
+    }
     async readOne(id){
         try {
             const model = await this.Model.findById({_id: id}).lean();
+            console.log(model);
+            return model
+        } catch (error) {
+            throw error
+        }
+    }
+    async readByEmail(email){
+        try {
+            const model = await this.Model.findOne({ email }).lean();
             console.log(model);
             return model
         } catch (error) {
