@@ -1,11 +1,20 @@
 import { Router } from "express";
-import UsersManager from "../../data/fs/UsersManager.js"
+//import UsersManager from "../../data/fs/UsersManager.js"
+import UsersManager from "../../data/mongo/managers/Users.manager.js";
 
 const usersRouter = Router();
 
 usersRouter.get("/register", async (req, res, next) => {
   try {
     return res.render("register", { title: "REGISTER" });
+  } catch (error) {
+    return next(error);
+  }
+});
+
+usersRouter.get("/login", async (req, res, next) => {
+  try {
+    return res.render("login", { title: "REGISTER" });
   } catch (error) {
     return next(error);
   }

@@ -1,5 +1,6 @@
 import { Router } from "express";
-import UsersManager from "../../data/fs/UsersManager.js";
+// import UsersManager from "../../data/fs/UsersManager.js";
+import UsersManager from "../../data/mongo/managers/Users.manager.js";
 
 const usersRouter = Router()
 
@@ -52,7 +53,6 @@ async function readOne(req, res, next){
 async function create(req, res, next){
     try {
         const data = req.body
-        console.log(data);
         const newUser = await UsersManager.create(data)
         return res.json({
             statusCode: 201,
