@@ -15,7 +15,8 @@
     "node": "^21.7.1",
     "passport": "^0.7.0",
     "passport-local": "^1.0.0",
-    "socket.io": "^4.7.5"
+    "socket.io": "^4.7.5",
+    "sweetalert2": "^11.11.0"
   },
   "name": "codeserver",
   "description": "",

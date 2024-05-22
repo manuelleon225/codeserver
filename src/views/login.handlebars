@@ -22,7 +22,44 @@
         class="m-2 p-2 text-center btn btn-primary"
         type="submit"
         value="LOGIN"
+        id="login"
       />
     </form>
   </section>
 </main>
+<script>
+  document.getElementById("login").addEventListener("click", async (e) => {
+    e.preventDefault()
+    const userData = {
+      email: document.getElementById("email").value,
+      password: document.getElementById("password").value
+    }
+    const opts = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(userData)
+    }
+    try {
+      let response = await fetch("/api/sessions/login", opts);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      let data = await response.json(); 
+      console.log(data);
+      if(data.statusCode === 201){
+        sessionStorage.setItem('online', true);
+        sessionStorage.setItem('email', data.session.email);
+        sessionStorage.setItem('photo', data.session.photo);
+        sessionStorage.setItem('user_id', data.session.user_id);
+        sessionStorage.setItem('role', data.session.role);
+        alert(`Logged in with email ${userData.email}!`)
+        window.location.replace('/')
+      } else {
+        alert(data.message)
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Login failed: ' + error.message);
+    }
+  })
+</script>

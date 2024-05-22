@@ -59,7 +59,7 @@ passport.use(
         req.session.role = user.role;
         req.session.photo = user.photo;
         req.session.user_id = user._id;
-        return done(null, user)
+        return done(null, req.session) // cambie user a req.session
       } catch (error) {
         return done(error);
       }

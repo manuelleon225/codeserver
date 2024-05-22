@@ -1,5 +1,5 @@
 import { Router } from "express";
-import passport from "../../middlewares/passport.mid.js";
+import passport from "../../middlewares/passport.mid.js";   
 
 const sessionsRouter = Router();
 
@@ -31,6 +31,7 @@ async function login(req, res, next) {
       return res.json({
         statusCode: 201,
         messsage: "Logged In!",
+        session: req.session
       });
     } catch (error) {
       return next(error);

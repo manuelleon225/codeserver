@@ -5,6 +5,7 @@ import { Server } from "socket.io";
 import morgan from "morgan";
 import exphbs from "express-handlebars";
 import { engine } from "express-handlebars";
+import session from 'express-session'
 
 import indexRouter from "./src/routers/index.router.js";
 import socketCb from "./src/routers/index.socket.js"
@@ -13,7 +14,6 @@ import pathHandler from "./src/middlewares/pathHandler.mid.js";
 import __dirname from "./utils.js";
 import { dbConnect } from "./src/utils/dbConnect.js";
 import cookieParser from "cookie-parser";
-import session from "express-session";
 import MongoStore from "connect-mongo";
 
 //http server
@@ -42,6 +42,12 @@ server.set("views", __dirname + "/src/views");
 //middlewares
 server.use(express.urlencoded({ extended: true }));
 server.use(express.static(__dirname + '/public'));
+server.use(session({
+  secret: process.env.SECRET,
+  resave: true,
+  saveUninitialized: true,
+  cookie: { maxAge: 60 * 1000 * 60 } // 60 * 1000 = 1 minuto * 60 = Sesion de una hora (60 min)
+}))
 server.use(express.json());
 server.use(cookieParser())
 server.use(session({

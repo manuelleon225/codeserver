@@ -6,7 +6,7 @@ const usersRouter = Router();
 
 usersRouter.get("/register", async (req, res, next) => {
   try {
-    return res.render("register", { title: "REGISTER" });
+    return res.render("register", { title: "Register" });
   } catch (error) {
     return next(error);
   }
@@ -14,7 +14,7 @@ usersRouter.get("/register", async (req, res, next) => {
 
 usersRouter.get("/login", async (req, res, next) => {
   try {
-    return res.render("login", { title: "REGISTER" });
+    return res.render("login", { title: "Login" });
   } catch (error) {
     return next(error);
   }
