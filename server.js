@@ -41,7 +41,7 @@ server.set("views", __dirname + "/src/views");
 
 //middlewares
 server.use(express.urlencoded({ extended: true }));
-server.use(express.static(__dirname + 'public'));
+server.use(express.static(__dirname + '/public'));
 server.use(express.json());
 server.use(cookieParser())
 server.use(session({

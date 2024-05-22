@@ -70,7 +70,7 @@ async function paginate(req, res, next) {
                 totalPages: allProducts.totalPages, 
                 limit: allProducts.limit,
                 prevPage: allProducts.hasPrevPage ? allProducts.prevPage : allProducts.offset,
-                nextPage: allProducts.hasNextPage ? allProducts.nextPage : allProducts.totalPages
+                nextPage: allProducts.hasNextPage ? allProducts.nextPage : allProducts.offset
             }
         })
     } catch (error) {
