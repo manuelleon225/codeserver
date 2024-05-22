@@ -3,6 +3,7 @@ import express from "express";
 import { createServer } from "http";
 import { Server } from "socket.io";
 import morgan from "morgan";
+import exphbs from "express-handlebars";
 import { engine } from "express-handlebars";
 
 import indexRouter from "./src/routers/index.router.js";
@@ -28,7 +29,13 @@ socketServer.on("connection", socketCb);
 nodeServer.listen(port, ready);
 
 //template engine
-server.engine("handlebars", engine());
+const hbs = exphbs.create({
+    runtimeOptions: {
+      allowProtoPropertiesByDefault: true,
+      allowProtoMethodsByDefault: true,
+    }
+  });  
+server.engine("handlebars", hbs.engine);
 server.set("view engine", "handlebars");
 server.set("views", __dirname + "/src/views");
 
