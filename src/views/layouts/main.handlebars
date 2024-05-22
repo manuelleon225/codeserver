@@ -55,14 +55,10 @@
       const online = sessionStorage.getItem("online") == "true" // Es un valor de cadena de texto, por lo que hay que confirmar si es true o no
       const userId = sessionStorage.getItem("user_id")
 
-      console.log("Online status:", online);
-      console.log("User ID:", userId);
-
       if(online){
-      console.log("Online");
         rightUl.innerHTML = `
           <li class="nav-item">
-              <a class="nav-link" href="/cart?user_id=${userId}"> {{!  CAMBIAR HARDCODEO }}
+              <a class="nav-link" href="/cart?user_id=${userId}">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="22"
@@ -83,13 +79,27 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/users/signout">
+              <button class="nav-link" id="btn_signout">
               <svg enable-background="new 0 0 48 48" height="22px" id="Layer_3" version="1.1" viewBox="0 0 48 48" width="22px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><polygon fill="#241F20aa" points="36,44 4,44 4,4 36,4 36,8 40,8 40,0 0,0 0,48 40,48 40,40 36,40  "/><polygon fill="#241F20aa" points="48,24 37.976,13.977 37.976,20 13,20 13,28 37.976,28 37.976,34.023  "/></g></svg>
-              </a>
+              </button>
             </li>
         `
+        const btn_signout = document.getElementById("btn_signout").addEventListener("click", async (req, res, next) => {
+        const opts = {
+          method: "POST",
+          headers: { "Content-Type" : "application/json"}
+        }
+        let response = await fetch("/api/sessions/signout", opts)
+        response = await response.json()
+        console.log(response)
+        if(response.statusCode == 200){
+          sessionStorage.clear()
+          sessionStorage.setItem("online", "false")
+          document.getElementById("btn_signout").removeEventListener
+          location.replace("/")
+        }
+        })
       } else {
-      console.log("offline");
         rightUl.innerHTML = `
           <li class="nav-item">
               <a class="nav-link" href="/users/login">
@@ -98,6 +108,7 @@
         `
       }
     })
+
   </script>
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

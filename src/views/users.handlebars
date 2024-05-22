@@ -8,6 +8,7 @@
     >
       <h3 class="m-2 p-2 text-center">EMAIL: {{users.email}}</h3>
       <img
+      id="user_photo"
         style="width: 360px; height: 360px"
         class="m-2 object-fit-cover"
         src="{{users.photo}}"
@@ -15,3 +16,6 @@
     </section>
   </section>
 </main>
+<script>
+    document.getElementById("user_photo").src = sessionStorage.getItem("photo")
+</script>

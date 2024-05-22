@@ -16,7 +16,7 @@ passport.use(
         }
         const userEmail = await userManager.readByEmail(email);
         if (userEmail) {
-          const error = new Error("BAD AUTH");
+          const error = new Error("EMAIL ALREADY IN USE");
           error.statusCode = 401;
           return done(error);
         }

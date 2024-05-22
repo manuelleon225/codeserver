@@ -34,10 +34,9 @@ async function read(req, res, next) {
 
 async function readOne(req, res, next) {
   try {
-    const userTemporal_id = "66381f6190e3aa6d5e0432b5"; // Hacerlo automatico
     const { pid } = req.params;
     const productById = await productManager.readOne(pid);
-    return res.render("product_detail", { title: "DETAIL", productById, userTemporal_id});
+    return res.render("product_detail", { title: "DETAIL", productById });
   } catch (err) {
     return next(err);
   }

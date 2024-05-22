@@ -14,6 +14,7 @@ sessionsRouter.post(
   login
 );
 sessionsRouter.post("/signout", signout);
+sessionsRouter.get("/online", online)
 
 async function register(req, res, next) {
   try {
@@ -51,6 +52,22 @@ async function signout(req, res, next) {
       statusCode: 200,
       messsage: "Signed out!",
     });
+  } catch (error) {
+    return next(error);
+  }
+}
+
+async function online(req, res, next) {
+  try {
+    if (req.session.online) {
+      return res.json({
+        statusCode: 200,
+        messsage: "Is ONLINE!",
+      });
+    }
+    const error = new Error("Is OFFLINE!");
+    error.statusCode = 401;
+    throw error;
   } catch (error) {
     return next(error);
   }
