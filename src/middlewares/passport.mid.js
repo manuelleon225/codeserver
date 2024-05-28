@@ -2,6 +2,7 @@ import passport from "passport";
 import { Strategy as LocalStrategy } from "passport-local";
 import userManager from "../data/mongo/managers/Users.manager.js";
 import { createHash, verifyHash } from "../utils/hash.util.js";
+import { createToken, verifyToken } from "../utils/token.util.js";
 
 passport.use(
   "register",
@@ -49,17 +50,15 @@ passport.use(
             error.statusCode = 401
             return done(error)
         }
-        if (req.session.email) {
+        const data = { email, role: user.role, photo: user.photo, _id: user._id, online: true}
+        const token = createToken(data)
+        user.token = token
+        if (verifyToken(token).email) {
             const error = new Error("Already logged in");
             error.statusCode = 401;
             return done(error);
         }
-        req.session.email = email;
-        req.session.online = true;
-        req.session.role = user.role;
-        req.session.photo = user.photo;
-        req.session.user_id = user._id;
-        return done(null, req.session) // cambie user a req.session
+        return done(null, user)
       } catch (error) {
         return done(error);
       }
