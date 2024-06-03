@@ -43,19 +43,13 @@ server.set("views", __dirname + "/src/views");
 server.use(express.urlencoded({ extended: true }));
 server.use(express.static(__dirname + '/public'));
 server.use(session({
+  store: new MongoStore({ mongoUrl: process.env.MONGO_DATABASE_URI, ttl: 60*60}),
   secret: process.env.SECRET,
   resave: true,
   saveUninitialized: true,
-  cookie: { maxAge: 60 * 1000 * 60 } // 60 * 1000 = 1 minuto * 60 = Sesion de una hora (60 min)
 }))
 server.use(express.json());
 server.use(cookieParser())
-server.use(session({
-    secret: process.env.SECRET,
-    resave: true,
-    saveUninitialized: true,
-    store: new MongoStore({ mongoUrl: process.env.MONGO_DATABASE_URI, ttl: 60*60})
-}))
 server.use(morgan("dev"));
 
 
