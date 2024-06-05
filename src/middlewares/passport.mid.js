@@ -1,5 +1,6 @@
 import passport from "passport";
 import { Strategy as LocalStrategy } from "passport-local";
+import { Strategy as JWTStrategy, ExtractJwt } from "passport-jwt";
 import userManager from "../data/mongo/managers/Users.manager.js";
 import { createHash, verifyHash } from "../utils/hash.util.js";
 import { createToken, verifyToken } from "../utils/token.util.js";
@@ -38,7 +39,7 @@ passport.use(
     { passReqToCallback: true, usernameField: "email" },
     async (req, email, password, done) => {
       try {
-        const user = await userManager.readByEmail(req.body.email);
+        const user = await userManager.readByEmail(email);
         if (!user) {
           const error = new Error("BAD AUTH");
           error.statusCode = 401;
@@ -50,20 +51,41 @@ passport.use(
             error.statusCode = 401
             return done(error)
         }
-        const data = { email, role: user.role, photo: user.photo, _id: user._id, online: true}
-        const token = createToken(data)
-        user.token = token
-        if (verifyToken(token).email) {
+        const userData = { email, role: user.role, photo: user.photo, _id: user._id, online: true}
+        const token = createToken(userData)
+        userData.token = token
+        if (verifyToken(token).email) { 
             const error = new Error("Already logged in");
             error.statusCode = 401;
             return done(error);
         }
-        return done(null, user)
+        return done(null, userData)
       } catch (error) {
         return done(error);
       }
     }
   )
 );
+
+passport.use(
+  "jwt",
+  new JWTStrategy(
+    { jwtFromRequest: ExtractJwt.fromExtractors([(req) => req?.cookies["token"]]),
+      secretOrKey: process.env.SECRET_JWT
+    },
+    (data, done)=>{
+      try {
+        if(!data){
+          const error = new Error("Forbidden from jwt!")
+          error.statusCode = 403
+          return done(error)
+        } 
+        return done(null, data)
+      } catch (error) {
+        return done(error)
+      }
+    }
+  )
+)
 
 export default passport;

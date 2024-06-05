@@ -44,12 +44,12 @@ server.use(express.urlencoded({ extended: true }));
 server.use(express.static(__dirname + '/public'));
 server.use(session({
   store: new MongoStore({ mongoUrl: process.env.MONGO_DATABASE_URI, ttl: 60*60}),
-  secret: process.env.SECRET,
+  secret: process.env.SECRET_JWT,
   resave: true,
   saveUninitialized: true,
 }))
 server.use(express.json());
-server.use(cookieParser())
+server.use(cookieParser(process.env.SECRET_COOKIE))
 server.use(morgan("dev"));
 
 

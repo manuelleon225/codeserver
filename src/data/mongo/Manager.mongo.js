@@ -29,7 +29,6 @@ class MongoManager {
     async readOne(id){
         try {
             const model = await this.Model.findById({_id: id}).lean();
-            console.log(model);
             return model
         } catch (error) {
             throw error
@@ -38,7 +37,6 @@ class MongoManager {
     async readByEmail(email){
         try {
             const model = await this.Model.findOne({ email }).lean();
-            console.log(model);
             return model
         } catch (error) {
             throw error

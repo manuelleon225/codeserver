@@ -9,11 +9,13 @@
     "express-handlebars": "^7.1.2",
     "express-session": "^1.18.0",
     "handlebars": "^4.7.8",
+    "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.3.3",
     "mongoose-paginate-v2": "^1.8.0",
     "morgan": "^1.10.0",
     "node": "^21.7.1",
     "passport": "^0.7.0",
+    "passport-jwt": "^4.0.1",
     "passport-local": "^1.0.0",
     "socket.io": "^4.7.5",
     "sweetalert2": "^11.11.0"
