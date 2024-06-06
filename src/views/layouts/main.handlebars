@@ -50,15 +50,22 @@
   </body>
   <script>
 
-    document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("DOMContentLoaded", async () => {
       const rightUl = document.getElementById("right-navbar")
       const online = sessionStorage.getItem("online") == "true" // Es un valor de cadena de texto, por lo que hay que confirmar si es true o no
-      const userId = sessionStorage.getItem("user_id")
+
+      const opts = {
+          method: "POST",
+          headers: { "Content-Type" : "application/json"}
+        }
+      let resp = await fetch("/api/sessions/", opts)
+      resp = await resp.json()
+      let user = await resp.session
 
       if(online){
         rightUl.innerHTML = `
           <li class="nav-item">
-              <a class="nav-link" href="/cart?user_id=${userId}">
+              <a class="nav-link" href="/cart?user_id=${user._id}">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="22"
@@ -74,7 +81,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/users/${userId}">
+              <a class="nav-link" href="/users/${user._id}">
                 <svg class="feather feather-user" fill="none" height="24" stroke="#241F20aa" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
               </a>
             </li>
@@ -91,7 +98,7 @@
         }
         let response = await fetch("/api/sessions/signout", opts)
         response = await response.json()
-        console.log(response)
+        console.log(response, ' RESPONSE ')
         if(response.statusCode == 200){
           sessionStorage.clear()
           sessionStorage.setItem("online", "false")

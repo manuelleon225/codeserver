@@ -40,26 +40,22 @@ passport.use(
     async (req, email, password, done) => {
       try {
         const user = await userManager.readByEmail(email);
+        console.log(user, ' USER ');
         if (!user) {
           const error = new Error("BAD AUTH");
           error.statusCode = 401;
           return done(error);
         }
         const verify = verifyHash(password, user.password)
-        if(!verify){
-            const error = new Error("INVALID CREDENTIALS")
-            error.statusCode = 401
-            return done(error)
+        if(verify){
+          const userData = { email, role: user.role, photo: user.photo, _id: user._id, online: true}
+          const token = createToken(userData)
+          userData.token = token
+          return done(null, userData)
         }
-        const userData = { email, role: user.role, photo: user.photo, _id: user._id, online: true}
-        const token = createToken(userData)
-        userData.token = token
-        if (verifyToken(token).email) { 
-            const error = new Error("Already logged in");
-            error.statusCode = 401;
-            return done(error);
-        }
-        return done(null, userData)
+        const error = new Error("INVALID CREDENTIALS")
+        error.statusCode = 401
+        return done(error)
       } catch (error) {
         return done(error);
       }

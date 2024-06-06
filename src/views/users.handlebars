@@ -17,5 +17,12 @@
   </section>
 </main>
 <script>
-    document.getElementById("user_photo").src = sessionStorage.getItem("photo")
+    const opts = {
+          method: "POST",
+          headers: { "Content-Type" : "application/json"}
+        }
+    let resp = await fetch("/api/sessions/", opts)
+    resp = await resp.json()
+    let user = await resp.session
+    document.getElementById("user_photo").src = user.photo
 </script>

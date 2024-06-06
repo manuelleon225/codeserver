@@ -24,7 +24,9 @@ class SessionsRouter extends CustomRouter {
       passportCb("login"),
       async function login(req, res, next) {
         try {
-          return res.cookie("token", req.user.token, {signedCookie: true})
+          console.log(req.user);
+          return res
+          .cookie("token", req.user.token, {signedCookie: true})
           .json({
             statusCode: 201,
             messsage: "Logged In!",
@@ -41,11 +43,12 @@ class SessionsRouter extends CustomRouter {
       passportCb("jwt"),
       async function online(req, res, next) {
       try {
-        if (req.session.online) {
+        if (req.user.online) {
+          console.log(req.user);
           return res.json({
             statusCode: 200,
             messsage: "Is ONLINE!",
-            session: req.session
+            session: req.user
           });
         }
         const error = new Error("Is OFFLINE!");
@@ -59,17 +62,19 @@ class SessionsRouter extends CustomRouter {
     ["USER", "ADMIN"],
     async function signout(req, res, next) {
       try {
-        if (req.session.email) {
-          req.session.destroy();
-        } else {
+        console.log(req.user, ' onli ');
+        if (req.cookies["token"]) {
+          return res
+          .clearCookie("token")
+          .json({
+            statusCode: 200,
+            messsage: "Signed out!",
+          });
+        } 
           const error = new Error("Not logged in");
           error.statusCode = 401;
           throw error;
-        }
-        return res.json({
-          statusCode: 200,
-          messsage: "Signed out!",
-        });
+        
       } catch (error) {
         return next(error);
       }

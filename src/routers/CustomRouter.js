@@ -41,7 +41,6 @@ class CustomRouter {
     if (policie.includes("PUBLIC")) return next()
     else {
       let token = req.cookies["token"];
-      console.log(token, ' token '); 
       if (!token) return res.response401()
       else {
         try {

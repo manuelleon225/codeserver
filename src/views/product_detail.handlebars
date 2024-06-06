@@ -56,8 +56,15 @@ let count = 1;
 
 addCartButton.addEventListener("click", async () => {
   try {
+    const opts = {
+          method: "POST",
+          headers: { "Content-Type" : "application/json"}
+        }
+    let resp = await fetch("/api/sessions/", opts)
+    resp = await resp.json()
+    let user = await resp.session
     const product_id = "{{productById._id}}"
-    const user_id = sessionStorage.getItem("user_id")
+    const user_id = user._id
     const response = await fetch("http://localhost:8080/api/cart", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
