@@ -49,7 +49,6 @@
       }
       if(response.statusCode === 201){
         sessionStorage.setItem('online', true);
-        sessionStorage.setItem('token', response.token)
         window.location.replace('/')
       } else {
         alert(data.message)

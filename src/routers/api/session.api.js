@@ -24,7 +24,6 @@ class SessionsRouter extends CustomRouter {
       passportCb("login"),
       async function login(req, res, next) {
         try {
-          console.log(req.user);
           return res
           .cookie("token", req.user.token, {signedCookie: true})
           .json({
@@ -44,7 +43,6 @@ class SessionsRouter extends CustomRouter {
       async function online(req, res, next) {
       try {
         if (req.user.online) {
-          console.log(req.user);
           return res.json({
             statusCode: 200,
             messsage: "Is ONLINE!",
@@ -62,7 +60,6 @@ class SessionsRouter extends CustomRouter {
     ["USER", "ADMIN"],
     async function signout(req, res, next) {
       try {
-        console.log(req.user, ' onli ');
         if (req.cookies["token"]) {
           return res
           .clearCookie("token")

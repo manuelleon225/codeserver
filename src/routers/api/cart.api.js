@@ -6,9 +6,9 @@ class CartsRouter extends CustomRouter {
   init() {
     this.create("/", ["PUBLIC"], create);
     this.read("/", ["PUBLIC"], read);
-    this.read("/:uid", ["PUBLIC"], readOne);
-    this.update("/:uid", ["PUBLIC"], update);
-    this.delete("/:uid", ["PUBLIC"], deleteCart);
+    this.read("/:cid", ["PUBLIC"], readOne);
+    this.update("/:cid", ["PUBLIC"], update);
+    this.delete("/:cid", ["PUBLIC"], deleteCart);
   }
 }
 
@@ -30,8 +30,8 @@ async function read(req, res, next) {
 
 async function readOne(req, res, next) {
   try {
-    const { uid } = req.params;
-    const cartById = await cartManager.readOne(uid);
+    const { cid } = req.params;
+    const cartById = await cartManager.readOne(cid);
     if (cartById) {
       return res.response200(cartById)
     } else {
@@ -67,14 +67,13 @@ async function update(req, res, next) {
 
 async function deleteCart(req, res, next) {
   try {
-    const { uid } = req.params;
-    const deletedCart = await cartManager.destroy(uid);
+    const { cid } = req.params;
+    const deletedCart = await cartManager.destroy(cid);
     return deletedCart ? res.response200(`Cart: ${deletedCart} deleted`) : res.response404()
   } catch (error) {
     return next(error);
   }
 }
-
 const cartsRouter = new CartsRouter();
 
 export default cartsRouter.getRouter();
