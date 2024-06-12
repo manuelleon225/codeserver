@@ -19,8 +19,8 @@ async function read(req, res, next) {
   
   async function readOne(req, res, next) {
     try {
-      const { uid } = req.params;
-      const cartById = await cartManager.readOne(uid);
+      const { cid } = req.params;
+      const cartById = await cartManager.readOne(cid);
       if (cartById) {
         return res.response200(cartById)
       } else {
@@ -32,7 +32,7 @@ async function read(req, res, next) {
       return next(err);
     }
   }
-  
+    
   async function create(req, res, next) {
     try {
       const data = req.body;
@@ -56,13 +56,14 @@ async function read(req, res, next) {
   
   async function deleteCart(req, res, next) {
     try {
-      const { uid } = req.params;
-      const deletedCart = await cartManager.destroy(uid);
+      const { cid } = req.params;
+      const deletedCart = await cartManager.destroy(cid);
       return deletedCart ? res.response200(`Cart: ${deletedCart} deleted`) : res.response404()
     } catch (error) {
       return next(error);
     }
   }
+  
 
   export { create, read, readOne, update, deleteCart};
   
