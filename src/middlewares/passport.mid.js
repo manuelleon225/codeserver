@@ -40,7 +40,6 @@ passport.use(
     async (req, email, password, done) => {
       try {
         const user = await userManager.readByEmail(email);
-        console.log(user, ' USER ');
         if (!user) {
           const error = new Error("BAD AUTH");
           error.statusCode = 401;

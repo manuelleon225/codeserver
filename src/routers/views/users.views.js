@@ -18,11 +18,11 @@ class UsersRouter extends CustomRouter {
         return next(error);
       }
     });
-    this.read("/:uid", ["PUBLIC"], async (req, res, next) => {
+    this.read("/:uid", ["USER", "ADMIN"], async (req, res, next) => {
       try {
         const { uid } = req.params;
         const users = await UsersManager.readOne(uid);
-        return res.render("users", { title: "REAL", users });
+        return res.render("users", { title: "User profile", users });
       } catch (error) {
         return next(error);
       }
