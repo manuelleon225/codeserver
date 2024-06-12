@@ -8,5 +8,6 @@ export const createToken = (data) => {
 
 export const verifyToken = (token) => {
     const tokenData = jwt.verify(token, process.env.SECRET_JWT)
-    return tokenData
+    return tokenData;
 }
+

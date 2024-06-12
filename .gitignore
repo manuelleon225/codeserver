@@ -1,3 +1,6 @@
 node_modules
 .DS_Store
-# .env this should be able but I don't do it because otherwise you can't use the database
+
+.env
+.env.dev
+.env.prod
