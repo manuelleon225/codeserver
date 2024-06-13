@@ -1,6 +1,7 @@
 // import productManager from "../../data/fs/ProductManager.js";
 import productManager from "../../data/mongo/managers/Products.manager.js";
-import { read, readOne, paginate, create, update, deleteProduct } from "../../controllers/products.controller.js";
+import { read, readOne, paginate, create, update, destroy } from "../../controllers/products.controller.js";
+//../controllers/products.controller.js
 import CustomRouter from "../CustomRouter.js";
 
 class ProductsRouter extends CustomRouter {
@@ -10,7 +11,7 @@ class ProductsRouter extends CustomRouter {
     this.read("/:pid",["PUBLIC"], readOne);
     this.create("/real",["ADMIN"], create);
     this.update("/:pid",["ADMIN"], update);
-    this.delete("/:pid",["ADMIN"], deleteProduct);
+    this.destroy("/:pid",["ADMIN"], destroy);
   }
 }
 

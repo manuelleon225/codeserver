@@ -7,7 +7,7 @@ class CartsRouter extends CustomRouter {
     this.read("/", ["PUBLIC"], read);
     this.read("/:uid", ["PUBLIC"], readOne);
     this.update("/:uid", ["PUBLIC"], update);
-    this.delete("/:uid", ["PUBLIC"], deleteCart);
+    this.destroy("/:uid", ["PUBLIC"], deleteCart);
   }
 }
 

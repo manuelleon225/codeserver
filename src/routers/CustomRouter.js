@@ -70,7 +70,7 @@ class CustomRouter {
   update(path, arrayOfPolicies, ...callbacks) {
     this.router.put(path, this.responses, this.policies(arrayOfPolicies), this.applyCbs(callbacks));
   }
-  delete(path, arrayOfPolicies, ...callbacks) {
+  destroy(path, arrayOfPolicies, ...callbacks) {
     this.router.delete(path, this.responses, this.policies(arrayOfPolicies), this.applyCbs(callbacks));
   }
   use(path, ...callbacks) {
