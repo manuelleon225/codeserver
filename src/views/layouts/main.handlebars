@@ -58,14 +58,14 @@
           method: "POST",
           headers: { "Content-Type" : "application/json"}
         }
-      let resp = await fetch("/api/sessions/", opts)
+      let resp = await fetch("/api/sessions/online", opts)
       resp = await resp.json()
       let user = await resp.session
 
       if(online){
         rightUl.innerHTML = `
           <li class="nav-item">
-              <a class="nav-link" href="/cart/${user._id}">
+              <a class="nav-link" href="/cart?user_id=${user._id}">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="22"

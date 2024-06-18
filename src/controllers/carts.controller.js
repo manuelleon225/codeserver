@@ -32,6 +32,22 @@ async function read(req, res, next) {
       return next(err);
     }
   }
+
+  async function readByUserId(req, res, next) {
+    try {
+      const { user_id } = req.query;
+      const cartById = await cartManager.read({user_id:{_id: user_id}});
+      if (cartById) {
+        return res.response200(cartById)
+      } else {
+        const error = new Error("NOT FOUND PRODUCT");
+        error.statusCode = 404;
+        throw error;
+      }
+    } catch (err) {
+      return next(err);
+    }
+  }
     
   async function create(req, res, next) {
     try {
@@ -65,5 +81,5 @@ async function read(req, res, next) {
   }
   
 
-  export { create, read, readOne, update, deleteCart};
+  export { create, read, readOne, readByUserId, update, deleteCart};
   

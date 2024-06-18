@@ -1,13 +1,14 @@
 import CustomRouter from "../CustomRouter.js";
-import { create, read, readOne, update, deleteCart } from "../../controllers/carts.controller.js";
+import { create, read, readOne, update, deleteCart, readByUserId } from "../../controllers/carts.controller.js";
 
 class CartsRouter extends CustomRouter {
   init() {
     this.create("/", ["PUBLIC"], create);
-    this.read("/", ["PUBLIC"], read);
-    this.read("/:uid", ["PUBLIC"], readOne);
-    this.update("/:uid", ["PUBLIC"], update);
-    this.destroy("/:uid", ["PUBLIC"], deleteCart);
+    this.read("/cart", ["PUBLIC"], read);
+    this.read("/:cid", ["PUBLIC"], readOne);
+    this.read("/", ["PUBLIC"], readByUserId);
+    this.update("/:cid", ["PUBLIC"], update);
+    this.destroy("/:cid", ["PUBLIC"], deleteCart);
   }
 }
 

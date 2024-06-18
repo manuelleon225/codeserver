@@ -44,9 +44,26 @@
     });
 
     // Event listener para cancelar compra
-    document.getElementById('cancel-btn').addEventListener('click', async (e) => {
-      console.log(e.target, ' target de vaciar carrito ')
+    document.getElementById('cancel-btn').addEventListener('click', async () => {
       // Tengo que hacer una peticion para cada item y que se borre, ya que se borran de la bd con el _id del carrito
+      const opts = {
+          method: "POST",
+          headers: { "Content-Type" : "application/json"}
+        }
+      let resp = await fetch("/api/sessions/online", opts)
+      resp = await resp.json()
+      let user = await resp.session
+      let products_cart = await fetch(`http://localhost:8080/api/cart?user_id=${user._id}`)
+      products_cart = await products_cart.json()
+      console.log(products_cart)
+      products_cart.message.forEach(async (prod_cart) => {
+        console.log(prod_cart._id)
+        let response = await fetch(`http://localhost:8080/api/cart/${prod_cart._id}`, {
+          method: "DELETE",
+          headers: { "Content-Type": "application/json" }
+        });
+      })
+
       document.getElementById('cart').innerHTML = '';
     });
   </script>
