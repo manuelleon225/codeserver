@@ -1,7 +1,7 @@
 import { config } from "dotenv";
 import argsUtil from "./args.util.js";
 
-const { env } =argsUtil
+const { env } = argsUtil
 const path = env === "prod" ? "./.env.prod" : "./.env.dev"
 config({ path })
 

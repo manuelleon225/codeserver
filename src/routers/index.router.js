@@ -8,11 +8,15 @@ class IndexRouter extends CustomRouter {
         this.use("/api", indexApiRouter);
         this.use("/", viewsRouter);
         this.use("/fork", (req, res, next) => {
-            const childProcess = fork("./src/utils.js/test.utils.js");
-            childProcess.send("start");
-            childProcess.on("message", (result) => {
-              return res.json({ result });
-            });
+            try {
+                const childProcess = fork("./src/processes/test.js");
+                childProcess.send("start");
+                childProcess.on("message", (result) => {
+                  return res.json({ result });
+                });
+            } catch (error) {
+                return next(error)
+            }
         });
     }
 }

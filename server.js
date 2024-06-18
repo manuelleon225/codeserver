@@ -50,7 +50,7 @@ server.use(morgan("dev"));
 
 server.use(session({
   store: new MongoStore({ mongoUrl: environment.MONGO_DATABASE_URI, ttl: 60*60}),
-  secret: process.env.SECRET_JWT,
+  secret: environment.SECRET_JWT,
   resave: true,
   saveUninitialized: true,
 }))
@@ -60,21 +60,18 @@ server.use("/", indexRouter);
 server.use(errorHandler);
 server.use(pathHandler);
 
-//console.log(argsUtil);
-//console.log(environment);
+// process.on("exit,", (code)=> {
+//   console.log("justo antes de cerrarse");
+//   console.log(code);
+// })
 
-/*process.on("exit,", (code)=> {
-  console.log("justo antes de cerrarse");
-  console.log(code);
-})
-
-process.on("uncaughtException", (exc) => {
-  console.log("Excepction no catcheada");
-  console.log(exc);
-})
-process.on("message", (message)=> {
-  console.log("Cuando reciba mensaje de otro proceso");
-  console.log(message);
-})
-//console()
-process.exit()*/
+// process.on("uncaughtException", (exc) => {
+//   console.log("Excepction no catcheada");
+//   console.log(exc);
+// })
+// process.on("message", (message)=> {
+//   console.log("Cuando reciba mensaje de otro proceso");
+//   console.log(message);
+// })
+// //console()
+// process.exit()

@@ -4,6 +4,7 @@ import { Strategy as JWTStrategy, ExtractJwt } from "passport-jwt";
 import userManager from "../data/mongo/managers/Users.manager.js";
 import { createHash, verifyHash } from "../utils/hash.util.js";
 import { createToken, verifyToken } from "../utils/token.util.js";
+import environment from "../utils/env.util.js";
 
 passport.use(
   "register",
@@ -66,7 +67,7 @@ passport.use(
   "jwt",
   new JWTStrategy(
     { jwtFromRequest: ExtractJwt.fromExtractors([(req) => req?.cookies["token"]]),
-      secretOrKey: process.env.SECRET_JWT
+     secretOrKey: environment.SECRET_JWT
     },
     (data, done)=>{
       try {
