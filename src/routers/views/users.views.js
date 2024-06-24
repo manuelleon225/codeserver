@@ -1,5 +1,5 @@
-//import UsersManager from "../../data/fs/UsersManager.js"
-import UsersManager from "../../data/mongo/managers/Users.manager.js";
+//import UsersManager from "../../dao/fs/UsersManager.js"
+import UsersManager from "../../dao/mongo/managers/Users.manager.js";
 import CustomRouter from "../CustomRouter.js";
 
 class UsersRouter extends CustomRouter {

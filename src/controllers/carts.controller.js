@@ -1,4 +1,4 @@
-import cartManager from "../data/mongo/managers/Cart.manager.js";
+import cartManager from "../dao/mongo/managers/Cart.manager.js";
 
 
 async function read(req, res, next) {

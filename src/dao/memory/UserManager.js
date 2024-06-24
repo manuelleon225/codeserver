@@ -74,6 +74,57 @@ class UserManager {
       throw error;
     }
   }
+
+  paginate({ filter, opts }) {
+    try {
+      let filteredUsers = MemoryManager.#users;
+
+      if (filter) {
+        filteredUsers = filteredUsers.filter((user) => {
+          return Object.keys(filter).every((key) => user[key] === filter[key]);
+        });
+      }
+
+      const total = filteredUsers.length;
+      const page = opts.page || 1;
+      const limit = opts.limit || 10;
+      const offset = (page - 1) * limit;
+
+      const paginatedUsers = filteredUsers.slice(offset, offset + limit);
+
+      return {
+        docs: paginatedUsers,
+        totalDocs: total,
+        limit: limit,
+        page: page,
+        totalPages: Math.ceil(total / limit),
+        pagingCounter: offset + 1,
+        hasPrevPage: page > 1,
+        hasNextPage: page < Math.ceil(total / limit),
+        prevPage: page > 1 ? page - 1 : null,
+        nextPage: page < Math.ceil(total / limit) ? page + 1 : null,
+      };
+    } catch (error) {
+      throw error;
+    }
+  }
+  readByEmail(email) {
+    try {
+      const user = MemoryManager.#users.find(
+        (user) => user.email === email
+      );
+
+      if (!user) {
+        const error = new Error("User not found");
+        error.statusCode = 404;
+        throw error;
+      }
+
+      return user;
+    } catch (error) {
+      throw error;
+    }
+  }
 }
 
 /*const gestorDeUsuarios = new UserManager()

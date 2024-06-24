@@ -1,4 +1,4 @@
-import cartsManager from "../../data/mongo/managers/Cart.manager.js";
+import cartsManager from "../../dao/mongo/managers/Cart.manager.js";
 import { Types } from "mongoose";
 import CustomRouter from "../CustomRouter.js";
 

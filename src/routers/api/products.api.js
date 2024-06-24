@@ -1,5 +1,5 @@
-// import productManager from "../../data/fs/ProductManager.js";
-import productManager from "../../data/mongo/managers/Products.manager.js";
+// import productManager from "../../dao/fs/ProductManager.js";
+import productManager from "../../dao/mongo/managers/Products.manager.js";
 import { read, readOne, paginate, create, update, destroy } from "../../controllers/products.controller.js";
 //../controllers/products.controller.js
 import CustomRouter from "../CustomRouter.js";

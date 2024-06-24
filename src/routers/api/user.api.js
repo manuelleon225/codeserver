@@ -1,5 +1,5 @@
-// import UsersManager from "../../data/fs/UsersManager.js";
-import UsersManager from "../../data/mongo/managers/Users.manager.js";
+// import UsersManager from "../../dao/fs/UsersManager.js";
+import UsersManager from "../../dao/mongo/managers/Users.manager.js";
 import { read, readOne, create, update, destroy } from "../../controllers/users.controller.js"
 import CustomRouter from "../CustomRouter.js";
 
@@ -12,7 +12,6 @@ class UsersRouter extends CustomRouter {
     this.destroy("/:uid", ["USER", "ADMIN"], destroy);
   }
 }
-
 
 const usersRouter = new UsersRouter();
 
