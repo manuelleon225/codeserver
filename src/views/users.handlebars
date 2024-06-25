@@ -22,7 +22,7 @@
           method: "POST",
           headers: { "Content-Type" : "application/json"}
         }
-    let resp = await fetch("/api/sessions/", opts)
+    let resp = await fetch("/api/sessions/online", opts)
     resp = await resp.json()
     let user = await resp.session
     document.getElementById("user_photo").src = user.photo

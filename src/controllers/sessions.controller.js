@@ -34,6 +34,7 @@ class SessionsController {
             });
           }
           const error = new Error("Is OFFLINE!");
+          localStorage.getItem("online", "false")
           error.statusCode = 401;
           throw error;
         } catch (error) {

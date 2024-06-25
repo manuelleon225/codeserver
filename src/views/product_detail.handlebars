@@ -60,23 +60,24 @@ addCartButton.addEventListener("click", async () => {
           method: "POST",
           headers: { "Content-Type" : "application/json"}
         }
-    let resp = await fetch("/api/sessions/", opts)
+    let resp = await fetch("/api/sessions/online", opts)
     resp = await resp.json()
-    let user = await resp.session
-    const product_id = "{{productById._id}}"
-    const user_id = user._id
-    const response = await fetch("http://localhost:8080/api/cart", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ product_id, user_id, quantity:count })
-    });
-    const responseBody = await response.json()
-    console.log(responseBody)
-    if(responseBody.statusCode == 201){
-      alert('Producto agregado con exito')
-      window.location.replace('/')
-    } else {
-      alert('Ocurrió un problema')
+    if(resp){
+      let user = await resp.session
+      const product_id = "{{productById._id}}"
+      const user_id = user._id
+      const response = await fetch("http://localhost:8080/api/cart/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ product_id, user_id, quantity:count })
+      });
+      const responseBody = await response.json()
+      if(responseBody.statusCode == 201){
+        alert('Producto agregado con exito')
+        window.location.replace('/')
+      } else {
+        alert('Ocurrió un problema')
+      }
     }
   } catch (error) {
     console.error("Error:", error);
