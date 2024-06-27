@@ -11,7 +11,8 @@
     "express-session": "^1.18.0",
     "handlebars": "^4.7.8",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.3.3",
+    "mongodb": "^6.7.0",
+    "mongoose": "^8.4.4",
     "mongoose-paginate-v2": "^1.8.0",
     "morgan": "^1.10.0",
     "node": "^21.7.1",
@@ -26,7 +27,7 @@
   "version": "1.0.0",
   "main": "server.js",
   "type": "module",
-"scripts": {
+  "scripts": {
     "start": "node ./server.js -p 9000",
     "dev": "nodemon ./server.js --env dev",
     "argv": "nodemon ./server.js -p 8080 --env=prod --persistence memory"

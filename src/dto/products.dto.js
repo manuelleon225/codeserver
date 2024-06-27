@@ -15,3 +15,5 @@ export class ProductDTO {
         this.updatedAt = data.updatedAt;
     }
 }
+
+export default ProductDTO

@@ -15,3 +15,5 @@ export class UserDTO {
         this.updatedAt = data.updatedAt;
     }
 }
+
+export default UserDTO;
