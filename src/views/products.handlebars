@@ -5,7 +5,7 @@
             <label class="input-group-text">Filter by category</label>
         </div>
         <select class="custom-select mx-4 px-1" id="select-category">
-            <option value="allCategories">All categories</option>
+            <option value="">All categories</option>
             <option value="Clothes">Clothes</option>
             <option value="Shoes">Shoes</option>
             <option value="Accesories">Accesories</option>
@@ -17,25 +17,6 @@
         </div>
     </div>
     <div id="products" class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
-        <!-- {{#each allProducts}}
-        <div class="col mb-4">
-            <div class="card">
-                <img src="{{this.photo}}" class="card-img-top img-fluid h-100" alt="product-photo">
-                <div class="card-body">
-                    <h5 class="card-title">{{this.title}}</h5>
-                    <p class="card-text">Category: {{this.category}}</p>
-                    <p class="card-text">Price: ${{this.price}}</p>
-                    <p class="card-text">Stock: {{this.stock}}</p>
-                    <p class="card-text">ID: {{this._id}}</p>
-                </div>
-                <div class="card-footer">
-                    <a href="/search/{{this._id}}">
-                        <button class="btn btn-primary w-100">Add to cart</button>
-                    </a>
-                </div>
-            </div>
-        </div>
-        {{/each}}-->
     </div>
     <div class="d-flex justify-content-center">
         <div id="prev" class="button-container mx-2"></div>

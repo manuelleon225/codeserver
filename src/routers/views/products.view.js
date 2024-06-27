@@ -1,13 +1,13 @@
-import { Router } from "express";
-import productManager from "../../data/mongo/managers/Products.manager.js";
+import productManager from "../../dao/mongo/managers/Products.manager.js";
+import CustomRouter from "../CustomRouter.js";
 
-const productsRouter = Router();
-
-productsRouter.get("/", read);
-
-productsRouter.get("/search/:pid", readOne);
-
-productsRouter.get("/products/real", create);
+class ProductsRouter extends CustomRouter {
+  init() {
+    this.read("/", ["PUBLIC"], read);
+    this.read("/search/:pid", ["PUBLIC"], readOne);
+    this.read("/products/real", ["ADMIN"], create);
+  }
+}
 
 async function read(req, res, next) {
   try {
@@ -62,4 +62,6 @@ async function create(req, res, next) {
   }
 }
 
-export default productsRouter;
+const productsRouter = new ProductsRouter();
+
+export default productsRouter.getRouter();

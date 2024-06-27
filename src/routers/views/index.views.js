@@ -1,12 +1,16 @@
-import { Router } from "express";
 import productsRouter from "./products.view.js";
 import usersRouter from "./users.views.js";
 import cartRouter from "./cart.views.js";
+import CustomRouter from "../CustomRouter.js";
 
-const viewsRouter = Router();
+class ViewsRouter extends CustomRouter {
+  init() {
+    this.use("/", productsRouter);
+    this.use("/users", usersRouter);
+    this.use("/cart", cartRouter);
+  }
+}
 
-viewsRouter.use("/", productsRouter);
-viewsRouter.use("/users", usersRouter);
-viewsRouter.use("/cart", cartRouter);
+const viewsRouter = new ViewsRouter();
 
-export default viewsRouter;
+export default viewsRouter.getRouter();

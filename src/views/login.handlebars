@@ -41,18 +41,14 @@
     }
     try {
       let response = await fetch("/api/sessions/login", opts);
-      if (!response.ok) {
+      response = await response.json()
+      console.error(response);
+      
+      if (!response.statusCode === 201) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-      let data = await response.json(); 
-      console.log(data);
-      if(data.statusCode === 201){
+      if(response.statusCode === 201){
         sessionStorage.setItem('online', true);
-        sessionStorage.setItem('email', data.session.email);
-        sessionStorage.setItem('photo', data.session.photo);
-        sessionStorage.setItem('user_id', data.session.user_id);
-        sessionStorage.setItem('role', data.session.role);
-        alert(`Logged in with email ${userData.email}!`)
         window.location.replace('/')
       } else {
         alert(data.message)

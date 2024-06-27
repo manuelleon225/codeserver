@@ -1,8 +1,10 @@
 import passport from "passport";
 import { Strategy as LocalStrategy } from "passport-local";
-import userManager from "../data/mongo/managers/Users.manager.js";
+import { Strategy as JWTStrategy, ExtractJwt } from "passport-jwt";
+import userManager from "../dao/mongo/managers/Users.manager.js";
 import { createHash, verifyHash } from "../utils/hash.util.js";
 import { createToken, verifyToken } from "../utils/token.util.js";
+import environment from "../utils/env.util.js";
 
 passport.use(
   "register",
@@ -38,32 +40,48 @@ passport.use(
     { passReqToCallback: true, usernameField: "email" },
     async (req, email, password, done) => {
       try {
-        const user = await userManager.readByEmail(req.body.email);
+        const user = await userManager.readByEmail(email);
         if (!user) {
           const error = new Error("BAD AUTH");
           error.statusCode = 401;
           return done(error);
         }
         const verify = verifyHash(password, user.password)
-        if(!verify){
-            const error = new Error("INVALID CREDENTIALS")
-            error.statusCode = 401
-            return done(error)
+        if(verify){
+          const userData = { email, role: user.role, photo: user.photo, _id: user._id, online: true}
+          const token = createToken(userData)
+          userData.token = token
+          return done(null, userData)
         }
-        const data = { email, role: user.role, photo: user.photo, _id: user._id, online: true}
-        const token = createToken(data)
-        user.token = token
-        if (verifyToken(token).email) {
-            const error = new Error("Already logged in");
-            error.statusCode = 401;
-            return done(error);
-        }
-        return done(null, user)
+        const error = new Error("INVALID CREDENTIALS")
+        error.statusCode = 401
+        return done(error)
       } catch (error) {
         return done(error);
       }
     }
   )
 );
+
+passport.use(
+  "jwt",
+  new JWTStrategy(
+    { jwtFromRequest: ExtractJwt.fromExtractors([(req) => req?.cookies["token"]]),
+     secretOrKey: environment.SECRET_JWT
+    },
+    (data, done)=>{
+      try {
+        if(!data){
+          const error = new Error("Forbidden from jwt!")
+          error.statusCode = 403
+          return done(error)
+        } 
+        return done(null, data)
+      } catch (error) {
+        return done(error)
+      }
+    }
+  )
+)
 
 export default passport;

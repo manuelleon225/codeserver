@@ -100,6 +100,59 @@ class ProductManager {
             throw error
         } 
     }
+    async paginate({ filter, opts }) {
+        try {
+          let fileProducts = await fs.promises.readFile(this.path, "utf-8");
+          fileProducts = fileProducts ? JSON.parse(fileProducts) : []; 
+    
+          if (filter) {
+            fileProducts = fileProducts.filter((prod) => {
+              return Object.keys(filter).every((key) => prod[key] === filter[key]);
+            });
+          }
+    
+          const total = fileProducts.length;
+          const page = opts.page || 1;
+          const limit = opts.limit || 10;
+          const offset = (page - 1) * limit;
+    
+          const paginatedProducts = fileProducts.slice(offset, offset + limit);
+    
+          return {
+            docs: paginatedProducts,
+            totalDocs: total,
+            limit: limit,
+            page: page,
+            totalPages: Math.ceil(total / limit),
+            pagingCounter: offset + 1,
+            hasPrevPage: page > 1,
+            hasNextPage: page < Math.ceil(total / limit),
+            prevPage: page > 1 ? page - 1 : null,
+            nextPage: page < Math.ceil(total / limit) ? page + 1 : null
+          };
+        } catch (error) {
+          throw error;
+        }
+      }    
+      async readByEmail(email) {
+        try {
+          let fileProducts = await fs.promises.readFile(this.path, "utf-8");
+          fileProducts = fileProducts ? JSON.parse(fileProducts) : [];
+    
+          const product = fileProducts.find((prod) => prod.email === email);
+
+          if (!product) {
+            const error = new Error("Product not found");
+            error.statusCode = 404;
+            throw error;
+          }
+    
+          return product;
+        } catch (error) {
+          throw error;
+        }
+      }
+    
 }
 
 const productManager = new ProductManager(path)

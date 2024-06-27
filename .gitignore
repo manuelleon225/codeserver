@@ -1,3 +1,7 @@
 node_modules
 .DS_Store
-# .env this should be able but I don't do it because otherwise you can't use the database
+
+# SE DEBEN OCULTAR PERO EN ESTE CASO NO LO HAGO PARA QUE EL TUTOR PUEDA CONTAR CON LA CONFIGURACION DE ENTORNO
+# .env
+# .env.dev
+# .env.prod

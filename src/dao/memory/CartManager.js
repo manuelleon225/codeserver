@@ -73,4 +73,54 @@ class CartManager {
             throw error
         } 
     }
+    paginate({ filter, opts }) {
+        try {
+          let filteredCarts = MemoryManager.#carts;
+    
+          if (filter) {
+            filteredCarts = filteredCarts.filter((cart) => {
+              return Object.keys(filter).every((key) => cart[key] === filter[key]);
+            });
+          }
+    
+          const total = filteredCarts.length;
+          const page = opts.page || 1;
+          const limit = opts.limit || 10;
+          const offset = (page - 1) * limit;
+    
+          const paginatedCart = filteredCarts.slice(offset, offset + limit);
+    
+          return {
+            docs: paginatedCart,
+            totalDocs: total,
+            limit: limit,
+            page: page,
+            totalPages: Math.ceil(total / limit),
+            pagingCounter: offset + 1,
+            hasPrevPage: page > 1,
+            hasNextPage: page < Math.ceil(total / limit),
+            prevPage: page > 1 ? page - 1 : null,
+            nextPage: page < Math.ceil(total / limit) ? page + 1 : null,
+          };
+        } catch (error) {
+          throw error;
+        }
+      }
+      readByEmail(email) {
+        try {
+          const cart = MemoryManager.#carts.find(
+            (cart) => cart.email === email
+          );
+    
+          if (!cart) {
+            const error = new Error("Cart not found");
+            error.statusCode = 404;
+            throw error;
+          }
+    
+          return cart;
+        } catch (error) {
+          throw error;
+        }
+      }
 }

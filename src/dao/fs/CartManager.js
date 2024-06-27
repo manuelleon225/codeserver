@@ -24,10 +24,10 @@ class CartManager {
             } else {
                 const newCart = {
                   id: data.id || crypto.randomBytes(12).toString("hex"),
-                  user_id: data.id || crypto.randomBytes(12).toString("hex"),
-                  product_id: data.id || crypto.randomBytes(12).toString("hex"),
-                  quantity: data.id || 1,
-                  state: data.id || "reserved",
+                  user_id: data.user_id || crypto.randomBytes(12).toString("hex"),
+                  product_id: data.product_id || crypto.randomBytes(12).toString("hex"),
+                  quantity: data.quantity || 1,
+                  state: data.state || "reserved",
                 }
                 let fileCarts = await fs.promises.readFile(this.path, "utf-8")
                 fileCarts = JSON.parse(fileCarts)
@@ -99,6 +99,58 @@ class CartManager {
             throw error
         } 
     }
+    async paginate({ filter, opts }) {
+        try {
+          let fileCarts = await fs.promises.readFile(this.path, "utf-8");
+          fileCarts = fileCarts ? JSON.parse(fileCarts) : []; 
+    
+          if (filter) {
+            fileCarts = fileCarts.filter((cart) => {
+              return Object.keys(filter).every((key) => cart[key] === filter[key]);
+            });
+          }
+    
+          const total = fileCarts.length;
+          const page = opts.page || 1;
+          const limit = opts.limit || 10;
+          const offset = (page - 1) * limit;
+    
+          const paginatedCart = fileCarts.slice(offset, offset + limit);
+    
+          return {
+            docs: paginatedCart,
+            totalDocs: total,
+            limit: limit,
+            page: page,
+            totalPages: Math.ceil(total / limit),
+            pagingCounter: offset + 1,
+            hasPrevPage: page > 1,
+            hasNextPage: page < Math.ceil(total / limit),
+            prevPage: page > 1 ? page - 1 : null,
+            nextPage: page < Math.ceil(total / limit) ? page + 1 : null
+          };
+        } catch (error) {
+          throw error;
+        }
+      }    
+      async readByEmail(email) {
+        try {
+          let fileCarts = await fs.promises.readFile(this.path, "utf-8");
+          fileCarts = fileCarts ? JSON.parse(fileCarts) : [];
+    
+          const cart = fileCarts.find((prod) => prod.email === email);
+
+          if (!cart) {
+            const error = new Error("Cart not found");
+            error.statusCode = 404;
+            throw error;
+          }
+    
+          return cart;
+        } catch (error) {
+          throw error;
+        }
+      }
 }
 
 const cartManager = new CartManager(path)

@@ -1,20 +1,19 @@
   <h1 class="p-2 text-center text-info w-100">CARRITO DE COMPRAS</h1>
-  <div class="container d-flex justify-content-center" id="cart" style="width: 100% !important;">
-
+  <div class=" row row-cols-1 row-cols-md-3 g-4 justify-content-center" id="cart" style="width: 100% !important;">
     {{#each cart}}
-       <div class="card m-2 d-flex"  style="max-width: 500px;">
-      <div class="fs-4 p-2"><span>Email: </span>{{this.user_id.email}}</div>
-      <div class="card-body text-center">
-        <h5 class="card-title h6 text-center">{{this.product_id.title}}</h5>
-        <img src="{{this.product_id.photo}}" style="width: auto; height: 200px; margin: 10px 0px;" alt="...">
-        <p class="card-text small">Precio: ${{this.product_id.price}}</p>
-        <p class="card-text small">Cantidad: <input type="number" class="form-control form-control-sm quantity-input"
-            value="{{this.quantity}}" min="1"></p>
-            <div class="text-center">
-      <button class="btn btn-sm btn-danger remove-btn" name="{{this._id}}">ELIMINAR</button>
-    </div>
+      <div class="card m-2 d-flex"  style="max-width: 500px;">
+        <div class="fs-4 p-2"><span>Email: </span>{{this.user_id.email}}</div>
+          <div class="card-body text-center">
+            <h5 class="card-title h6 text-center">{{this.product_id.title}}</h5>
+            <img src="{{this.product_id.photo}}" style="width: auto; height: 200px; margin: 10px 0px;" alt="...">
+            <p class="card-text small">Precio: ${{this.product_id.price}}</p>
+            <p class="card-text small">Cantidad: <input type="number" class="form-control form-control-sm quantity-input"
+              value="{{this.quantity}}" min="1"></p>
+          <div class="text-center">
+            <button class="btn btn-sm btn-danger remove-btn" name="{{this._id}}">ELIMINAR</button>
+          </div>
+        </div>
       </div>
-    </div>
     {{/each}}
   </div>
 
@@ -26,12 +25,16 @@
   <script>
     // Event listener para eliminar un producto
     document.querySelectorAll('.remove-btn').forEach(item => {
-      item.addEventListener('click', async event => {
-        await fetch("http://localhost:8080/api/cart/" + event.target.name, {
+      item.addEventListener('click', async (event) => {
+        console.log(event.target.name, ' id ')
+        response = await fetch("http://localhost:8080/api/cart/" + event.target.name, {
           method: "DELETE",
           headers: { "Content-Type": "application/json" }
         });
-        event.target.closest('.card').remove();
+        console.log(response)
+        if(response.status == 200){
+          event.target.closest('.card').remove();
+        }
       });
     });
 
@@ -41,7 +44,26 @@
     });
 
     // Event listener para cancelar compra
-    document.getElementById('cancel-btn').addEventListener('click', function () {
+    document.getElementById('cancel-btn').addEventListener('click', async () => {
+      // Tengo que hacer una peticion para cada item y que se borre, ya que se borran de la bd con el _id del carrito
+      const opts = {
+          method: "POST",
+          headers: { "Content-Type" : "application/json"}
+        }
+      let resp = await fetch("/api/sessions/online", opts)
+      resp = await resp.json()
+      let user = await resp.session
+      let products_cart = await fetch(`http://localhost:8080/api/cart?user_id=${user._id}`)
+      products_cart = await products_cart.json()
+      console.log(products_cart)
+      products_cart.message.forEach(async (prod_cart) => {
+        console.log(prod_cart._id)
+        let response = await fetch(`http://localhost:8080/api/cart/${prod_cart._id}`, {
+          method: "DELETE",
+          headers: { "Content-Type": "application/json" }
+        });
+      })
+
       document.getElementById('cart').innerHTML = '';
     });
   </script>
