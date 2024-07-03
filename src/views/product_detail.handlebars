@@ -62,7 +62,7 @@ addCartButton.addEventListener("click", async () => {
         }
     let resp = await fetch("/api/sessions/online", opts)
     resp = await resp.json()
-    if(resp){
+    if(resp.statusCode === 200){
       let user = await resp.session
       const product_id = "{{productById._id}}"
       const user_id = user._id
@@ -78,6 +78,8 @@ addCartButton.addEventListener("click", async () => {
       } else {
         alert('Ocurrió un problema')
       }
+    } else {
+      alert("Debes iniciar sesion primero")
     }
   } catch (error) {
     console.error("Error:", error);

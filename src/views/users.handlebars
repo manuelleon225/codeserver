@@ -24,7 +24,11 @@
         }
     let resp = await fetch("/api/sessions/online", opts)
     resp = await resp.json()
-    let user = await resp.session
-    document.getElementById("user_photo").src = user.photo
+    if(resp.statusCode === 200){
+      let user = await resp.session
+      document.getElementById("user_photo").src = user.photo
+    } else {
+       alert("Debes iniciar sesion primero");
+    }
   })
 </script>
