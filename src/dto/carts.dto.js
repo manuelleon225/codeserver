@@ -14,3 +14,5 @@ export class CartDTO {
         this.updatedAt = data.updatedAt;
     }
 }
+
+export default CartDTO

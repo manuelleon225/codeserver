@@ -31,7 +31,9 @@
     "start": "node ./server.js -p 9000",
     "dev": "nodemon ./server.js --env dev",
     "argv": "nodemon ./server.js -p 8080 --env=prod --persistence memory",
-    "product" : "node ./src/mocks/products.mock.js"
+    "products" : "node ./src/mocks/products.mock.js",
+    "users" : "node ./src/mocks/users.mock.js",
+    "carts" : "node ./src/mocks/carts.mock.js"
   },
   "keywords": [],
   "author": "",
