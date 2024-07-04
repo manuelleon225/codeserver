@@ -30,12 +30,14 @@
   "scripts": {
     "start": "node ./server.js -p 9000",
     "dev": "nodemon ./server.js --env dev",
-    "argv": "nodemon ./server.js -p 8080 --env=prod --persistence memory"
+    "argv": "nodemon ./server.js -p 8080 --env=prod --persistence memory",
+    "product" : "node ./src/mocks/products.mock.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
     "morgan": "^1.10.0",
     "nodemon": "^3.1.0"
   }
