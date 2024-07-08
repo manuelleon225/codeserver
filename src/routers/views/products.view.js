@@ -1,4 +1,6 @@
 import productManager from "../../dao/mongo/managers/Products.manager.js";
+import CustomError from "../../utils/errors/CustomError.js";
+import errors from "../../utils/errors/Errors.js";
 import CustomRouter from "../CustomRouter.js";
 
 class ProductsRouter extends CustomRouter {
@@ -23,9 +25,7 @@ async function read(req, res, next) {
         allProducts,
       });
     } else {
-      const error = new Error("NOT FOUND PRODUCTS");
-      error.statusCode = 404;
-      throw error;
+      return new CustomError(errors.notFound);
     }
   } catch (error) {
     return next(error);
@@ -53,9 +53,7 @@ async function create(req, res, next) {
         allProducts,
       });
     } else {
-      const error = new Error("NOT FOUND PRODUCTS");
-      error.statusCode = 404;
-      throw error;
+      return new CustomError(errors.notFound);
     }
   } catch (error) {
     return next(error);

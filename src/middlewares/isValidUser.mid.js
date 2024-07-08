@@ -1,12 +1,11 @@
 import userManager from "../dao/mongo/managers/Users.manager.js";
+import errors from "../utils/errors/Errors.js";
 
 async function isValidUser(req, res, next){
     try {
         const email = await userManager.readByEmail(req.body.email)
         if(!email){
-            const error = new Error("BAD AUTH")
-            error.statusCode = 401
-            throw error
+            return new CustomError(errors.auth)
         }
         return next()
     } catch (error) {

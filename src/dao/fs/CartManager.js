@@ -1,5 +1,7 @@
 import fs from "fs"
 import crypto from "crypto"
+import CustomError from "../../utils/errors/CustomError"
+import errors from "../../utils/errors/Errors"
 const path = "./src/data/files/carts.json"
 
 class CartManager {
@@ -19,8 +21,7 @@ class CartManager {
     async create(data) {
         try {
             if (!data.title) {
-                const error = new Error("ERROR: Faltan datos")
-                throw error
+                return new CustomError(errors.missingData);
             } else {
                 const newCart = {
                   id: data.id || crypto.randomBytes(12).toString("hex"),
@@ -58,8 +59,7 @@ class CartManager {
             fileCarts = await JSON.parse(fileCarts)
             const cartFound = await fileCarts.find((cart) => cart.id == id)
             if (!cartFound) {
-                const error = new Error("No hay ningun cart registrado con ese id")
-                throw error
+                return new CustomError(errors.notFound)
             } else {
                 return cartFound
             }
@@ -73,8 +73,7 @@ class CartManager {
             fileCarts = JSON.parse(fileCarts)
             const cartFound = fileCarts.find((cart) => cart.id == id)
             if(!cartFound){
-                const error = new Error("CART WITH THIS ID NOT FOUND")
-                throw error
+                return new CustomError(errors.notFound)
             } else {
                 fileCarts = fileCarts.filter((cart) => cart.id != id)
                 fileCarts = JSON.stringify(fileCarts, null, 2)
@@ -141,9 +140,7 @@ class CartManager {
           const cart = fileCarts.find((prod) => prod.email === email);
 
           if (!cart) {
-            const error = new Error("Cart not found");
-            error.statusCode = 404;
-            throw error;
+            return new CustomError(errors.notFound);
           }
     
           return cart;

@@ -6,7 +6,6 @@ import morgan from "morgan";
 import exphbs from "express-handlebars";
 import { engine } from "express-handlebars";
 import session from 'express-session'
-
 import indexRouter from "./src/routers/index.router.js";
 import socketCb from "./src/routers/index.socket.js"
 import errorHandler from "./src/middlewares/errorHandler.mid.js";
@@ -16,6 +15,7 @@ import { dbConnect } from "./src/utils/dbConnect.js";
 import cookieParser from "cookie-parser";
 import MongoStore from "connect-mongo";
 import argsUtil from "./src/utils/args.util.js";
+import compression from "express-compression";
 
 //http server
 const server = express();
@@ -53,6 +53,9 @@ server.use(session({
   secret: environment.SECRET_JWT,
   resave: true,
   saveUninitialized: true,
+}))
+server.use(compression({
+  brotli: { enabled: true, zlib:{} }
 }))
 
 //endpoints

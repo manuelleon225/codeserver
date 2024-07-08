@@ -1,12 +1,13 @@
 import crypto from "crypto";
+import CustomError from "../../utils/errors/CustomError";
+import errors from "../../utils/errors/Errors";
 
 class ProductManager {
   static #products = [];
   create(data) {
     try {
       if (!data.title) {
-        const error = new Error("ERROR: Faltan datos");
-        throw error;
+        return new CustomError(errors.missingData);
       } else {
         const newProduct = {
           id: crypto.randomBytes(12).toString("hex"),
@@ -26,8 +27,7 @@ class ProductManager {
   read(query) {
     try {
       if (ProductManager.#products.length == 0) {
-        const error = new Error("No hay productos registrados");
-        throw error;
+        return new CustomError(errors.notFound);
       } else {
         const products = ProductManager.#products.filter(
           (prod) => prod.category == query
@@ -42,8 +42,7 @@ class ProductManager {
     try {
       const prodFound = ProductManager.#products.find((prod) => prod.id == id);
       if (!prodFound) {
-        const error = new Error("No hay ningun producto registrado con ese id");
-        throw error;
+        return new CustomError(errors.notFound);
       } else {
         return prodFound;
       }
@@ -55,8 +54,7 @@ class ProductManager {
     try {
       const prodFound = ProductManager.#products.find((prod) => prod.id == id);
       if (!prodFound) {
-        const error = new Error("No hay ningun producto registrado con ese id");
-        throw error;
+        return new CustomError(errors.notFound);
       } else {
         ProductManager.#products = ProductManager.#products.filter(
           (prod) => prod.id != id
@@ -120,9 +118,7 @@ class ProductManager {
       );
 
       if (!product) {
-        const error = new Error("Product not found");
-        error.statusCode = 404;
-        throw error;
+        return new CustomError(errors.notFound);
       }
 
       return product;

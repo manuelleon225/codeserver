@@ -1,5 +1,7 @@
 import fs from "fs"
 import crypto from "crypto"
+import CustomError from "../../utils/errors/CustomError"
+import errors from "../../utils/errors/Errors"
 const path = "./src/data/files/products.json"
 
 class ProductManager {
@@ -19,8 +21,7 @@ class ProductManager {
     async create(data) {
         try {
             if (!data.title) {
-                const error = new Error("ERROR: Faltan datos")
-                throw error
+                return new CustomError(errors.missingData)
             } else {
                 const newProduct = {
                     id: crypto.randomBytes(12).toString("hex"),
@@ -59,8 +60,7 @@ class ProductManager {
             fileProducts = await JSON.parse(fileProducts)
             const prodFound = await fileProducts.find((prod) => prod.id == id)
             if (!prodFound) {
-                const error = new Error("No hay ningun producto registrado con ese id")
-                throw error
+                return new CustomError(errors.notFound)
             } else {
                 return prodFound
             }
@@ -74,8 +74,7 @@ class ProductManager {
             fileProducts = JSON.parse(fileProducts)
             const prodFound = fileProducts.find((prod) => prod.id == id)
             if(!prodFound){
-                const error = new Error("PRODUCT WITH THIS ID NOT FOUND")
-                throw error
+                return new CustomError(errors.notFound);
             } else {
                 fileProducts = fileProducts.filter((prod) => prod.id != id)
                 fileProducts = JSON.stringify(fileProducts, null, 2)
@@ -142,9 +141,7 @@ class ProductManager {
           const product = fileProducts.find((prod) => prod.email === email);
 
           if (!product) {
-            const error = new Error("Product not found");
-            error.statusCode = 404;
-            throw error;
+            return new CustomError(errors.notFound);
           }
     
           return product;

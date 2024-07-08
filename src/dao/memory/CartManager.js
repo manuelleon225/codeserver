@@ -1,12 +1,13 @@
 import crypto from "crypto"
+import CustomError from "../../utils/errors/CustomError"
+import errors from "../../utils/errors/Errors"
 
 class CartManager {
     static #carts = []
     create(data){
         try{
             if(!data.title){
-                const error = new Error("ERROR: Faltan datos")
-                throw error
+                return new CustomError(errors.missingData);
             } else {
                 const newCart = {
                     id: crypto.randomBytes(12).toString("hex"),
@@ -25,8 +26,7 @@ class CartManager {
     read(){
         try{
             if(CartManager.#carts.length == 0){
-                const error = new Error("No hay carritos registrados")
-                throw error
+                return new CustomError("No hay carritos registrados", 400)
             } else {
                 //const carts = CartManager.#carts;
                 return CartManager.#carts
@@ -39,8 +39,7 @@ class CartManager {
         try{
             const cartFound = CartManager.#carts.find((cart) => cart.id == id)
             if(!cartFound){
-                const error = new Error("No hay ningun carrito registrado con ese id")
-                throw error
+                return new CustomError(errors.notFound)
             } else {
                 return cartFound
             }
@@ -52,8 +51,7 @@ class CartManager {
         try{
             const cartFound = CartManager.#carts.find((cart) => cart.id == id)
             if(!cartFound){
-                const error = new Error("No hay ningun carrito registrado con ese id")
-                throw error
+                return new CustomError(errors.notFound)
             } else {
                 CartManager.#carts = CartManager.#carts.filter((cart) => cart.id != id)
                 return CartManager.#carts
@@ -113,9 +111,7 @@ class CartManager {
           );
     
           if (!cart) {
-            const error = new Error("Cart not found");
-            error.statusCode = 404;
-            throw error;
+            return new CustomError(errors.notFound);
           }
     
           return cart;
