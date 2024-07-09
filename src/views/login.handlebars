@@ -44,14 +44,11 @@
       response = await response.json()
       console.error(response);
       
-      if (!response.statusCode === 201) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
       if(response.statusCode === 201){
         sessionStorage.setItem('online', true);
         window.location.replace('/')
       } else {
-        alert(data.message)
+        throw new Error(response.message)
       }
     } catch (error) {
       console.error('Error:', error);

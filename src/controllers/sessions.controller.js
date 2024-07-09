@@ -28,7 +28,6 @@ class SessionsController {
       async  online(req, res, next) {
         try {
           if (req.user.online) {
-            console.log(req.user);
             return res.json({
               statusCode: 200,
               messsage: "Is ONLINE!",

@@ -16,6 +16,7 @@ import cookieParser from "cookie-parser";
 import MongoStore from "connect-mongo";
 import argsUtil from "./src/utils/args.util.js";
 import compression from "express-compression";
+import winston from "./src/middlewares/winston.mid.js";
 
 //http server
 const server = express();
@@ -46,7 +47,8 @@ server.use(express.static(__dirname + '/public'));
 
 server.use(express.json());
 server.use(cookieParser(environment.SECRET_COOKIE))
-server.use(morgan("dev"));
+// server.use(morgan("dev"));
+server.use(winston);
 
 server.use(session({
   store: new MongoStore({ mongoUrl: environment.MONGO_DATABASE_URI, ttl: 60*60}),
