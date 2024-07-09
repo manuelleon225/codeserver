@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "artillery": "^2.0.16",
     "bcrypt": "^5.1.1",
     "bootstrap-icons": "^1.11.3",
     "commander": "^12.1.0",
@@ -35,7 +36,11 @@
     "argv": "nodemon ./server.js -p 8080 --env=prod --persistence memory",
     "products": "node ./src/mocks/products.mock.js",
     "users": "node ./src/mocks/users.mock.js",
-    "carts": "node ./src/mocks/carts.mock.js"
+    "carts": "node ./src/mocks/carts.mock.js",
+    "simplex": "artillery quick --count 20 --num 100 'http://localhost:8080/simplex' -o ./test/artillery/simplex.json",
+    "complex": "artillery quick --count 20 --num 100 'http://localhost:8080/complex' -o ./test/artillery/complex.json",
+    "flow": "artillery run ./test/artillery/flow.yaml -o ./test/artillery/flow.json",
+    "report": "artillery report ./test/artillery/flow.json"
   },
   "keywords": [],
   "author": "",
