@@ -1,4 +1,6 @@
 import cartManager from "../../dao/mongo/managers/Cart.manager.js";
+import CustomError from "../../utils/errors/CustomError.js";
+import errors from "../../utils/errors/Errors.js";
 import { verifyToken } from "../../utils/token.util.js";
 import CustomRouter from "../CustomRouter.js";
 
@@ -26,9 +28,7 @@ class CartRouter extends CustomRouter {
             return res.response403()
           }
         } else {
-          const error = new Error("NOT FOUND CART");
-          error.statusCode = 404;
-          throw error;
+          return new CustomError(errors.notFound);
         }
       } catch (err) {
         return next(err);

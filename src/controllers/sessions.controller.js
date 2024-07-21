@@ -1,3 +1,5 @@
+import CustomError from "../utils/errors/CustomError.js";
+
 class SessionsController {
     async register(req, res, next) {
         try {
@@ -26,17 +28,14 @@ class SessionsController {
       async  online(req, res, next) {
         try {
           if (req.user.online) {
-            console.log(req.user);
             return res.json({
               statusCode: 200,
               messsage: "Is ONLINE!",
               session: req.user
             });
           }
-          const error = new Error("Is OFFLINE!");
           localStorage.getItem("online", "false")
-          error.statusCode = 401;
-          throw error;
+          return new CustomError("Is OFFLINE!", 401);
         } catch (error) {
           return next(error);
         }
@@ -54,10 +53,7 @@ class SessionsController {
               messsage: "Signed out!",
             });
           } 
-            const error = new Error("Not logged in");
-            error.statusCode = 401;
-            throw error;
-          
+            return new CustomError("Not logged in", 401);
         } catch (error) {
           return next(error);
         }

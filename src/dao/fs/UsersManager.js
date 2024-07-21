@@ -1,5 +1,7 @@
 import fs from "fs"
 import crypto from "crypto"
+import CustomError from "../../utils/errors/CustomError";
+import errors from "../../utils/errors/Errors";
 const path = "./src/data/files/users.json"
 
 class UserManager {
@@ -19,8 +21,7 @@ class UserManager {
     async create(data) {
         try {
             if(!data.email || !data.password){
-                const error = new Error("ERROR: Faltan datos")
-                throw error
+                return new CustomError(errors.missingData)
             } else {
                 const newUser = {
                     id: crypto.randomBytes(12).toString("hex"),
@@ -57,8 +58,7 @@ class UserManager {
             fileUsers = JSON.parse(fileUsers)
             const userFound = fileUsers.find((user) => user.id == id)
             if (!userFound) {
-                const error = new Error("No se encontro ningun usuario registrado con ese id")
-                throw error
+                return new CustomError(errors.notFound);
             } else {
                 console.log(userFound);
                 return userFound
@@ -73,8 +73,7 @@ class UserManager {
             fileUsers = JSON.parse(fileUsers)
             const userFound =fileUsers.find((user)  => user.id == id )
             if(!userFound){
-                const error = new Error("USER WITH THIS ID NOT FOUND")
-                throw error 
+                return new CustomError(errors.notFound)
             } else {
                 fileUsers = fileUsers.filter((user) => user.id != id)
                 fileUsers = JSON.stringify(fileUsers, null, 2)
@@ -142,9 +141,7 @@ class UserManager {
           const user = fileUsers.find((user) => user.email === email);
 
           if (!user) {
-            const error = new Error("User not found");
-            error.statusCode = 404;
-            throw error;
+            return new CustomError(errors.notFound);
           }
     
           return user;

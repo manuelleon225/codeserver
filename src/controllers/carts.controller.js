@@ -1,4 +1,6 @@
 import cartManager from "../dao/mongo/managers/Cart.manager.js";
+import CustomError from "../utils/errors/CustomError.js";
+import errors from "../utils/errors/Errors.js";
 
 
 async function read(req, res, next) {
@@ -7,9 +9,7 @@ async function read(req, res, next) {
       if (allCarts.length !== 0) {
         return res.response200(allCarts)
       } else {
-        const error = new Error("NOT FOUND CART");
-        error.statusCode = 404;
-        throw error;
+        return new CustomError(errors.notFound);
       }
     } catch (err) {
       console.log(err);
@@ -24,9 +24,7 @@ async function read(req, res, next) {
       if (cartById) {
         return res.response200(cartById)
       } else {
-        const error = new Error("NOT FOUND PRODUCT");
-        error.statusCode = 404;
-        throw error;
+        return new CustomError(errors.notFound);
       }
     } catch (err) {
       return next(err);
@@ -40,9 +38,7 @@ async function read(req, res, next) {
       if (cartById) {
         return res.response200(cartById)
       } else {
-        const error = new Error("NOT FOUND PRODUCT");
-        error.statusCode = 404;
-        throw error;
+        return new CustomError(errors.notFound);
       }
     } catch (err) {
       return next(err);

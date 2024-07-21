@@ -1,12 +1,13 @@
 import crypto from "crypto";
+import CustomError from "../../utils/errors/CustomError";
+import errors from "../../utils/errors/Errors";
 
 class UserManager {
   static #users = [];
   create(data) {
     try {
       if (!data.email || !data.password) {
-        const error = new Error("Error: Faltan datos");
-        throw error;
+        return new CustomError(errors.missingData);
       } else {
         const newUser = {
           id: crypto.randomBytes(12).toString("hex"),
@@ -25,8 +26,7 @@ class UserManager {
   read() {
     try {
       if (UserManager.#users.length == 0) {
-        const error = new Error("No hay usuarios registrados");
-        throw error;
+        return new CustomError(errors.notFound);
       } else {
         return UserManager.#users;
       }
@@ -39,8 +39,7 @@ class UserManager {
     try {
       const userFound = UserManager.#users.find((user) => user.id == id);
       if (!userFound) {
-        const error = new Error("No hay ningun usuario registrado con ese id");
-        throw error;
+        return new CustomError(errors.notFound);
       } else {
         return userFound;
       }
@@ -52,8 +51,7 @@ class UserManager {
     try {
       const userFound = UserManager.#users.find((user) => user.id == id);
       if (!userFound) {
-        const error = new Error("No hay ningun usuario registrado con ese id");
-        throw error;
+        return new CustomError(errors.notFound);
       } else {
         UserManager.#users = UserManager.#users.filter((user) => user.id != id);
         return UserManager.#users;
@@ -115,9 +113,7 @@ class UserManager {
       );
 
       if (!user) {
-        const error = new Error("User not found");
-        error.statusCode = 404;
-        throw error;
+        return new CustomError(errors.notFound);
       }
 
       return user;

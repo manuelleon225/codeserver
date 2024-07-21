@@ -6,7 +6,6 @@ import morgan from "morgan";
 import exphbs from "express-handlebars";
 import { engine } from "express-handlebars";
 import session from 'express-session'
-
 import indexRouter from "./src/routers/index.router.js";
 import socketCb from "./src/routers/index.socket.js"
 import errorHandler from "./src/middlewares/errorHandler.mid.js";
@@ -16,6 +15,10 @@ import { dbConnect } from "./src/utils/dbConnect.js";
 import cookieParser from "cookie-parser";
 import MongoStore from "connect-mongo";
 import argsUtil from "./src/utils/args.util.js";
+import compression from "express-compression";
+import winston from "./src/middlewares/winston.mid.js";
+import cluster from "cluster";
+import { cpus } from "os";
 
 //http server
 const server = express();
@@ -27,7 +30,13 @@ const ready = async () => {
 const nodeServer = createServer(server)
 const socketServer = new Server(nodeServer)
 socketServer.on("connection", socketCb);
-nodeServer.listen(port, ready);
+if(cluster.isPrimary){
+  for(let i=0; i < cpus().length; i++){
+    cluster.fork()
+  }
+} else {
+  nodeServer.listen(port, ready);
+}
 
 //template engine
 const hbs = exphbs.create({
@@ -46,13 +55,17 @@ server.use(express.static(__dirname + '/public'));
 
 server.use(express.json());
 server.use(cookieParser(environment.SECRET_COOKIE))
-server.use(morgan("dev"));
+// server.use(morgan("dev"));
+server.use(winston);
 
 server.use(session({
   store: new MongoStore({ mongoUrl: environment.MONGO_DATABASE_URI, ttl: 60*60}),
   secret: environment.SECRET_JWT,
   resave: true,
   saveUninitialized: true,
+}))
+server.use(compression({
+  brotli: { enabled: true, zlib:{} }
 }))
 
 //endpoints

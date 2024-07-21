@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { verifyToken } from "../utils/token.util.js";
 import userManager from "../dao/mongo/managers/Users.manager.js";
+import logger from "../utils/winston.util.js";
 
 class CustomRouter {
   constructor() {
@@ -29,12 +30,22 @@ class CustomRouter {
     res.paginate = (response, info) =>
       res.json({ statusCode: 200, response, info });
     res.response201 = (message) => res.json({ statusCode: 201, message });
-    res.response400 = (error) =>
-      res.json({ statusCode: 400, message: error.message });
-    res.response401 = () =>
-      res.json({ statusCode: 401, message: "Bad auth from policies!" });
-    res.response403 = () => res.json({ statusCode: 403, message: "FORBIDDEN 403!" });
-    res.response404 = () => res.json({ statusCode: 404, message: "NOT FOUND" });
+    res.response400 = (message) => {
+      logger.ERROR(`${req.method} ${req.url} _ 400 _ ${new Date().toLocaleTimeString()} - ${message}`)
+      return res.json({ statusCode: 400, message: message })
+    }
+    res.response401 = () => {
+      logger.ERROR(`${req.method} ${req.url} _ 401 _ ${new Date().toLocaleTimeString()} - Bad auth from policies!`)
+      return res.json({ statusCode: 401, message: "Bad auth from policies!" });
+    }
+    res.response403 = () => {
+      logger.ERROR(`${req.method} ${req.url} _ 403 _ ${new Date().toLocaleTimeString()} - FORBIDDEN 403!`)
+      res.json({ statusCode: 403, message: "FORBIDDEN 403!" });
+    }
+    res.response404 = () => {
+      logger.ERROR(`${req.method} ${req.url} _ 404 _ ${new Date().toLocaleTimeString()} - NOT FOUND!`)
+      res.json({ statusCode: 404, message: "NOT FOUND" });
+    }
     return next();
   };
   policies = (policie) => async (req, res, next) => {
@@ -48,7 +59,8 @@ class CustomRouter {
           const { role, email } = token
           if (
             (policie.includes("USER") && role === 0) ||
-            (policie.includes("ADMIN") && role === 1)
+            (policie.includes("ADMIN") && role === 1) ||
+            (policie.includes("USER PREMIUM") && role === 2)
           ) {
             const user = await userManager.readByEmail(email);
             req.user = user;

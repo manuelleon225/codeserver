@@ -5,6 +5,8 @@ import userManager from "../dao/mongo/managers/Users.manager.js";
 import { createHash, verifyHash } from "../utils/hash.util.js";
 import { createToken, verifyToken } from "../utils/token.util.js";
 import environment from "../utils/env.util.js";
+import CustomError from "../utils/errors/CustomError.js";
+import errors from "../utils/errors/Errors.js";
 
 passport.use(
   "register",
@@ -13,14 +15,12 @@ passport.use(
     async (req, email, password, done) => {
       try {
         if (!email || !password) {
-          const error = new Error("MISSING DATA");
-          error.statusCode = 400;
+          const error = new CustomError(errors.invalid);
           return done(error);
         }
         const userEmail = await userManager.readByEmail(email);
         if (userEmail) {
-          const error = new Error("EMAIL ALREADY IN USE");
-          error.statusCode = 401;
+          const error = new CustomError("EMAIL ALREADY IN USE", 401);
           return done(error);
         }
         const hashPassword = createHash(password);
@@ -42,9 +42,7 @@ passport.use(
       try {
         const user = await userManager.readByEmail(email);
         if (!user) {
-          const error = new Error("BAD AUTH");
-          error.statusCode = 401;
-          return done(error);
+          return new CustomError(errors.auth);
         }
         const verify = verifyHash(password, user.password)
         if(verify){
@@ -53,9 +51,7 @@ passport.use(
           userData.token = token
           return done(null, userData)
         }
-        const error = new Error("INVALID CREDENTIALS")
-        error.statusCode = 401
-        return done(error)
+        return new CustomError(errors.invalid)
       } catch (error) {
         return done(error);
       }
@@ -72,9 +68,7 @@ passport.use(
     (data, done)=>{
       try {
         if(!data){
-          const error = new Error("Forbidden from jwt!")
-          error.statusCode = 403
-          return done(error)
+          return new CustomError(errors.forbidden);
         } 
         return done(null, data)
       } catch (error) {

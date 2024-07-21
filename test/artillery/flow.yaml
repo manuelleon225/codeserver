@@ -1,0 +1,28 @@
+config:
+  pluggins:
+    metrics-by-endpoint : {}
+  target: http://localhost:8080/api
+  phases:
+    - duration: 10
+      arrivalRate: 50
+scenarios:
+  - name: login
+    flow:
+      - log: login
+      - post: 
+          url: /sessions/login
+          json:
+            email: naza@gmail.com
+            password: 1234
+      - log: read all products
+      - get:
+          url: /products
+      - log: create product
+      - post:
+          url: /products/real
+          json:
+            title: Pantalon rayado pijama
+            photo: https://static.vecteezy.com/system/resources/previews/003/814/707/non_2x/striped-pajama-pants-of-blue-color-from-isolated-on-white-top-view-sleep-pants-close-up-photo.jpg
+            category: Ropa
+            price: 29.99
+            stock: 20
