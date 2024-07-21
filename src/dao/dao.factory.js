@@ -37,7 +37,7 @@ switch (persistence) {
     };
     break;
   default:
-    console.log("connected to mongo");
+    console.log("connected to mongo w/dao");
     dbConnect();
     const { default: productsManagerMongo } = await import(
       "./mongo/managers/Products.manager.js"

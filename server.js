@@ -17,6 +17,8 @@ import MongoStore from "connect-mongo";
 import argsUtil from "./src/utils/args.util.js";
 import compression from "express-compression";
 import winston from "./src/middlewares/winston.mid.js";
+import cluster from "cluster";
+import { cpus } from "os";
 
 //http server
 const server = express();
@@ -28,7 +30,13 @@ const ready = async () => {
 const nodeServer = createServer(server)
 const socketServer = new Server(nodeServer)
 socketServer.on("connection", socketCb);
-nodeServer.listen(port, ready);
+if(cluster.isPrimary){
+  for(let i=0; i < cpus().length; i++){
+    cluster.fork()
+  }
+} else {
+  nodeServer.listen(port, ready);
+}
 
 //template engine
 const hbs = exphbs.create({
