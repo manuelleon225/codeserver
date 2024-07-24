@@ -11,7 +11,7 @@ class UsersRepository {
     console.log(data);
     data = new UsersDTO(data);
     const create = await this.model.create(data);
-    return data;
+    return create;
   };
   readRepository = async () => {
     const read = await this.model.read();

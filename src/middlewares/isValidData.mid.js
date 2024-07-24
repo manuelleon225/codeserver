@@ -4,7 +4,7 @@ import errors from "../utils/errors/Errors"
 async function isValidData(req, res, next){
     try {
         if(!req.body.email && !req.body.password){
-            return new CustomError(errors.missingData)
+            return CustomError.new(errors.missingData)
         }
         return next()
     } catch (error) {

@@ -9,7 +9,7 @@ async function isValidPassword(req, res, next){
         const user = await userManager.readByEmail(email)
         const verify = verifyHash(password, user.password)
         if(!verify){
-            return new CustomError(errors.invalid)
+            return CustomError.new(errors.invalid)
         }
         return next()
     } catch (error) {

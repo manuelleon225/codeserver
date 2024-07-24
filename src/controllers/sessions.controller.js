@@ -11,7 +11,6 @@ class SessionsController {
 
     async login(req, res, next) {
         try {
-          console.log(req.user);
           return res
           .cookie("token", req.user.token, {signedCookie: true})
           .json({
@@ -35,7 +34,7 @@ class SessionsController {
             });
           }
           localStorage.getItem("online", "false")
-          return new CustomError("Is OFFLINE!", 401);
+          return CustomError.new("Is OFFLINE!", 401);
         } catch (error) {
           return next(error);
         }
@@ -44,7 +43,6 @@ class SessionsController {
       
       async  signout(req, res, next) {
         try {
-          console.log(req.user, ' onli ');
           if (req.cookies["token"]) {
             return res
             .clearCookie("token")
@@ -53,16 +51,27 @@ class SessionsController {
               messsage: "Signed out!",
             });
           } 
-            return new CustomError("Not logged in", 401);
+            return CustomError.new("Not logged in", 401);
         } catch (error) {
           return next(error);
         }
       }; 
+
+      async recoverPassword(req, res, next) {
+        try {
+          return res.json({
+            statusCode: 200,
+            messsage: "Sent!",
+          })
+        } catch (error) {
+          return next(error);
+        }
+      }
 }
 
 const sessionsController = new SessionsController();
-const { register,login, online, signout }  = sessionsController;
-export { register,login,online,signout };
+const { register,login, online, signout, recoverPassword }  = sessionsController;
+export { register,login,online,signout, recoverPassword };
 
 
 

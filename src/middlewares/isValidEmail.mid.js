@@ -6,7 +6,7 @@ async function isValidEmail(req, res, next){
     try {
         const email = await userManager.readByEmail(req.body.email)
         if(email){
-            return new CustomError(errors.auth)
+            return CustomError.new(errors.auth)
         }
         return next()
     } catch (error) {

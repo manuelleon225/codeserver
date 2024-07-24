@@ -25,7 +25,7 @@ async function read(req, res, next) {
         allProducts,
       });
     } else {
-      return new CustomError(errors.notFound);
+      return CustomError.new(errors.notFound);
     }
   } catch (error) {
     return next(error);
@@ -53,7 +53,7 @@ async function create(req, res, next) {
         allProducts,
       });
     } else {
-      return new CustomError(errors.notFound);
+      return CustomError.new(errors.notFound);
     }
   } catch (error) {
     return next(error);
