@@ -42,7 +42,6 @@ passport.use(
     async (req, email, password, done) => {
       try {
         const user = await userManager.readByEmail(email);
-        console.log(!user);
         if (!user) {
           const error = CustomError.new(errors.auth);
           return done(error)
@@ -84,7 +83,7 @@ passport.use(
 )
 
 passport.use(
-  "recover_pass",
+  "send_mail",
   new LocalStrategy(
     { passReqToCallback: true, usernameField: "email", passwordField: "email" },
     async (req, email, password, done) => {
@@ -97,7 +96,55 @@ passport.use(
         const verificationCode = Math.floor(100000 + Math.random() * 900000); 
         await sendVerificationEmail(email, verificationCode);
         req.session.verificationCode = verificationCode;
+        console.log(verificationCode, ' recover pass ');
         return done(null, user, { message: 'Verification email sent' });
+      } catch (error) {
+        return done(error);
+      }
+    }
+  )
+);
+
+passport.use(
+  "verify_code",
+  new LocalStrategy(
+    { passReqToCallback: true, usernameField: "code", passwordField: "code" },
+    async (req, email, password, done) => {
+      try {
+        const { code } = req.body;
+        if (req.session.verificationCode == code) {
+          return done(null, req.user, { statusCode: 200, message: 'Code verified successfully!' });
+        } else {
+          return done(null, false, { message: 'Invalid code' });
+        }
+      } catch (error) {
+        return done(error);
+      }
+    }
+  )
+);
+
+passport.use(
+  "new_password",
+  new LocalStrategy(
+    { passReqToCallback: true, usernameField: "email", passwordField: "password" },
+    async (req, email, password, done) => {
+      try {
+        delete req.session.verificationCode;
+        let user = await userManager.readByEmail(email);
+        console.log(user, ' user ');
+        password = createHash(password)
+
+        user.password = password
+
+        userManager.update(user._id, user)
+        user = await userManager.readByEmail(email);
+        console.log(user, ' user after');
+
+        const userData = { email, role: user.role, photo: user.photo, _id: user._id, online: true}
+        const token = createToken(userData)
+        userData.token = token
+        return done(null, userData)
       } catch (error) {
         return done(error);
       }

@@ -223,3 +223,55 @@
 [33mERROR[39m: POST /api/sessions/recover-password _ 400 _0:46:39   Invalid credentials
 [33mERROR[39m: POST /online _ 401 _ 0:47:38 - Bad auth from policies!
 [33mERROR[39m: POST /api/sessions/recover-password _ 400 _0:47:41   Invalid credentials
+[33mERROR[39m: POST /online _ 401 _ 22:13:55 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 22:14:25 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 22:14:27 - Bad auth from policies!
+[33mERROR[39m: GET /products/real _ 403 _ 22:14:50 - FORBIDDEN 403!
+[33mERROR[39m: POST /online _ 401 _ 22:15:02 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 22:15:04 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 22:15:05 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 23:17:18 - Bad auth from policies!
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _23:17:20   Invalid credentials
+[33mERROR[39m: POST /online _ 401 _ 23:17:43 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 23:18:20 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 23:19:45 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 23:24:44 - Bad auth from policies!
+[33mERROR[39m: POST /api/sessions/verify_code _ 400 _23:24:51   Unexpected token '"', """" is not valid JSON
+[33mERROR[39m: GET /new_password _ 401 _ 23:24:54 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 23:27:39 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 23:28:13 - Bad auth from policies!
+[33mERROR[39m: POST /api/sessions/verify_code _ 400 _23:28:21   Unexpected token '"', ""111"" is not valid JSON
+[33mERROR[39m: POST /online _ 401 _ 23:28:22 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 23:28:49 - Bad auth from policies!
+[33mERROR[39m: POST /api/sessions/verify_code _ 400 _23:29:03   Unexpected token '"', ""111"" is not valid JSON
+[33mERROR[39m: POST /online _ 401 _ 23:29:03 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 23:29:25 - Bad auth from policies!
+[33mERROR[39m: POST /api/sessions/verify_code _ 400 _23:29:32   Unexpected token '"', ""1111"" is not valid JSON
+[33mERROR[39m: POST /online _ 401 _ 23:30:11 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 23:34:41 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 23:37:54 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 23:38:12 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 0:11:06 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 0:13:56 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 0:15:20 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 0:15:54 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 0:27:28 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 0:28:21 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 0:28:45 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 0:30:48 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 0:47:19 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 0:50:12 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 0:56:01 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 0:56:45 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 1:03:50 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 1:06:57 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 1:07:31 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 1:16:09 - Bad auth from policies!
+[33mERROR[39m: PUT /api/sessions/new_password _ undefined _1:20:54   localStorage is not defined
+[33mERROR[39m: PUT /api/sessions/new_password _ undefined _1:21:12   localStorage is not defined
+[33mERROR[39m: POST /online _ 401 _ 1:24:27 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 1:24:38 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 1:24:46 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 1:24:47 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 1:25:12 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 1:25:13 - Bad auth from policies!
