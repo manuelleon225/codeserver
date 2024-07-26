@@ -21,7 +21,7 @@ class UserManager {
     async create(data) {
         try {
             if(!data.email || !data.password){
-                return new CustomError(errors.missingData)
+                return CustomError.new(errors.missingData)
             } else {
                 const newUser = {
                     id: crypto.randomBytes(12).toString("hex"),
@@ -58,7 +58,7 @@ class UserManager {
             fileUsers = JSON.parse(fileUsers)
             const userFound = fileUsers.find((user) => user.id == id)
             if (!userFound) {
-                return new CustomError(errors.notFound);
+                return CustomError.new(errors.notFound);
             } else {
                 console.log(userFound);
                 return userFound
@@ -73,7 +73,7 @@ class UserManager {
             fileUsers = JSON.parse(fileUsers)
             const userFound =fileUsers.find((user)  => user.id == id )
             if(!userFound){
-                return new CustomError(errors.notFound)
+                return CustomError.new(errors.notFound)
             } else {
                 fileUsers = fileUsers.filter((user) => user.id != id)
                 fileUsers = JSON.stringify(fileUsers, null, 2)
@@ -141,7 +141,7 @@ class UserManager {
           const user = fileUsers.find((user) => user.email === email);
 
           if (!user) {
-            return new CustomError(errors.notFound);
+            return CustomError.new(errors.notFound);
           }
     
           return user;

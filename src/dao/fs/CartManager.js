@@ -21,7 +21,7 @@ class CartManager {
     async create(data) {
         try {
             if (!data.title) {
-                return new CustomError(errors.missingData);
+                return CustomError.new(errors.missingData);
             } else {
                 const newCart = {
                   id: data.id || crypto.randomBytes(12).toString("hex"),
@@ -59,7 +59,7 @@ class CartManager {
             fileCarts = await JSON.parse(fileCarts)
             const cartFound = await fileCarts.find((cart) => cart.id == id)
             if (!cartFound) {
-                return new CustomError(errors.notFound)
+                return CustomError.new(errors.notFound)
             } else {
                 return cartFound
             }
@@ -73,7 +73,7 @@ class CartManager {
             fileCarts = JSON.parse(fileCarts)
             const cartFound = fileCarts.find((cart) => cart.id == id)
             if(!cartFound){
-                return new CustomError(errors.notFound)
+                return CustomError.new(errors.notFound)
             } else {
                 fileCarts = fileCarts.filter((cart) => cart.id != id)
                 fileCarts = JSON.stringify(fileCarts, null, 2)
@@ -140,7 +140,7 @@ class CartManager {
           const cart = fileCarts.find((prod) => prod.email === email);
 
           if (!cart) {
-            return new CustomError(errors.notFound);
+            return CustomError.new(errors.notFound);
           }
     
           return cart;

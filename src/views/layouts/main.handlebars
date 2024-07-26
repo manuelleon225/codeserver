@@ -49,10 +49,9 @@
     {{{body}}}
   </body>
   <script>
-
     document.addEventListener("DOMContentLoaded", async () => {
       const rightUl = document.getElementById("right-navbar")
-      const online = sessionStorage.getItem("online") == "true" // Es un valor de cadena de texto, por lo que hay que confirmar si es true o no
+      const online = sessionStorage.getItem("online") == "true" 
 
       const opts = {
           method: "POST",
@@ -106,6 +105,11 @@
         }
       })
       } else {
+        sessionStorage.setItem("online", "false");
+        const response = await fetch('/api/cookies/clear_token', {
+          method: 'GET',
+          credentials: 'same-origin'
+        });
         rightUl.innerHTML = `
           <li class="nav-item">
               <a class="nav-link" href="/users/login">

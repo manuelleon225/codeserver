@@ -11,12 +11,11 @@ class SessionsController {
 
     async login(req, res, next) {
         try {
-          console.log(req.user);
           return res
           .cookie("token", req.user.token, {signedCookie: true})
           .json({
             statusCode: 201,
-            messsage: "Logged In!",
+            message: "Logged In!",
             token: req.user.token
           });
         } catch (error) {
@@ -30,12 +29,12 @@ class SessionsController {
           if (req.user.online) {
             return res.json({
               statusCode: 200,
-              messsage: "Is ONLINE!",
+              message: "Is ONLINE!",
               session: req.user
             });
           }
           localStorage.getItem("online", "false")
-          return new CustomError("Is OFFLINE!", 401);
+          return CustomError.new("Is OFFLINE!", 401);
         } catch (error) {
           return next(error);
         }
@@ -44,25 +43,60 @@ class SessionsController {
       
       async  signout(req, res, next) {
         try {
-          console.log(req.user, ' onli ');
           if (req.cookies["token"]) {
             return res
             .clearCookie("token")
             .json({
               statusCode: 200,
-              messsage: "Signed out!",
+              message: "Signed out!",
             });
           } 
-            return new CustomError("Not logged in", 401);
+            return CustomError.new("Not logged in", 401);
         } catch (error) {
           return next(error);
         }
       }; 
+
+      async sendMail(req, res, next) {
+        try {
+          return res.json({
+            statusCode: 200,
+            message: "Code sent to your email!",
+          })
+        } catch (error) {
+          return next(error);
+        }
+      }
+
+      async verifyCode(req, res, next) {
+        try {
+          return res.json({
+            statusCode: 200,
+            message: "Code verified successfully!",
+          })
+        } catch (error) {
+          return next(error);
+        }
+      }
+
+      async newPassword(req, res, next) {
+        try {
+          return res
+          .cookie("token", req.user.token, {signedCookie: true})
+          .json({
+            statusCode: 200,
+            
+            message: "Password changed successfully!",
+          })
+        } catch (error) {
+          return next(error);
+        }
+      }
 }
 
 const sessionsController = new SessionsController();
-const { register,login, online, signout }  = sessionsController;
-export { register,login,online,signout };
+const { register,login, online, signout, sendMail, verifyCode, newPassword }  = sessionsController;
+export { register,login,online,signout, sendMail, verifyCode, newPassword };
 
 
 

@@ -7,7 +7,7 @@ class CartManager {
     create(data){
         try{
             if(!data.title){
-                return new CustomError(errors.missingData);
+                return CustomError.new(errors.missingData);
             } else {
                 const newCart = {
                     id: crypto.randomBytes(12).toString("hex"),
@@ -26,7 +26,7 @@ class CartManager {
     read(){
         try{
             if(CartManager.#carts.length == 0){
-                return new CustomError("No hay carritos registrados", 400)
+                return CustomError.new("No hay carritos registrados", 400)
             } else {
                 //const carts = CartManager.#carts;
                 return CartManager.#carts
@@ -39,7 +39,7 @@ class CartManager {
         try{
             const cartFound = CartManager.#carts.find((cart) => cart.id == id)
             if(!cartFound){
-                return new CustomError(errors.notFound)
+                return CustomError.new(errors.notFound)
             } else {
                 return cartFound
             }
@@ -51,7 +51,7 @@ class CartManager {
         try{
             const cartFound = CartManager.#carts.find((cart) => cart.id == id)
             if(!cartFound){
-                return new CustomError(errors.notFound)
+                return CustomError.new(errors.notFound)
             } else {
                 CartManager.#carts = CartManager.#carts.filter((cart) => cart.id != id)
                 return CartManager.#carts
@@ -111,7 +111,7 @@ class CartManager {
           );
     
           if (!cart) {
-            return new CustomError(errors.notFound);
+            return CustomError.new(errors.notFound);
           }
     
           return cart;

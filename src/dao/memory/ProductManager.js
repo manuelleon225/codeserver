@@ -7,7 +7,7 @@ class ProductManager {
   create(data) {
     try {
       if (!data.title) {
-        return new CustomError(errors.missingData);
+        return CustomError.new(errors.missingData);
       } else {
         const newProduct = {
           id: crypto.randomBytes(12).toString("hex"),
@@ -27,7 +27,7 @@ class ProductManager {
   read(query) {
     try {
       if (ProductManager.#products.length == 0) {
-        return new CustomError(errors.notFound);
+        return CustomError.new(errors.notFound);
       } else {
         const products = ProductManager.#products.filter(
           (prod) => prod.category == query
@@ -42,7 +42,7 @@ class ProductManager {
     try {
       const prodFound = ProductManager.#products.find((prod) => prod.id == id);
       if (!prodFound) {
-        return new CustomError(errors.notFound);
+        return CustomError.new(errors.notFound);
       } else {
         return prodFound;
       }
@@ -54,7 +54,7 @@ class ProductManager {
     try {
       const prodFound = ProductManager.#products.find((prod) => prod.id == id);
       if (!prodFound) {
-        return new CustomError(errors.notFound);
+        return CustomError.new(errors.notFound);
       } else {
         ProductManager.#products = ProductManager.#products.filter(
           (prod) => prod.id != id
@@ -118,7 +118,7 @@ class ProductManager {
       );
 
       if (!product) {
-        return new CustomError(errors.notFound);
+        return CustomError.new(errors.notFound);
       }
 
       return product;

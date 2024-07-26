@@ -9,7 +9,7 @@ async function read(req, res, next) {
       if (allCarts.length !== 0) {
         return res.response200(allCarts)
       } else {
-        return new CustomError(errors.notFound);
+        return CustomError.new(errors.notFound);
       }
     } catch (err) {
       console.log(err);
@@ -24,7 +24,7 @@ async function read(req, res, next) {
       if (cartById) {
         return res.response200(cartById)
       } else {
-        return new CustomError(errors.notFound);
+        return CustomError.new(errors.notFound);
       }
     } catch (err) {
       return next(err);
@@ -38,7 +38,7 @@ async function read(req, res, next) {
       if (cartById) {
         return res.response200(cartById)
       } else {
-        return new CustomError(errors.notFound);
+        return CustomError.new(errors.notFound);
       }
     } catch (err) {
       return next(err);

@@ -21,7 +21,7 @@ class ProductManager {
     async create(data) {
         try {
             if (!data.title) {
-                return new CustomError(errors.missingData)
+                return CustomError.new(errors.missingData)
             } else {
                 const newProduct = {
                     id: crypto.randomBytes(12).toString("hex"),
@@ -60,7 +60,7 @@ class ProductManager {
             fileProducts = await JSON.parse(fileProducts)
             const prodFound = await fileProducts.find((prod) => prod.id == id)
             if (!prodFound) {
-                return new CustomError(errors.notFound)
+                return CustomError.new(errors.notFound)
             } else {
                 return prodFound
             }
@@ -74,7 +74,7 @@ class ProductManager {
             fileProducts = JSON.parse(fileProducts)
             const prodFound = fileProducts.find((prod) => prod.id == id)
             if(!prodFound){
-                return new CustomError(errors.notFound);
+                return CustomError.new(errors.notFound);
             } else {
                 fileProducts = fileProducts.filter((prod) => prod.id != id)
                 fileProducts = JSON.stringify(fileProducts, null, 2)
@@ -141,7 +141,7 @@ class ProductManager {
           const product = fileProducts.find((prod) => prod.email === email);
 
           if (!product) {
-            return new CustomError(errors.notFound);
+            return CustomError.new(errors.notFound);
           }
     
           return product;
