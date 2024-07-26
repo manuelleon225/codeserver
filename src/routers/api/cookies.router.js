@@ -25,9 +25,9 @@ cookiesRouter.get("/get", async (req, res, next) => {
   }
 });
 
-cookiesRouter.get("/clear", async (req, res, next) => {
+cookiesRouter.get("/clear_token", async (req, res, next) => {
   try {
-    return res.clearCookie("modo").json({ response: "borrada" });
+    return res.clearCookie("token").json({ response: "token deleted" });
   } catch (error) {
     return next(error);
   }

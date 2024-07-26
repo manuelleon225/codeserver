@@ -7,7 +7,7 @@ class UserManager {
   create(data) {
     try {
       if (!data.email || !data.password) {
-        return new CustomError(errors.missingData);
+        return CustomError.new(errors.missingData);
       } else {
         const newUser = {
           id: crypto.randomBytes(12).toString("hex"),
@@ -26,7 +26,7 @@ class UserManager {
   read() {
     try {
       if (UserManager.#users.length == 0) {
-        return new CustomError(errors.notFound);
+        return CustomError.new(errors.notFound);
       } else {
         return UserManager.#users;
       }
@@ -39,7 +39,7 @@ class UserManager {
     try {
       const userFound = UserManager.#users.find((user) => user.id == id);
       if (!userFound) {
-        return new CustomError(errors.notFound);
+        return CustomError.new(errors.notFound);
       } else {
         return userFound;
       }
@@ -51,7 +51,7 @@ class UserManager {
     try {
       const userFound = UserManager.#users.find((user) => user.id == id);
       if (!userFound) {
-        return new CustomError(errors.notFound);
+        return CustomError.new(errors.notFound);
       } else {
         UserManager.#users = UserManager.#users.filter((user) => user.id != id);
         return UserManager.#users;
@@ -113,7 +113,7 @@ class UserManager {
       );
 
       if (!user) {
-        return new CustomError(errors.notFound);
+        return CustomError.new(errors.notFound);
       }
 
       return user;

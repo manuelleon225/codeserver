@@ -28,7 +28,7 @@ class CartRouter extends CustomRouter {
             return res.response403()
           }
         } else {
-          return new CustomError(errors.notFound);
+          return CustomError.new(errors.notFound);
         }
       } catch (err) {
         return next(err);

@@ -7,3 +7,271 @@
 [33mERROR[39m: POST  /online  22:03:55 - jwt expired
 [33mERROR[39m: POST  /online  22:03:59 - jwt expired
 [33mERROR[39m: POST /online _ 400 _ 22:07:00 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 20:38:42 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 20:38:43 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 20:38:45 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 20:40:07 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 20:44:07 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 20:44:20 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 20:44:29 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 20:44:30 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 20:44:31 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 20:44:40 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 20:45:06 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 20:45:30 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 20:45:33 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 20:46:12 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 20:49:38 - jwt expired
+[33mERROR[39m: GET /recover-password _ 400 _ 20:49:38 - jwt expired
+[33mERROR[39m: GET /recover-password _ 400 _ 20:52:54 - jwt expired
+[33mERROR[39m: GET /recover-password _ 400 _ 20:52:56 - jwt expired
+[33mERROR[39m: GET /recover-password _ 400 _ 20:53:34 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 20:53:36 - jwt expired
+[33mERROR[39m: GET /recover-password _ 400 _ 20:53:37 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 20:54:46 - jwt expired
+[33mERROR[39m: GET /recover-password _ 400 _ 20:54:53 - jwt expired
+[33mERROR[39m: GET /recover-password _ 400 _ 20:56:10 - jwt expired
+[33mERROR[39m: GET /recover-password _ 400 _ 20:56:14 - jwt expired
+[33mERROR[39m: GET /recover-password _ 400 _ 20:58:53 - gatdem
+[33mERROR[39m: POST /online _ 400 _ 21:01:33 - jwt expired
+[33mERROR[39m: GET /recover-password _ 400 _ 21:01:34 - jwt expired
+[33mERROR[39m: GET /recover-password _ 400 _ 21:30:03 - jwt expired
+[33mERROR[39m: GET /recover-password _ 400 _ 21:30:03 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 21:30:05 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 21:30:06 - jwt expired
+[33mERROR[39m: GET /recover-password _ 400 _ 21:30:08 - jwt expired
+[33mERROR[39m: GET /recover-password _ 400 _ 21:31:09 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 21:31:13 - jwt expired
+[33mERROR[39m: GET /recover-password _ 400 _ 21:31:14 - jwt expired
+[33mERROR[39m: GET /recover-password _ 400 _ 21:31:44 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 21:31:46 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 21:31:47 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 21:31:48 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 21:31:50 - jwt expired
+[33mERROR[39m: GET /recover-password _ 400 _ 21:31:51 - jwt expired
+[33mERROR[39m: GET /recover-password _ 400 _ 21:33:11 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 21:33:13 - jwt expired
+[33mERROR[39m: GET /recover-password _ 400 _ 21:33:14 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 21:33:21 - jwt expired
+[33mERROR[39m: GET /recover-password _ 400 _ 21:33:22 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 21:33:29 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 21:33:37 - jwt expired
+[33mERROR[39m: GET /recover-password _ 400 _ 21:33:41 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 21:33:56 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 21:34:01 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 21:35:05 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 21:35:06 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 21:35:07 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 21:35:08 - jwt expired
+[33mERROR[39m: GET /recover-password _ 400 _ 21:35:10 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 21:36:11 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 21:36:15 - jwt expired
+[33mERROR[39m: GET /recover-password _ 400 _ 21:36:17 - jwt expired
+[33mERROR[39m: GET /recover-password _ 400 _ 21:36:57 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 21:37:11 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 21:37:30 - jwt expired
+[33mERROR[39m: GET /recover-password _ 400 _ 21:37:39 - jwt expired
+[33mERROR[39m: GET /recover-password _ 400 _ 21:38:22 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 21:38:25 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 21:38:30 - jwt expired
+[33mERROR[39m: GET /recover-password _ 400 _ 21:38:32 - jwt expired
+[33mERROR[39m: GET /recover-password _ 401 _ 21:45:12 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 21:45:16 - Bad auth from policies!
+[33mERROR[39m: GET /recover-password _ 401 _ 21:45:18 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 21:45:28 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 21:51:15 - Bad auth from policies!
+[33mERROR[39m: POST /api/sessions/login _ undefined _21:56:57   passportMiddleware is not defined
+[33mERROR[39m: POST /online _ 401 _ 21:59:46 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 22:00:55 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 22:02:28 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 22:07:39 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 22:07:41 - Bad auth from policies!
+[33mERROR[39m: GET /products/real _ 403 _ 22:08:37 - FORBIDDEN 403!
+[33mERROR[39m: POST /online _ 401 _ 22:08:44 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 22:08:47 - Bad auth from policies!
+[33mERROR[39m: GET /recover-password _ 401 _ 22:08:49 - Bad auth from policies!
+[33mERROR[39m: GET /recover-password _ 401 _ 22:09:49 - Bad auth from policies!
+[33mERROR[39m: GET /recover-password _ 401 _ 22:12:13 - Bad auth from policies!
+[33mERROR[39m: GET /recover-password _ 401 _ 22:12:47 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 22:13:04 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 22:13:05 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 22:13:09 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 22:13:38 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 22:13:39 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 22:13:40 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 22:15:21 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 22:15:40 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 22:18:41 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 22:19:17 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 22:19:35 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 22:25:43 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 22:25:58 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 22:26:36 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 22:26:44 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 22:27:44 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 22:28:02 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 22:28:49 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 22:28:52 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 22:28:54 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 22:29:19 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 22:29:39 - Bad auth from policies!
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _22:29:44   Unexpected token 'a', "asd@asd.com" is not valid JSON
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _22:30:16   Unexpected token 'a', "asd@asd.com" is not valid JSON
+[33mERROR[39m: POST /online _ 401 _ 22:30:21 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 22:30:26 - Bad auth from policies!
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _22:30:29   Unexpected token '"', ""asd@asd.com"" is not valid JSON
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _22:31:36   Unexpected token '"', ""asd@asd.com"" is not valid JSON
+[33mERROR[39m: POST /online _ 401 _ 22:31:40 - Bad auth from policies!
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _22:31:43   Unexpected token '"', ""asd@asd.com"" is not valid JSON
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _22:32:02   Unexpected token '"', ""asd@asd.com"" is not valid JSON
+[33mERROR[39m: POST /online _ 401 _ 22:32:05 - Bad auth from policies!
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _22:32:07   Unexpected token 'a', "asd@asd.com" is not valid JSON
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _19:13:06   Unexpected token 'a', "asd@asd.com" is not valid JSON
+[33mERROR[39m: POST /online _ 401 _ 19:13:30 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 19:13:43 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 19:21:02 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 19:24:20 - Bad auth from policies!
+[33mERROR[39m: POST /api/sessions/login _ undefined _19:36:05   Class constructor CustomError cannot be invoked without 'new'
+[33mERROR[39m: POST /api/sessions/login _ undefined _19:37:22   CustomError.new is not a constructor
+[33mERROR[39m: POST /api/sessions/login _ undefined _19:47:49   CustomError.new is not a constructor
+[33mERROR[39m: POST /api/sessions/login _ undefined _19:48:01   CustomError.new is not a constructor
+[33mERROR[39m: POST /api/sessions/login _ undefined _19:49:14   CustomError.new is not a constructor
+[33mERROR[39m: POST /api/sessions/login _ undefined _19:50:00   Cannot access 'error' before initialization
+[33mERROR[39m: POST /api/sessions/login _ undefined _19:52:06   Cannot access 'error' before initialization
+[33mERROR[39m: POST /api/sessions/login _ 401 _19:52:20   Bad auth
+[33mERROR[39m: POST /api/sessions/login _ 401 _19:53:20   Bad auth
+[33mERROR[39m: POST /api/sessions/login _ 401 _19:53:32   Bad auth
+[33mERROR[39m: POST /api/sessions/login _ 401 _19:53:42   Bad auth
+[33mERROR[39m: POST /api/sessions/login _ 401 _19:53:47   Bad auth
+[33mERROR[39m: POST /api/sessions/login _ 401 _19:53:58   Bad auth
+[33mERROR[39m: POST /signout _ 401 _ 19:54:08 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 19:54:11 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 19:56:14 - Bad auth from policies!
+[33mERROR[39m: POST /api/sessions/login _ 401 _19:56:23   Bad auth
+[33mERROR[39m: POST /online _ 401 _ 20:56:49 - Bad auth from policies!
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _21:31:59   Invalid credentials
+[33mERROR[39m: POST /online _ 401 _ 23:06:26 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 23:08:48 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 23:08:50 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 23:08:52 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 23:10:09 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 23:10:15 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 23:10:58 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 23:11:26 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 23:11:38 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 23:12:00 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 23:12:19 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 23:12:41 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 23:12:42 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 23:12:58 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 23:12:59 - Bad auth from policies!
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _23:13:17   Invalid credentials
+[33mERROR[39m: POST /online _ 401 _ 23:15:53 - Bad auth from policies!
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _23:15:57   Invalid credentials
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _23:16:54   Invalid credentials
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _23:19:59   Invalid credentials
+[33mERROR[39m: POST /online _ 401 _ 23:21:22 - Bad auth from policies!
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _23:21:24   Invalid credentials
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _23:23:05   Invalid credentials
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _23:34:13   Invalid credentials
+[33mERROR[39m: POST /api/sessions/recover-password _ undefined _23:34:45   Invalid credentials
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _23:35:59   Invalid credentials
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _23:36:11   Invalid credentials
+[33mERROR[39m: POST /api/sessions/recover-password _ undefined _23:37:18   Invalid credentials
+[31mFATAL[39m: POST /api/sessions/recover-password _ 23:38:50
+[33mERROR[39m: POST /api/sessions/recover-password _ 23:38:50
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _23:38:50   Invalid credentials
+[31mFATAL[39m: POST /api/sessions/recover-password _ 23:41:26
+[33mERROR[39m: POST /api/sessions/recover-password _ 23:41:26
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _23:41:26   Invalid credentials
+[31mFATAL[39m: POST /api/sessions/recover-password _ 23:42:01
+[33mERROR[39m: POST /api/sessions/recover-password _ 23:42:01
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _23:42:01   Invalid credentials
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _23:42:50   Invalid credentials
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _23:43:19   Invalid credentials
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _23:43:49   Invalid credentials
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _23:44:10   Invalid credentials
+[33mERROR[39m: POST /online _ 401 _ 23:44:34 - Bad auth from policies!
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _23:44:37   Invalid credentials
+[33mERROR[39m: POST /online _ 401 _ 0:27:38 - Bad auth from policies!
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _0:27:41   Invalid credentials
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _0:28:50   Invalid credentials
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _0:29:26   Invalid credentials
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _0:29:46   Invalid credentials
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _0:31:41   Invalid credentials
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _0:32:32   Invalid credentials
+[33mERROR[39m: POST /api/sessions/login _ 401 _0:33:38   Bad auth
+[33mERROR[39m: POST /online _ 401 _ 0:33:52 - Bad auth from policies!
+[33mERROR[39m: POST /api/sessions/login _ 401 _0:33:55   Bad auth
+[33mERROR[39m: POST /online _ 401 _ 0:35:06 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 0:35:07 - Bad auth from policies!
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _0:35:09   Invalid credentials
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _0:35:22   Invalid credentials
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _0:36:15   Invalid credentials
+[33mERROR[39m: POST /online _ 401 _ 0:36:18 - Bad auth from policies!
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _0:36:19   Invalid credentials
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _0:36:23   Invalid credentials
+[33mERROR[39m: POST /online _ 401 _ 0:36:30 - Bad auth from policies!
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _0:36:34   Invalid credentials
+[33mERROR[39m: POST /api/sessions/login _ 401 _0:43:21   Bad auth
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _0:43:26   Invalid credentials
+[33mERROR[39m: POST /api/sessions/recover-password _ undefined _0:43:28   sendVerificationEmail is not defined
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _0:44:39   Invalid credentials
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _0:44:57   Invalid credentials
+[33mERROR[39m: POST /online _ 401 _ 0:45:39 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 0:46:36 - Bad auth from policies!
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _0:46:39   Invalid credentials
+[33mERROR[39m: POST /online _ 401 _ 0:47:38 - Bad auth from policies!
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _0:47:41   Invalid credentials
+[33mERROR[39m: POST /online _ 401 _ 22:13:55 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 22:14:25 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 22:14:27 - Bad auth from policies!
+[33mERROR[39m: GET /products/real _ 403 _ 22:14:50 - FORBIDDEN 403!
+[33mERROR[39m: POST /online _ 401 _ 22:15:02 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 22:15:04 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 22:15:05 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 23:17:18 - Bad auth from policies!
+[33mERROR[39m: POST /api/sessions/recover-password _ 400 _23:17:20   Invalid credentials
+[33mERROR[39m: POST /online _ 401 _ 23:17:43 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 23:18:20 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 23:19:45 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 23:24:44 - Bad auth from policies!
+[33mERROR[39m: POST /api/sessions/verify_code _ 400 _23:24:51   Unexpected token '"', """" is not valid JSON
+[33mERROR[39m: GET /new_password _ 401 _ 23:24:54 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 23:27:39 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 23:28:13 - Bad auth from policies!
+[33mERROR[39m: POST /api/sessions/verify_code _ 400 _23:28:21   Unexpected token '"', ""111"" is not valid JSON
+[33mERROR[39m: POST /online _ 401 _ 23:28:22 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 23:28:49 - Bad auth from policies!
+[33mERROR[39m: POST /api/sessions/verify_code _ 400 _23:29:03   Unexpected token '"', ""111"" is not valid JSON
+[33mERROR[39m: POST /online _ 401 _ 23:29:03 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 23:29:25 - Bad auth from policies!
+[33mERROR[39m: POST /api/sessions/verify_code _ 400 _23:29:32   Unexpected token '"', ""1111"" is not valid JSON
+[33mERROR[39m: POST /online _ 401 _ 23:30:11 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 23:34:41 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 23:37:54 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 23:38:12 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 0:11:06 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 0:13:56 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 0:15:20 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 0:15:54 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 0:27:28 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 0:28:21 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 0:28:45 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 0:30:48 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 0:47:19 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 0:50:12 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 0:56:01 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 0:56:45 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 1:03:50 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 1:06:57 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 1:07:31 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 1:16:09 - Bad auth from policies!
+[33mERROR[39m: PUT /api/sessions/new_password _ undefined _1:20:54   localStorage is not defined
+[33mERROR[39m: PUT /api/sessions/new_password _ undefined _1:21:12   localStorage is not defined
+[33mERROR[39m: POST /online _ 401 _ 1:24:27 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 1:24:38 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 1:24:46 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 1:24:47 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 1:25:12 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 1:25:13 - Bad auth from policies!

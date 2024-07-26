@@ -1,34 +1,85 @@
 <main class="d-flex w-100 flex-grow-1">
   <section class="d-flex flex-column align-items-center w-100">
-    <h1
-      class="bg-info-subtle p-2 text-center text-info w-100"
-    >PROFILE</h1>
-    <section
-      class="d-flex flex-column justify-content-center align-items-center w-25 m-3"
-    >
-      <h3 class="m-2 p-2 text-center">EMAIL: {{users.email}}</h3>
-      <img
-      id="user_photo"
-        style="width: 360px; height: 360px"
-        class="m-2 object-fit-cover"
-        src="{{users.photo}}"
-      />
-    </section>
+    <h1 class="bg-info-subtle p-2 text-center text-info w-100">PROFILE</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <section class="d-flex flex-column justify-content-left align-items-center">
+          <h3 class="m-2 p-2 text-center">EMAIL: {{users.email}}</h3>
+          <img id="user_photo" style="width: 360px; height: 360px" class="m-2 object-fit-cover" src="{{users.photo}}" />
+        </section>
+      </div>
+      <div class="col-md-6">
+        <section class="d-flex flex-column justify-content-center align-items-center">
+          <h3 class="m-2 p-2 text-center">CAMBIAR CONTRASEÑA</h2>
+            <form>
+              <div class="mb-3">
+                <!--<label for="code">Contraseña actual:</label>
+                <input type="password" id="password-1" name="password" class="form-control my-3" required>-->
+                <input type="text" id="emailUser" name="emailUser" class="form-control my-3" disabled="disable" value="{{users.email}}" hidden="hidden">
+                <label for="code">Nueva contraseña:</label>
+                <input type="password" id="password-2" name="password" class="form-control my-3" required>
+                <label for="code">Repetir nueva contraseña:</label>
+                <input type="password" id="password-3" name="password" class="form-control my-3" required>
+                <button id="change_password_btn" type="submit" class="btn btn-primary btn-block">Aceptar</button>
+              </div>
+            </form>
+        </section>
+      </div>
+    </div>
+
+
   </section>
 </main>
 <script>
   document.addEventListener("DOMContentLoaded", async () => {
     const opts = {
-          method: "POST",
-          headers: { "Content-Type" : "application/json"}
-        }
+      method: "POST",
+      headers: { "Content-Type": "application/json" }
+    }
     let resp = await fetch("/api/sessions/online", opts)
     resp = await resp.json()
-    if(resp.statusCode === 200){
+    if (resp.statusCode === 200) {
       let user = await resp.session
       document.getElementById("user_photo").src = user.photo
     } else {
-       alert("Debes iniciar sesion primero");
+      alert("Debes iniciar sesion primero");
     }
-  })
+  });
+
+  document.getElementById('change_password_btn').addEventListener('click', async (e) => {
+    e.preventDefault();
+    //const pass1 = document.getElementById('password-1').value;
+    const pass2 = document.getElementById('password-2').value;
+    const pass3 = document.getElementById('password-3').value;
+    const email = document.getElementById('emailUser').value;
+
+    if (pass2 !== pass3) {
+      alert('Passwords dont match');
+    } else {
+      // Validar la contraseña con la expresión regular
+      const passwordRegex = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
+      if (!passwordRegex.test(pass2)) {
+        alert('Password must be at least 8 characters and 1 uppercase letter and at least 1 number');
+      } else {
+        const newPass = {
+          email: email,
+          password: pass2
+        }
+
+        let changePassword = await fetch('/api/sessions/new_password', {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(newPass)
+        })
+
+        changePassword = await changePassword.json();
+        console.log(changePassword)
+        if (changePassword.statusCode == 200) {
+          alert(changePassword.message);
+          sessionStorage.setItem('online', 'true');
+          window.location.replace('/');
+        }
+      }
+    }
+  });
 </script>

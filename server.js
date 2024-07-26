@@ -50,10 +50,9 @@ server.set("view engine", "handlebars");
 server.set("views", __dirname + "/src/views");
 
 //middlewares
+server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
 server.use(express.static(__dirname + '/public'));
-
-server.use(express.json());
 server.use(cookieParser(environment.SECRET_COOKIE))
 // server.use(morgan("dev"));
 server.use(winston);

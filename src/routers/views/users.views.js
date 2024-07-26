@@ -18,6 +18,13 @@ class UsersRouter extends CustomRouter {
         return next(error);
       }
     });
+    this.read("/recover-password", ["PUBLIC"], async (req, res, next) => {
+      try {
+        return res.render("recover_password", { title: "Recover your password" })
+      } catch (error) {
+        return next(error)
+      }
+    });
     this.read("/:uid", ["USER", "ADMIN"], async (req, res, next) => {
       try {
         const { uid } = req.params;
