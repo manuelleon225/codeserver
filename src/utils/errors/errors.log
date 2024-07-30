@@ -275,3 +275,14 @@
 [33mERROR[39m: POST /online _ 401 _ 1:24:47 - Bad auth from policies!
 [33mERROR[39m: POST /online _ 401 _ 1:25:12 - Bad auth from policies!
 [33mERROR[39m: POST /online _ 401 _ 1:25:13 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 400 _ 21:36:17 - jwt expired
+[33mERROR[39m: POST /real _ 400 _ 23:21:57 - jwt expired
+[33mERROR[39m: POST /real _ 400 _ 23:24:32 - jwt expired
+[33mERROR[39m: POST /real _ 400 _ 23:42:58 - jwt expired
+[33mERROR[39m: POST /real _ 400 _ 23:43:28 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 23:44:44 - jwt expired
+[33mERROR[39m: POST /online _ 401 _ 23:44:45 - Bad auth from policies!
+[33mERROR[39m: POST /api/sessions/login _ 400 _23:44:52   Invalid credentials
+[33mERROR[39m: POST /api/sessions/login _ 400 _23:44:57   Invalid credentials
+[33mERROR[39m: POST /online _ 401 _ 23:45:04 - Bad auth from policies!
+[33mERROR[39m: GET /api/products/:pid _ undefined _23:49:44   Cast to ObjectId failed for value "{ _id: ':pid' }" (type Object) at path "_id" for model "products"
