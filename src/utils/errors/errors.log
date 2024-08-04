@@ -286,3 +286,43 @@
 [33mERROR[39m: POST /api/sessions/login _ 400 _23:44:57   Invalid credentials
 [33mERROR[39m: POST /online _ 401 _ 23:45:04 - Bad auth from policies!
 [33mERROR[39m: GET /api/products/:pid _ undefined _23:49:44   Cast to ObjectId failed for value "{ _id: ':pid' }" (type Object) at path "_id" for model "products"
+[33mERROR[39m: GET /docs/ _ undefined _15:54:22   Server selection timed out after 30000 ms
+[33mERROR[39m: PUT /1c8f84f6e1855b4767829c3d _ 401 _ 16:07:21 - Bad auth from policies!
+[33mERROR[39m: PUT /1c8f84f6e1855b4767829c3d _ 401 _ 16:08:16 - Bad auth from policies!
+[33mERROR[39m: PUT /1c8f84f6e1855b4767829c3d _ 401 _ 16:08:57 - Bad auth from policies!
+[33mERROR[39m: PUT /api/products/6685f39115c72694868d4891 _ undefined _16:19:41   Operation `products.findOneAndUpdate()` buffering timed out after 10000ms
+[33mERROR[39m: GET /66a1a6eecf4455f3f932aea2 _ 400 _ 13:36:34 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 13:36:42 - jwt expired
+[33mERROR[39m: GET /products/real _ 400 _ 13:36:50 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 13:36:53 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 13:36:54 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 13:36:57 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 13:37:00 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 13:37:03 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 13:37:05 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 13:37:08 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 13:37:11 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 13:37:13 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 13:37:17 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 13:37:24 - jwt expired
+[33mERROR[39m: POST /online _ 401 _ 13:37:26 - Bad auth from policies!
+[33mERROR[39m: POST /api/sessions/login _ 400 _13:37:32   Invalid credentials
+[33mERROR[39m: PUT /api/products/%7Bpid%7D. _ undefined _13:39:03   Cast to ObjectId failed for value "{ _id: '{pid}.' }" (type Object) at path "_id" for model "products"
+[33mERROR[39m: PUT /api/products/6685f39115c72694868d4891. _ undefined _13:41:20   Cast to ObjectId failed for value "{ _id: '6685f39115c72694868d4891.' }" (type Object) at path "_id" for model "products"
+[33mERROR[39m: PUT /api/products/6685f39115c72694868d4891 _ undefined _17:16:02   Class constructor ObjectId cannot be invoked without 'new'
+[33mERROR[39m: PUT /api/products/6685f39115c72694868d4891 _ undefined _17:16:08   Class constructor ObjectId cannot be invoked without 'new'
+[33mERROR[39m: PUT /api/products/6685f39115c72694868d4891. _ undefined _17:17:07   Cast to ObjectId failed for value "{ _id: '6685f39115c72694868d4891.' }" (type Object) at path "_id" for model "products"
+[33mERROR[39m: PUT /api/products/6685f39115c72694868d4891. _ undefined _17:19:06   Cast to ObjectId failed for value "{ _id: '6685f39115c72694868d4891.' }" (type Object) at path "_id" for model "products"
+[33mERROR[39m: GET /api/products/6685f39115c72694868d4891. _ undefined _17:20:18   Cast to ObjectId failed for value "{ _id: '6685f39115c72694868d4891.' }" (type Object) at path "_id" for model "products"
+[33mERROR[39m: DELETE /del/:pid _ 401 _ 17:27:07 - Bad auth from policies!
+[33mERROR[39m: DELETE /api/products/del/6685f39115c72694868d4891 _ undefined _17:33:52   Cannot read properties of null (reading '_id')
+[33mERROR[39m: DELETE /api/products/del/6685f39115c72694868d4891 _ undefined _17:34:12   Cannot read properties of null (reading '_id')
+[33mERROR[39m: DELETE /api/products/del/6685f39115c72694868d4891 _ undefined _17:36:09   Cannot read properties of null (reading '_id')
+[33mERROR[39m: DELETE /api/products/del/6685f39115c72694868d4891 _ undefined _17:37:19   Cannot read properties of null (reading '_id')
+[33mERROR[39m: DELETE /api/products/del/6685f39115c72694868d4891 _ undefined _17:38:51   mongoose is not defined
+[33mERROR[39m: DELETE /api/products/del/6685f39115c72694868d4891 _ undefined _17:39:06   Class constructor ObjectId cannot be invoked without 'new'
+[33mERROR[39m: DELETE /api/products/del/6685f39115c72694868d4891 _ undefined _17:39:57   Cannot read properties of null (reading '_id')
+[33mERROR[39m: DELETE /api/products/del/6685f39115c72694868d4891 _ undefined _17:41:10   Cannot read properties of null (reading '_id')
+[33mERROR[39m: DELETE /api/products/del/6685f39115c72694868d4891 _ undefined _17:44:28   Cannot read properties of null (reading '_id')
+[33mERROR[39m: DELETE /api/products/del/6685f39115c72694868d4891 _ undefined _17:44:46   Cannot read properties of null (reading '_id')
+[33mERROR[39m: GET /api/products/6685f39115c72694868d4891 _ undefined _17:45:00   res.error404 is not a function

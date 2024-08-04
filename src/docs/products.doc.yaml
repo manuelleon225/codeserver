@@ -134,12 +134,12 @@ components:
             price: 24.99
             stock: 31
         info:
-          totalDocs: 100
+          totalDocs: 30
           page: 3
-          totalPages: 5
-          limit: 20
+          totalPages: 10
+          limit: 3
           prevPage: 2
-          nextPage: 5
+          nextPage: 4
     Error400:
       type: object
       properties:
@@ -233,7 +233,7 @@ paths:
   
   /api/products/{pid}:
     get:
-      summary: Endpoint to get all products
+      summary: Endpoint to get a specific product
       tags: 
         - Product
       parameters:
@@ -252,6 +252,31 @@ paths:
                 $ref: '#/components/responses/Response200one'
         404:
           description: Not found product
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error404'
+        500:
+          description: ERROR FROM SERVER
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error500'
+
+  /api/products/paginate:
+    get:
+      summary: Endpoint to get products paginated
+      tags: 
+        - Product
+      responses: 
+        200:
+          description: Products
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Paginate'
+        404:
+          description: Not found products
           content:
             application/json:
               schema:
@@ -284,6 +309,105 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/responses/Message201'
+        400:
+          description: Missing data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error400'
+        401:
+          description: Without authenticate - Neccesary token
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error401'
+        403:
+          description: Authenticated but without neccesary permissions
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error403'
+        500:
+          description: ERROR FROM SERVER
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error500'
+      
+  /api/products/upd/{pid}:
+    put:
+      summary: Endpoint to update a product
+      tags: 
+        - Product
+      security:
+        - cookieAuth: []
+      parameters:
+        - name: pid
+          in: path
+          required: true
+          description: Product ID
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: Data for update a product
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+      responses: 
+        200:
+          description: Product updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Message200'
+        400:
+          description: Missing data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error400'
+        401:
+          description: Without authenticate - Neccesary token
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error401'
+        403:
+          description: Authenticated but without neccesary permissions
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error403'
+        500:
+          description: ERROR FROM SERVER
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error500'
+      
+  /api/products/del/{pid}:
+    delete:
+      summary: Endpoint to delete a product
+      tags: 
+        - Product
+      security:
+        - cookieAuth: []
+      parameters:
+        - name: pid
+          in: path
+          required: true
+          description: Product ID
+          schema:
+            type: string
+      responses: 
+        200:
+          description: Product deleted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Message200'
         400:
           description: Missing data
           content:
