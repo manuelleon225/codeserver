@@ -19,6 +19,9 @@ import compression from "express-compression";
 import winston from "./src/middlewares/winston.mid.js";
 import cluster from "cluster";
 import { cpus } from "os";
+import { serve, setup } from "swagger-ui-express";
+import swaggerJSDoc from "swagger-jsdoc";
+import swaggerOptions from "./src/utils/swagger.util.js";
 
 //http server
 const server = express();
@@ -40,14 +43,15 @@ if(cluster.isPrimary){
 
 //template engine
 const hbs = exphbs.create({
-    runtimeOptions: {
-      allowProtoPropertiesByDefault: true,
-      allowProtoMethodsByDefault: true,
-    }
-  });  
+  runtimeOptions: {
+    allowProtoPropertiesByDefault: true,
+    allowProtoMethodsByDefault: true,
+  }
+});  
 server.engine("handlebars", hbs.engine);
 server.set("view engine", "handlebars");
 server.set("views", __dirname + "/src/views");
+const specs = swaggerJSDoc(swaggerOptions);
 
 //middlewares
 server.use(express.json());
@@ -56,16 +60,16 @@ server.use(express.static(__dirname + '/public'));
 server.use(cookieParser(environment.SECRET_COOKIE))
 // server.use(morgan("dev"));
 server.use(winston);
-
 server.use(session({
   store: new MongoStore({ mongoUrl: environment.MONGO_DATABASE_URI, ttl: 60*60}),
   secret: environment.SECRET_JWT,
   resave: true,
   saveUninitialized: true,
-}))
+}));
 server.use(compression({
   brotli: { enabled: true, zlib:{} }
-}))
+}));
+server.use("/docs", serve, setup(specs));
 
 //endpoints
 server.use("/", indexRouter);

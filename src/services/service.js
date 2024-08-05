@@ -20,7 +20,7 @@ class Service {
     };
     destroyService = async (id) => {
       const destroy = await this.repository.destroyRepository(id);
-      return "File deleted ID: " + destroy._id;
+      return destroy;
     };
     updateService = async (id, data) => {
       const update = await this.repository.updateRepository(id, data);

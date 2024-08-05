@@ -1,0 +1,61 @@
+components:
+  schemas:
+    Cart:
+      type: object
+      properties:
+        user_id:
+          tpye: object,
+          properties:
+            _id:
+              type: string
+              description: User ID
+            email:
+              type: string
+              description: User Email
+            role:
+              type: number
+              description: User Role
+          description: Object User who made a purchase
+        product_id:
+          tpye: object,
+          properties:
+            _id:
+              type: string
+              description: ID of the purchased product
+            title: 
+              description: Product name
+              type: string
+            photo:
+              description: URL of product photo
+              type: string
+            category:
+              description: Product category
+              type: string
+            price:
+              description: Product price
+              type: number
+            stock:
+              description: Product stock
+              type: number
+          description: Object Product purchased
+        quantity:
+          type: number
+          description: Product cart quantity
+        state:
+          type: string
+          description: Purchase status
+      example:
+        user_id:
+          _id: 664d3f789fa1615a88270b5d
+          email: naza@gmail.com
+          role: 1
+        product_id:
+          _id: 6640fbf1401d49d5ef00113b
+          title: Auriculares inalámbricos Bluetooth
+          photo: https://images.fravega.com/f500/dbda7b26b93ee1f8c13c8bd93d49d593.jpg
+          category: Electronics
+          price: 59.99
+          stock: 35
+        quantity: 1
+        state: reserved
+  responses:
