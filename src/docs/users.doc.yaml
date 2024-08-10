@@ -147,72 +147,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/responses/Error500'
-
-  /api/users/{uid}:
-    get:
-      summary: Endpoint to get a specific user
-      tags:
-        - User
-      parameters:
-        - name: uid
-          in: path
-          required: true
-          description: User ID
-          schema:
-            type: string
-      responses:
-        200:
-          description: User found by ID
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/responses/Response200one'
-        400:
-          description: ID not found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/responses/Error400'
-        500:
-          description: ERROR FROM SERVER
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/responses/Error500'
-
-  /api/users/email/{email}:
-    get:
-      summary: Endpoint to get a user by email
-      tags:
-        - User
-      parameters:
-        - name: email
-          in: path
-          required: true
-          description: User email
-          schema:
-            type: string
-      responses:
-        200:
-          description: User found by email
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/responses/Response200one'
-        404:
-          description: Email not found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/responses/Error404'
-        500:
-          description: ERROR FROM SERVER
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/responses/Error500'
-
-  /api/users/:
     post:
       summary: Endpoint to create a user
       tags:
@@ -245,6 +179,36 @@ paths:
                 $ref: '#/components/responses/Error500'
 
   /api/users/{uid}:
+    get:
+      summary: Endpoint to get a specific user
+      tags:
+        - User
+      parameters:
+        - name: uid
+          in: path
+          required: true
+          description: User ID
+          schema:
+            type: string
+      responses:
+        200:
+          description: User found by ID
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Response200one'
+        400:
+          description: ID not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error400'
+        500:
+          description: ERROR FROM SERVER
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error500'
     put:
       summary: Endpoint to update a user
       tags:
@@ -282,8 +246,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/responses/Error500'
-
-  /api/users/{uid}:
     delete:
       summary: Endpoint to delete a user
       tags:
@@ -308,6 +270,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/responses/Error400'
+        500:
+          description: ERROR FROM SERVER
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error500'
+
+  /api/users/email/{email}:
+    get:
+      summary: Endpoint to get a user by email
+      tags:
+        - User
+      parameters:
+        - name: email
+          in: path
+          required: true
+          description: User email
+          schema:
+            type: string
+      responses:
+        200:
+          description: User found by email
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Response200one'
+        404:
+          description: Email not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error404'
         500:
           description: ERROR FROM SERVER
           content:

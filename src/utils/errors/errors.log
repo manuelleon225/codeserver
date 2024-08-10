@@ -326,3 +326,14 @@
 [33mERROR[39m: DELETE /api/products/del/6685f39115c72694868d4891 _ undefined _17:44:28   Cannot read properties of null (reading '_id')
 [33mERROR[39m: DELETE /api/products/del/6685f39115c72694868d4891 _ undefined _17:44:46   Cannot read properties of null (reading '_id')
 [33mERROR[39m: GET /api/products/6685f39115c72694868d4891 _ undefined _17:45:00   res.error404 is not a function
+[33mERROR[39m: GET / _ undefined _2:59:52 p. m.   Operation `products.find()` buffering timed out after 10000ms
+[33mERROR[39m: POST /online _ 401 _ 4:05:27 p. m. - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 4:05:48 p. m. - Bad auth from policies!
+[33mERROR[39m: POST /api/sessions/login _ 401 _4:11:15 p. m.   Bad auth
+[33mERROR[39m: POST /api/sessions/login _ 401 _4:15:26 p. m.   Bad auth
+[33mERROR[39m: POST /online _ 401 _ 4:28:09 p. m. - Bad auth from policies!
+[33mERROR[39m: POST /api/sessions/login _ 401 _4:28:47 p. m.   Bad auth
+[33mERROR[39m: POST /api/sessions/login _ 400 _4:49:35 p. m.   Invalid credentials
+[33mERROR[39m: POST /online _ 401 _ 4:50:40 p. m. - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 4:50:46 p. m. - Bad auth from policies!
+[33mERROR[39m: POST /api/sessions/login _ 400 _4:51:41 p. m.   Invalid credentials
