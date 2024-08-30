@@ -4,7 +4,8 @@ import cartsRouter from "./cart.api.js";
 import ticketsRouter from "./tickets.api.js";
 import sessionsRouter from "./session.api.js";
 import CustomRouter from "../CustomRouter.js";
-import cookiesRouter from "./cookies.router.js";
+import cookiesRouter from "./cookies.api.js";
+import paymentRouter from "./payment.api.js";
 
 class IndexApiRouter extends CustomRouter {
   init() {
@@ -14,6 +15,7 @@ class IndexApiRouter extends CustomRouter {
     this.use("/tickets", ticketsRouter);
     this.use("/sessions", sessionsRouter);
     this.use("/cookies", cookiesRouter);
+    this.use("/payment", paymentRouter);
   }
 }
 

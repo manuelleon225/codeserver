@@ -1,0 +1,310 @@
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          description: Unique identifier for the user
+          type: string
+        photo:
+          description: URL of the user's photo
+          type: string
+        email:
+          description: Email address of the user
+          type: string
+        password:
+          description: User's password
+          type: string
+        role:
+          description: Role of the user (e.g., '0' for admin, 'usuario' for regular user)
+          type: string
+      example:
+        id: bc0f07d1519936853262e3c7
+        photo: https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png
+        email: manuelleon@gmail.com
+        password: 123456
+        role: 0
+
+  responses:
+    Message200:
+      type: object
+      properties:
+        statusCode:
+          type: integer
+          format: int64
+          description: Operation status code resulting from the request - Ok
+        message:
+          type: string
+          description: Description text Ok
+      example:
+        statusCode: 200
+        message: Operation successful
+
+    Message201:
+      type: object
+      properties:
+        statusCode:
+          type: integer
+          format: int64
+          description: Operation status code resulting from the request - Ok creating a user
+        message:
+          type: string
+          description: Description text Ok created
+      example:
+        statusCode: 201
+        message: Created bc0f07d1519936853262e3c7
+
+    Response200one:
+      type: object
+      properties:
+        statusCode:
+          type: integer
+          format: int64
+          description: Operation status code resulting from the request - Ok returning user data
+        response:
+          type: object
+          description: Object with user data
+      example:
+        statusCode: 200
+        response:
+          id: bc0f07d1519936853262e3c7
+          photo: https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png
+          email: manuelleon@gmail.com
+          role: 0
+
+    Response200two:
+      type: object
+      properties:
+        statusCode:
+          type: integer
+          format: int64
+          description: Operation status code resulting from the request - Ok returning users data
+        response:
+          type: array
+          description: Array with user data
+      example:
+        statusCode: 200
+        response:
+          - id: bc0f07d1519936853262e3c7
+            photo: https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png
+            email: manuelleon@gmail.com
+            role: 0
+          - id: 702b04f9ac77d284b08d888b
+            photo: https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png
+            email: dali_98@gmail.com
+            role: usuario
+
+    Error400:
+      type: object
+      properties:
+        statusCode:
+          type: integer
+          format: int64
+          description: Operation status code resulting from the request - Error from client
+        message:
+          type: string
+          description: Description text with error message from client
+      example:
+        statusCode: 400
+        message: File not found
+
+    Error404:
+      type: object
+      properties:
+        statusCode:
+          type: integer
+          format: int64
+          description: Operation status code resulting from the request - Error for data not found
+        message:
+          type: string
+          description: Description text with error message about data not found
+      example:
+        statusCode: 404
+        message: Email not found
+
+paths:
+  /api/users/:
+    get:
+      summary: Endpoint to get all users
+      tags:
+        - User
+      responses:
+        200:
+          description: Users found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Response200two'
+        400:
+          description: File not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error400'
+        500:
+          description: ERROR FROM SERVER
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error500'
+    post:
+      summary: Endpoint to create a user
+      tags:
+        - User
+      requestBody:
+        required: true
+        description: Data to create a user
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        201:
+          description: User created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Message201'
+        400:
+          description: Missing data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error400'
+        500:
+          description: ERROR FROM SERVER
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error500'
+
+  /api/users/{uid}:
+    get:
+      summary: Endpoint to get a specific user
+      tags:
+        - User
+      parameters:
+        - name: uid
+          in: path
+          required: true
+          description: User ID
+          schema:
+            type: string
+      responses:
+        200:
+          description: User found by ID
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Response200one'
+        400:
+          description: ID not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error400'
+        500:
+          description: ERROR FROM SERVER
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error500'
+    put:
+      summary: Endpoint to update a user
+      tags:
+        - User
+      parameters:
+        - name: uid
+          in: path
+          required: true
+          description: User ID
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: Data to update a user
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        200:
+          description: User updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Message200'
+        400:
+          description: Missing data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error400'
+        500:
+          description: ERROR FROM SERVER
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error500'
+    delete:
+      summary: Endpoint to delete a user
+      tags:
+        - User
+      parameters:
+        - name: uid
+          in: path
+          required: true
+          description: User ID
+          schema:
+            type: string
+      responses:
+        200:
+          description: User deleted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Message200'
+        400:
+          description: Missing data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error400'
+        500:
+          description: ERROR FROM SERVER
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error500'
+
+  /api/users/email/{email}:
+    get:
+      summary: Endpoint to get a user by email
+      tags:
+        - User
+      parameters:
+        - name: email
+          in: path
+          required: true
+          description: User email
+          schema:
+            type: string
+      responses:
+        200:
+          description: User found by email
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Response200one'
+        404:
+          description: Email not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error404'
+        500:
+          description: ERROR FROM SERVER
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error500'

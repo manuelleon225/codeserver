@@ -58,7 +58,7 @@ async function read(req, res, next) {
     if (read.length > 0) {
       return res.response200(read);
     } else {
-      return res.error404("FILE NOT FOUND");
+      return res.error404("PRODUCT NOT FOUND");
     }
   } catch (error) {
     return next(error);
@@ -72,7 +72,7 @@ async function readOne(req, res, next) {
     if (readOne) {
       return res.response200(readOne);
     } else {
-      return res.error404("FILE NOT FOUND");
+      return res.error404("PRODUCT NOT FOUND");
     }
   } catch (error) {
     return next(error);
@@ -83,7 +83,11 @@ async function destroy(req, res, next) {
   try {
     const { pid } = req.params;
     const destroy = await destroyService(pid);
-    return res.response200(destroy);
+    if (destroy) {
+      return res.response200(destroy);
+    } else {
+      return res.error404("PRODUCT NOT FOUND");
+    }
   } catch (error) {
     return next(error);
   }
@@ -93,7 +97,11 @@ async function update(req, res, next) {
     const { pid } = req.params;
     const data = req.body;
     const update = await updateService(pid, data);
-    return res.response200(update);
+    if (update) {
+      return res.response200(update);
+    } else {
+      return res.error404("PRODUCT NOT FOUND");
+    }
   } catch (error) {
     return next(error);
   }
