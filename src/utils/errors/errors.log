@@ -359,3 +359,16 @@
 [33mERROR[39m: POST /api/payment _ 401 _12:42:55   You did not provide an API key. You need to provide your API key in the Authorization header, using Bearer auth (e.g. 'Authorization: Bearer YOUR_SECRET_KEY'). See https://stripe.com/docs/api#authentication for details, or we can help at https://support.stripe.com/.
 [33mERROR[39m: POST /api/payment _ undefined _12:59:20   Cannot read properties of undefined (reading 'url')
 [33mERROR[39m: POST /api/payment _ undefined _13:00:29   Cannot read properties of undefined (reading 'data')
+[33mERROR[39m: POST /online _ 401 _ 13:09:17 - Bad auth from policies!
+[33mERROR[39m: GET /cart/successful_purchase _ undefined _13:23:01   next is not a function
+[33mERROR[39m: GET /cart/successful_purchase _ undefined _13:23:30   next is not a function
+[33mERROR[39m: GET /cart/successful_purchase _ undefined _13:25:04   next is not a function
+[33mERROR[39m: GET /cart/successful_purchase _ undefined _13:26:06   next is not a function
+[33mERROR[39m: GET /cart/successful_purchase _ undefined _13:26:20   next is not a function
+[33mERROR[39m: GET /cart/successful_purchase _ undefined _13:28:49   Cast to ObjectId failed for value "{ _id: undefined }" (type Object) at path "user_id" for model "cart"
+[33mERROR[39m: GET /cart/successful_purchase _ undefined _13:29:40   Cast to ObjectId failed for value "{ _id: undefined }" (type Object) at path "user_id" for model "cart"
+[33mERROR[39m: GET /cart/successful_purchase _ undefined _13:30:10   user_id is not defined
+[33mERROR[39m: GET /cart/successful_purchase _ undefined _13:30:49   Cast to ObjectId failed for value "{ _id: undefined }" (type Object) at path "user_id" for model "cart"
+[33mERROR[39m: GET /cart/successful_purchase _ undefined _13:32:00   payment is not defined
+[33mERROR[39m: GET /cart/successful_purchase _ undefined _13:32:06   payment is not defined
+[33mERROR[39m: POST /api/payment _ 400 _13:38:42   The `line_items` parameter is required in payment mode.
