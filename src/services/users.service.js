@@ -1,4 +1,4 @@
-import Service from "./Service.js";
+import Service from "./service.js";
 import userManager from "../dao/mongo/managers/Users.manager.js";
 import usersRepository from "../repositories/users.rep.js";
 

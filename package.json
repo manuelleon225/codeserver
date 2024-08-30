@@ -23,6 +23,9 @@
     "passport-jwt": "^4.0.1",
     "passport-local": "^1.0.0",
     "socket.io": "^4.7.5",
+    "stripe": "^16.9.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
     "sweetalert2": "^11.11.0",
     "winston": "^3.13.0"
   },
@@ -41,14 +44,20 @@
     "simplex": "artillery quick --count 20 --num 100 'http://localhost:8080/simplex' -o ./test/artillery/simplex.json",
     "complex": "artillery quick --count 20 --num 100 'http://localhost:8080/complex' -o ./test/artillery/complex.json",
     "flow": "artillery run ./test/artillery/flow.yaml -o ./test/artillery/flow.json",
-    "report": "artillery report ./test/artillery/flow.json"
+    "report": "artillery report ./test/artillery/flow.json",
+    "mocha": "mocha ./test/mocha",
+    "chai": "mocha ./test/chai",
+    "supertest": "mocha ./test/supertest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@faker-js/faker": "^8.4.1",
+    "chai": "^5.1.1",
+    "mocha": "^10.7.0",
     "morgan": "^1.10.0",
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.0",
+    "supertest": "^7.0.0"
   }
 }

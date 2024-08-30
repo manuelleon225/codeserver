@@ -27,10 +27,16 @@ class ProductsRepository {
   };
   destroyRepository = async (id) => {
     const destroy = await this.model.destroy(id);
+    if(!destroy){
+      return "Not found product with ID " + id;
+    }
     return "File deleted ID: " + destroy._id;
   };
   updateRepository = async (id, data) => {
     const update = await this.model.update(id, data);
+    if(!update){
+      return "Not found product with ID " + id;
+    }
     return update;
   };
   paginateRepository = async ({ filter, opts }) => {

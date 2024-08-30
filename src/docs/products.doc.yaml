@@ -1,0 +1,435 @@
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        title: 
+          description: Product name
+          type: string
+        photo:
+          description: URL of product photo
+          type: string
+        category:
+          description: Product category
+          type: string
+        price:
+          description: Product price
+          type: number
+        stock:
+          description: Product stock
+          type: number
+      example:
+        title: Thermal Backpack
+        photo: www.photodefault.com/photo.png
+        category: Accesories
+        price: 39.99
+        stock: 63
+  securitySchemes:
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: token
+  responses:
+    Message200:
+      type: object
+      properties:
+        statusCode:
+          type: integer
+          format: int64
+          description: Operation status code resulting from the request - Ok in the request
+        message:
+          type: string
+          description: Description text Ok
+      example:
+        statusCode: 200
+        message: Product found
+    Message201:
+      type: object
+      properties:
+        statusCode:
+          type: integer
+          format: int64
+          description: Operation status code resulting from the request - Ok creating a product
+        message:
+          type: string
+          description: Description text Ok created
+      example:
+        statusCode: 201
+        message: Product created
+    Response200one:
+      type: object
+      properties:
+        statusCode:
+          type: integer
+          format: int64
+          description: Operation status code resulting from the request - Ok returning products data
+        response:
+          type: object
+          description: Object with data
+      example:
+        statusCode: 200
+        response:
+          title: Thermal Backpack
+          photo: www.photodefault.com/photo.png
+          category: Accesories
+          price: 39.99
+          stock: 63
+    Response200two:
+      type: object
+      properties:
+        statusCode:
+          type: integer
+          format: int64
+          description: Operation status code resulting from the request - Ok returning products data
+        response:
+          type: array
+          description: Array with data
+      example:
+        statusCode: 200
+        response:
+          - title: Thermal Backpack
+            photo: www.photodefault.com/photo.png
+            category: Accesories
+            price: 39.99
+            stock: 63
+          - title: Thermal Shirt
+            photo: www.photodefault.com/photo.png
+            category: Clothes
+            price: 25
+            stock: 20
+          - title: Thermal Pants
+            photo: www.photodefault.com/photo.png
+            category: Clothes
+            price: 24.99
+            stock: 31
+    Paginate:
+      type: object
+      properties:
+        statusCode:
+          type: integer
+          format: int64
+          description: Operation status code resulting from the request - Ok returning products pagination
+        response:
+          type: array
+          description: Array with data paginated and sorted
+        info:
+          type: object
+          description: Pagination data
+      example:
+        statusCode: 200
+        response: 
+          - title: Thermal Backpack
+            photo: www.photodefault.com/photo.png
+            category: Accesories
+            price: 39.99
+            stock: 63
+          - title: Thermal Shirt
+            photo: www.photodefault.com/photo.png
+            category: Clothes
+            price: 25
+            stock: 20
+          - title: Thermal Pants
+            photo: www.photodefault.com/photo.png
+            category: Clothes
+            price: 24.99
+            stock: 31
+        info:
+          totalDocs: 30
+          page: 3
+          totalPages: 10
+          limit: 3
+          prevPage: 2
+          nextPage: 4
+    Error400:
+      type: object
+      properties:
+        statusCode:
+          type: integer
+          format: int64
+          description: Operation status code resulting from the request - Error from client
+        message:
+          type: string
+          description: Description text with error message from client
+      example:
+        statusCode: 400
+        message: Missing data
+    Error401:
+      type: object
+      properties:
+        statusCode:
+          type: integer
+          format: int64
+          description: Operation status code resulting from the request - Error of authentication
+        message:
+          type: string
+          description: Description text with error message about the authentication
+      example:
+        statusCode: 401
+        message: Bad auth from policies!
+    Error403:
+      type: object
+      properties:
+        statusCode:
+          type: integer
+          format: int64
+          description: Operation status code resulting from the request - Error of authorization
+        message:
+          type: string
+          description: Description text with error message about the authorization
+      example:
+        statusCode: 403
+        message: FORBIDDEN 403!
+    Error404:
+      type: object
+      properties:
+        statusCode:
+          type: integer
+          format: int64
+          description: Operation status code resulting from the request - Error for data not found
+        message:
+          type: string
+          description: Description text with error message about data not found
+      example:
+        statusCode: 404
+        message: NOT FOUND!
+    Error500:
+      type: object
+      properties:
+        statusCode:
+          type: integer
+          format: int64
+          description: Operation status code resulting from the request - Error from server
+        message:
+          type: string
+          description: Description text with error message from server
+      example:
+        statusCode: 500
+        message: ERROR
+paths:
+  /api/products/:
+    get:
+      summary: Endpoint to get all products
+      tags: 
+        - Product
+      responses: 
+        200:
+          description: Products
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Response200two'
+        404:
+          description: Not found products
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error404'
+        500:
+          description: ERROR FROM SERVER
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error500'
+  
+  /api/products/{pid}:
+    get:
+      summary: Endpoint to get a specific product
+      tags: 
+        - Product
+      parameters:
+        - name: pid
+          in: path
+          required: true
+          description: Product ID
+          schema:
+            type: string
+      responses: 
+        200:
+          description: Product by ID
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Response200one'
+        404:
+          description: Not found product
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error404'
+        500:
+          description: ERROR FROM SERVER
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error500'
+
+  /api/products/paginate:
+    get:
+      summary: Endpoint to get products paginated
+      tags: 
+        - Product
+      responses: 
+        200:
+          description: Products
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Paginate'
+        404:
+          description: Not found products
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error404'
+        500:
+          description: ERROR FROM SERVER
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error500'
+      
+  /api/products/real:
+    post:
+      summary: Endpoint to create a product
+      tags: 
+        - Product
+      security:
+        - cookieAuth: []
+      requestBody:
+        required: true
+        description: Data for create a product
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+      responses: 
+        201:
+          description: Product created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Message201'
+        400:
+          description: Missing data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error400'
+        401:
+          description: Without authenticate - Neccesary token
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error401'
+        403:
+          description: Authenticated but without neccesary permissions
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error403'
+        500:
+          description: ERROR FROM SERVER
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error500'
+      
+  /api/products/upd/{pid}:
+    put:
+      summary: Endpoint to update a product
+      tags: 
+        - Product
+      security:
+        - cookieAuth: []
+      parameters:
+        - name: pid
+          in: path
+          required: true
+          description: Product ID
+          schema:
+            type: string
+      requestBody:
+        required: true
+        description: Data for update a product
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Product'
+      responses: 
+        200:
+          description: Product updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Message200'
+        400:
+          description: Missing data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error400'
+        401:
+          description: Without authenticate - Neccesary token
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error401'
+        403:
+          description: Authenticated but without neccesary permissions
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error403'
+        500:
+          description: ERROR FROM SERVER
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error500'
+      
+  /api/products/del/{pid}:
+    delete:
+      summary: Endpoint to delete a product
+      tags: 
+        - Product
+      security:
+        - cookieAuth: []
+      parameters:
+        - name: pid
+          in: path
+          required: true
+          description: Product ID
+          schema:
+            type: string
+      responses: 
+        200:
+          description: Product deleted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Message200'
+        400:
+          description: Missing data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error400'
+        401:
+          description: Without authenticate - Neccesary token
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error401'
+        403:
+          description: Authenticated but without neccesary permissions
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error403'
+        500:
+          description: ERROR FROM SERVER
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Error500'
+      

@@ -1,0 +1,51 @@
+<div class="">
+    
+</div>
+<div class="container">
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <div class="p-3 text-center">
+                    <h1 class="mb-5">Thank you for your purchase</h1>
+                    {{cart}}
+                    <button id="btn-home" class="btn btn-primary">Home</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    document.getElementById('btn-home').addEventListener('click', async () => {
+        const opts = {
+          method: "POST",
+          headers: { "Content-Type" : "application/json"}
+        }
+        let resp = await fetch("/api/sessions/online", opts)
+        resp = await resp.json()
+        if(resp.statusCode === 200){
+            let user = await resp.session
+            let products_cart = await fetch(`/api/cart?user_id=${user._id}`)
+            products_cart = await products_cart.json()
+            // OBtener cada producto y restarle la cantidad al quantity
+            products_cart.message.forEach(async (prod_cart) => {
+                let prodUpdated = {...prod_cart.product_id, stock: (prod_cart.product_id.stock - prod_cart.quantity)}
+                console.log(prodUpdated)
+                let prod = await fetch(`/api/products/upd/${prod_cart.product_id._id}`,
+                { 
+                    method: "PUT",
+                    headers: { "Content-Type" : "application/json"},
+                    body: JSON.stringify(prodUpdated)
+                })
+                prod = await prod.json()
+                
+                let response = await fetch(`http://localhost:8080/api/cart/${prod_cart._id}`, {
+                        method: "DELETE",
+                        headers: { "Content-Type": "application/json" }
+                    });
+            })
+
+            window.location.replace('/')
+        } else {
+            alert("Debes iniciar sesion primero");
+        }
+    })
+</script>

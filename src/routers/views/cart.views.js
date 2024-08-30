@@ -1,3 +1,4 @@
+import { createPayment } from "../../controllers/payment.controller.js";
 import cartManager from "../../dao/mongo/managers/Cart.manager.js";
 import CustomError from "../../utils/errors/CustomError.js";
 import errors from "../../utils/errors/Errors.js";
@@ -17,9 +18,7 @@ class CartRouter extends CustomRouter {
     this.read("/", ["USER", "ADMIN"], async function read(req, res, next) {
       try {
         const { user_id } = req.query;
-        console.log(req.query, ' query ');
         const { _id: user_id_token } = verifyToken(req.cookies["token"])
-        console.log(user_id_token, ' token _id');
         const cart = await cartManager.read({user_id:{_id: user_id}});
         if (cart) {
           if(user_id == user_id_token){
@@ -35,6 +34,13 @@ class CartRouter extends CustomRouter {
       }
     });
 
+    this.read("/successful_purchase", ["USER", "ADMIN"], async function read(req, res, next) {
+      try {
+        return res.render("buySuccess", { title: "Successful Purchase" });
+      } catch (error) {
+        return next(error);
+      }
+    });
   }
 }
 
