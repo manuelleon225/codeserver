@@ -337,3 +337,25 @@
 [33mERROR[39m: POST /online _ 401 _ 4:50:40 p. m. - Bad auth from policies!
 [33mERROR[39m: POST /online _ 401 _ 4:50:46 p. m. - Bad auth from policies!
 [33mERROR[39m: POST /api/sessions/login _ 400 _4:51:41 p. m.   Invalid credentials
+[33mERROR[39m: POST /online _ 400 _ 22:05:07 - jwt expired
+[33mERROR[39m: POST /online _ 401 _ 22:05:10 - Bad auth from policies!
+[33mERROR[39m: POST /api/sessions/login _ 401 _12:13:01   Bad auth
+[33mERROR[39m: POST /online _ 401 _ 12:13:26 - Bad auth from policies!
+[33mERROR[39m: POST /api/sessions/login _ 401 _12:13:40   Bad auth
+[33mERROR[39m: POST /api/sessions/login _ 401 _12:14:08   Bad auth
+[33mERROR[39m: POST /online _ 401 _ 12:14:21 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 12:14:24 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 12:14:25 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 12:15:10 - Bad auth from policies!
+[33mERROR[39m: POST /api/payment _ undefined _12:17:54   Cannot read properties of undefined (reading '_id')
+[33mERROR[39m: POST /api/payment _ undefined _12:18:47   Cannot read properties of undefined (reading '_id')
+[33mERROR[39m: POST /api/payment _ undefined _12:19:51   Cannot read properties of undefined (reading '_id')
+[33mERROR[39m: POST /api/payment _ undefined _12:21:11   Cannot read properties of undefined (reading '_id')
+[33mERROR[39m: POST /api/payment _ undefined _12:21:42   next is not defined
+[33mERROR[39m: POST /api/payment _ undefined _12:41:45   next is not defined
+[33mERROR[39m: POST /api/payment _ undefined _12:41:57   next is not defined
+[33mERROR[39m: POST /api/payment _ undefined _12:42:20   productsOnCart.map is not a function
+[33mERROR[39m: POST /api/payment _ undefined _12:42:45   productsOnCart.map is not a function
+[33mERROR[39m: POST /api/payment _ 401 _12:42:55   You did not provide an API key. You need to provide your API key in the Authorization header, using Bearer auth (e.g. 'Authorization: Bearer YOUR_SECRET_KEY'). See https://stripe.com/docs/api#authentication for details, or we can help at https://support.stripe.com/.
+[33mERROR[39m: POST /api/payment _ undefined _12:59:20   Cannot read properties of undefined (reading 'url')
+[33mERROR[39m: POST /api/payment _ undefined _13:00:29   Cannot read properties of undefined (reading 'data')
