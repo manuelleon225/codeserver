@@ -1,4 +1,4 @@
-import Service from "./Service.js";
+import Service from "./service.js";
 import CartsManagerMongo from "../data/mongo/CartsManager.js";
 import cartsRepository from "../repositories/carts.rep.js";
 
