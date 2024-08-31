@@ -7,13 +7,14 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const stripe = new Stripe(environment.SECRET_STRIPE_KEY)
+const API_URL = process.env.API_URL
 
 const createPaymentRepository = async (user_id) => {
   try {
     let productsOnCart = await cartManager.read({ user_id });
     const line_items = productsOnCart.map((prod) => new PaymentProduct(prod));
     const mode = "payment";
-    const success_url = "http://localhost:8080/cart/successful_purchase";
+    const success_url = `${API_URL}/cart/successful_purchase`;
     const intent = await stripe.checkout.sessions.create({
       line_items,
       mode,
