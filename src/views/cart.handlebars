@@ -23,11 +23,13 @@
   </div>
 
   <script>
+    const API_URL = `{{API_URL}}`
+
     // Event listener para eliminar un producto
     document.querySelectorAll('.remove-btn').forEach(item => {
       item.addEventListener('click', async (event) => {
         console.log(event.target.name, ' id ')
-        response = await fetch("http://localhost:8080/api/cart/" + event.target.name, {
+        response = await fetch(`${API_URL}/api/cart/` + event.target.name, {
           method: "DELETE",
           headers: { "Content-Type": "application/json" }
         });
@@ -39,33 +41,33 @@
 
     // Event listener para finalizar compra
     document.getElementById('checkout-btn').addEventListener('click', async () => {
-        const opts = {
-            method: "POST",
-            headers: { "Content-Type" : "application/json"}
-          }
-        let resp = await fetch("/api/sessions/online", opts)
-        resp = await resp.json()
-        if(resp.statusCode === 200){
-          let products_cart = await fetch(`http://localhost:8080/api/cart?user_id=${resp.session._id}`)
-          products_cart = await products_cart.json()
-          products_cart = products_cart.message
-          if(products_cart.length > 0){
-              resp = await fetch("/api/payment", opts)
-              resp = await resp.json()
-              if(resp.statusCode === 201){
-                window.location.replace(resp.message.url);
-              }
-          } else {
-            alert('Your cart is empty')
-          }
-        } else {
-          alert("You need login first");
+      const opts = {
+          method: "POST",
+          headers: { "Content-Type" : "application/json"}
         }
+      let resp = await fetch("/api/sessions/online", opts)
+      resp = await resp.json()
+      if(resp.statusCode === 200){
+        let products_cart = await fetch(`${API_URL}/api/cart?user_id=${resp.session._id}`)
+        products_cart = await products_cart.json()
+        products_cart = products_cart.message
+        if(products_cart.length > 0){
+            resp = await fetch("/api/payment", opts)
+            resp = await resp.json()
+            if(resp.statusCode === 201){
+              window.location.replace(resp.message.url);
+            }
+        } else {
+          alert('Your cart is empty')
+        }
+      } else {
+        alert("You need login first");
+      }
     });
 
     // Event listener para cancelar compra
     document.getElementById('cancel-btn').addEventListener('click', async () => {
-      // Tengo que hacer una peticion para cada item y que se borre, ya que se borran de la bd con el _id del carrito
+    // Tengo que hacer una peticion para cada item y que se borre, ya que se borran de la bd con el _id del carrito
       const opts = {
           method: "POST",
           headers: { "Content-Type" : "application/json"}
@@ -74,10 +76,10 @@
       resp = await resp.json()
       if(resp.statusCode === 200){
         let user = await resp.session
-        let products_cart = await fetch(`http://localhost:8080/api/cart?user_id=${user._id}`)
+        let products_cart = await fetch(`${API_URL}/api/cart?user_id=${user._id}`)
         products_cart = await products_cart.json()
         products_cart.message.forEach(async (prod_cart) => {
-          let response = await fetch(`http://localhost:8080/api/cart/${prod_cart._id}`, {
+          let response = await fetch(`${API_URL}/api/cart/${prod_cart._id}`, {
             method: "DELETE",
             headers: { "Content-Type": "application/json" }
           });

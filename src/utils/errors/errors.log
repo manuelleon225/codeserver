@@ -372,3 +372,16 @@
 [33mERROR[39m: GET /cart/successful_purchase _ undefined _13:32:00   payment is not defined
 [33mERROR[39m: GET /cart/successful_purchase _ undefined _13:32:06   payment is not defined
 [33mERROR[39m: POST /api/payment _ 400 _13:38:42   The `line_items` parameter is required in payment mode.
+[33mERROR[39m: GET / _ undefined _15:30:28   Operation `products.find()` buffering timed out after 10000ms
+[33mERROR[39m: GET / _ undefined _15:30:48   connection timed out
+[33mERROR[39m: GET /favicon.ico _ undefined _15:30:48   connection timed out
+[33mERROR[39m: GET /search/6640fbf1401d49d5ef001150 _ undefined _15:50:04   read ETIMEDOUT
+[33mERROR[39m: POST /api/sessions/online _ undefined _15:50:04   read ETIMEDOUT
+[33mERROR[39m: POST /api/sessions/online _ undefined _15:50:04   read ETIMEDOUT
+[33mERROR[39m: POST /online _ 400 _ 15:50:06 - Operation `users.findOne()` buffering timed out after 10000ms
+[33mERROR[39m: POST /signout _ 400 _ 15:50:22 - Operation `users.findOne()` buffering timed out after 10000ms
+[33mERROR[39m: GET /66a1a6eecf4455f3f932aea2 _ 400 _ 15:50:23 - Operation `users.findOne()` buffering timed out after 10000ms
+[33mERROR[39m: GET /users/66a1a6eecf4455f3f932aea2 _ undefined _15:50:31   read ETIMEDOUT
+[33mERROR[39m: GET /favicon.ico _ undefined _15:50:31   read ETIMEDOUT
+[33mERROR[39m: POST /online _ 401 _ 15:55:23 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 15:55:24 - Bad auth from policies!

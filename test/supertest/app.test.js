@@ -3,9 +3,13 @@ import supertest from "supertest";
 import environment from "../../src/utils/env.util.js";
 import usersRepository from "../../src/repositories/users.rep.js";
 import productsRepository from "../../src/repositories/products.rep.js";
+import dotenv from "dotenv";
+
+dotenv.config();
+const API_URL = process.env.API_URL
 
 const requester = supertest(
-  `http://localhost:8080/api`
+  `${API_URL}/api`
 ); /* hacer dinamico el puerto */
 
 describe("Testeando SERVER", () => {

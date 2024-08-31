@@ -14,10 +14,11 @@
     </div>
 
 <script>
-    document.getElementById('btn-home').addEventListener('click', async () => {
+    const API_URL = `{{API_URL}}`
+    const cleanCartAndReduceStock = async () => {
         const opts = {
-          method: "POST",
-          headers: { "Content-Type" : "application/json"}
+            method: "POST",
+            headers: { "Content-Type" : "application/json"}
         }
         let resp = await fetch("/api/sessions/online", opts)
         resp = await resp.json()
@@ -37,15 +38,19 @@
                 })
                 prod = await prod.json()
                 
-                let response = await fetch(`http://localhost:8080/api/cart/${prod_cart._id}`, {
+                let response = await fetch(`${API_URL}/api/cart/${prod_cart._id}`, {
                         method: "DELETE",
                         headers: { "Content-Type": "application/json" }
                     });
             })
-
-            window.location.replace('/')
         } else {
             alert("Debes iniciar sesion primero");
+            window.location.replace('/')
         }
+    }
+    cleanCartAndReduceStock();
+
+    document.getElementById('btn-home').addEventListener('click', async () => {
+            window.location.replace('/')
     })
 </script>

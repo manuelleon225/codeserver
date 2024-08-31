@@ -22,6 +22,7 @@ import { cpus } from "os";
 import { serve, setup } from "swagger-ui-express";
 import swaggerJSDoc from "swagger-jsdoc";
 import swaggerOptions from "./src/utils/swagger.util.js";
+import dotenv from "dotenv";
 
 //http server
 const server = express();
@@ -70,6 +71,8 @@ server.use(compression({
   brotli: { enabled: true, zlib:{} }
 }));
 server.use("/docs", serve, setup(specs));
+dotenv.config();
+server.locals.API_URL = process.env.API_URL; 
 
 //endpoints
 server.use("/", indexRouter);

@@ -45,65 +45,66 @@
   </div>
 </div>
 <script>
-const urlParams = new URL(location.href);
-const pid = urlParams.searchParams.get("id");
-const addCartButton = document.getElementById("addCart");
-let prod = {};
-const addButton = document.getElementById("incrementBtn");
-const decButton = document.getElementById("decrementBtn");
-const itemCount = document.getElementById("itemCount");
-let count = 1;
+    const API_URL = `{{API_URL}}`
+    const urlParams = new URL(location.href);
+    const pid = urlParams.searchParams.get("id");
+    const addCartButton = document.getElementById("addCart");
+    let prod = {};
+    const addButton = document.getElementById("incrementBtn");
+    const decButton = document.getElementById("decrementBtn");
+    const itemCount = document.getElementById("itemCount");
+    let count = 1;
 
-addCartButton.addEventListener("click", async () => {
-  try {
-    const opts = {
-          method: "POST",
-          headers: { "Content-Type" : "application/json"}
+    addCartButton.addEventListener("click", async () => {
+      try {
+        const opts = {
+              method: "POST",
+              headers: { "Content-Type" : "application/json"}
+            }
+        let resp = await fetch("/api/sessions/online", opts)
+        resp = await resp.json()
+        if(resp.statusCode === 200){
+          let user = await resp.session
+          const product_id = "{{productById._id}}"
+          const user_id = user._id
+          const response = await fetch(`${API_URL}/api/cart/`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ product_id, user_id, quantity:count })
+          });
+          const responseBody = await response.json()
+          if(responseBody.statusCode == 201){
+            alert('Producto agregado con exito')
+            window.location.replace('/')
+          } else {
+            alert('Ocurrió un problema')
+          }
+        } else {
+          alert("Debes iniciar sesion primero")
         }
-    let resp = await fetch("/api/sessions/online", opts)
-    resp = await resp.json()
-    if(resp.statusCode === 200){
-      let user = await resp.session
-      const product_id = "{{productById._id}}"
-      const user_id = user._id
-      const response = await fetch("http://localhost:8080/api/cart/", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ product_id, user_id, quantity:count })
-      });
-      const responseBody = await response.json()
-      if(responseBody.statusCode == 201){
-        alert('Producto agregado con exito')
-        window.location.replace('/')
-      } else {
-        alert('Ocurrió un problema')
+      } catch (error) {
+        console.error("Error:", error);
       }
-    } else {
-      alert("Debes iniciar sesion primero")
-    }
-  } catch (error) {
-    console.error("Error:", error);
-  }
-})
+    })
 
-const itemCountPrint = () => {
-    itemCount.innerHTML = `
-        <h5>${count}</h5>
-    `;
-};
-itemCountPrint()
-addButton.addEventListener("click", () => {
-  if (count < {{productById.stock}}) {
-    count++;
-  }
-  itemCountPrint()
-});
+    const itemCountPrint = () => {
+        itemCount.innerHTML = `
+            <h5>${count}</h5>
+        `;
+    };
+    itemCountPrint()
+    addButton.addEventListener("click", () => {
+      if (count < {{productById.stock}}) {
+        count++;
+      }
+      itemCountPrint()
+    });
 
-decButton.addEventListener("click", () => {
-  if (count && count>1) {
-    count--;
-  }
-  itemCountPrint();
-});
+    decButton.addEventListener("click", () => {
+      if (count && count>1) {
+        count--;
+      }
+      itemCountPrint();
+    });
 
 </script>
