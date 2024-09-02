@@ -15,7 +15,7 @@ class CartRouter extends CustomRouter {
         return next(error);
       }
     });
-    this.read("/", ["USER", "ADMIN"], async function read(req, res, next) {
+    this.read("/", ["USER", "ADMIN", "PREM"], async function read(req, res, next) {
       try {
         const { user_id } = req.query;
         const { _id: user_id_token } = verifyToken(req.cookies["token"])
@@ -34,7 +34,7 @@ class CartRouter extends CustomRouter {
       }
     });
 
-    this.read("/successful_purchase", ["USER", "ADMIN"], async function read(req, res, next) {
+    this.read("/successful_purchase", ["USER", "ADMIN", "PREM"], async function read(req, res, next) {
       try {
         return res.render("buySuccess", { title: "Successful Purchase" });
       } catch (error) {

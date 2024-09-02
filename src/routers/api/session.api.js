@@ -6,11 +6,11 @@ class SessionsRouter extends CustomRouter {
   init() {
     this.create("/register", ["PUBLIC"], passportCb("register"), register);
     this.create("/login", ["PUBLIC"], passportCb("login"),login );
-    this.create("/recover-password", ["PUBLIC"], passportCb("send_mail"), sendMail);
-    this.create("/verify_code", ["PUBLIC"], passportCb("verify_code"), verifyCode);
-    this.update("/new_password", ["PUBLIC"], passportCb("new_password"), newPassword);
-    this.create("/online", ["USER", "ADMIN"], passportCb("jwt"), online);
-    this.create("/signout", ["USER", "ADMIN"],signout );
+    this.create("/recover-password", ["USER", "ADMIN", "PREM"], passportCb("send_mail"), sendMail);
+    this.create("/verify_code", ["USER", "ADMIN", "PREM"], passportCb("verify_code"), verifyCode);
+    this.update("/new_password", ["USER", "ADMIN", "PREM"], passportCb("new_password"), newPassword);
+    this.create("/online", ["USER", "ADMIN", "PREM"], passportCb("jwt"), online);
+    this.create("/signout", ["USER", "ADMIN", "PREM"],signout );
   }
 }
 

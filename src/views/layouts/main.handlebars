@@ -57,66 +57,72 @@
           method: "POST",
           headers: { "Content-Type" : "application/json"}
         }
-      let resp = await fetch("/api/sessions/online", opts)
-      resp = await resp.json()
-      let user = await resp.session
-
-      if(online){
-        rightUl.innerHTML = `
-          <li class="nav-item">
-              <a class="nav-link" href="/cart?user_id=${user._id}">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="22"
-                  height="22"
-                  fill="#241F20aa"
-                  class="bi bi-cart"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"
-                  />
-                </svg>
-              </a>
-            </li>
+      try{
+        let resp = await fetch("/api/sessions/online", opts)
+        resp = await resp.json()
+        let user = await resp.session
+        if(online){
+          rightUl.innerHTML = `
             <li class="nav-item">
-              <a class="nav-link" href="/users/${user._id}">
-                <svg class="feather feather-user" fill="none" height="24" stroke="#241F20aa" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-              </a>
-            </li>
+                <a class="nav-link" href="/cart?user_id=${user._id}">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="22"
+                    height="22"
+                    fill="#241F20aa"
+                    class="bi bi-cart"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/users/${user._id}">
+                  <svg class="feather feather-user" fill="none" height="24" stroke="#241F20aa" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </a>
+              </li>
+              <li class="nav-item">
+                <button class="nav-link" id="btn_signout">
+                <svg enable-background="new 0 0 48 48" height="22px" id="Layer_3" version="1.1" viewBox="0 0 48 48" width="22px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><polygon fill="#241F20aa" points="36,44 4,44 4,4 36,4 36,8 40,8 40,0 0,0 0,48 40,48 40,40 36,40  "/><polygon fill="#241F20aa" points="48,24 37.976,13.977 37.976,20 13,20 13,28 37.976,28 37.976,34.023  "/></g></svg>
+                </button>
+              </li>
+          `
+          const btn_signout = document.getElementById("btn_signout").addEventListener("click", async (req, res, next) => {
+          const opts = {
+            method: "POST",
+            headers: { "Content-Type" : "application/json"}
+          }
+          let response = await fetch("/api/sessions/signout", opts)
+          response = await response.json()
+          if(response.statusCode == 200){
+            sessionStorage.clear()
+            sessionStorage.setItem("online", "false")
+            document.getElementById("btn_signout").removeEventListener
+            location.replace("/")
+          }
+        })
+        } else {
+          sessionStorage.setItem("online", "false");
+          const response = await fetch('/api/cookies/clear_token', {
+            method: 'GET',
+            credentials: 'same-origin'
+          });
+          rightUl.innerHTML = `
             <li class="nav-item">
-              <button class="nav-link" id="btn_signout">
-              <svg enable-background="new 0 0 48 48" height="22px" id="Layer_3" version="1.1" viewBox="0 0 48 48" width="22px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><polygon fill="#241F20aa" points="36,44 4,44 4,4 36,4 36,8 40,8 40,0 0,0 0,48 40,48 40,40 36,40  "/><polygon fill="#241F20aa" points="48,24 37.976,13.977 37.976,20 13,20 13,28 37.976,28 37.976,34.023  "/></g></svg>
-              </button>
+                <a class="nav-link" href="/users/login">
+                  <i class="fas fa-user"></i>Login</a>
             </li>
-        `
-        const btn_signout = document.getElementById("btn_signout").addEventListener("click", async (req, res, next) => {
-        const opts = {
-          method: "POST",
-          headers: { "Content-Type" : "application/json"}
+          `
         }
-        let response = await fetch("/api/sessions/signout", opts)
-        response = await response.json()
-        if(response.statusCode == 200){
-          sessionStorage.clear()
-          sessionStorage.setItem("online", "false")
-          document.getElementById("btn_signout").removeEventListener
-          location.replace("/")
-        }
-      })
-      } else {
-        sessionStorage.setItem("online", "false");
-        const response = await fetch('/api/cookies/clear_token', {
-          method: 'GET',
-          credentials: 'same-origin'
-        });
-        rightUl.innerHTML = `
-          <li class="nav-item">
-              <a class="nav-link" href="/users/login">
-                <i class="fas fa-user"></i>Login</a>
-          </li>
-        `
+      } catch(error){
+        sessionStorage.setItem("online", "false")
+        window.location.reload();
+        throw error
       }
+
     })
 
   </script>

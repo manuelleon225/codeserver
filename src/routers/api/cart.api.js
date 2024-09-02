@@ -3,12 +3,12 @@ import { create, read, readOne, update, deleteCart, readByUserId } from "../../c
 
 class CartsRouter extends CustomRouter {
   init() {
-    this.create("/", ["PUBLIC"], create);
-    this.read("/cart", ["PUBLIC"], read);
-    this.read("/:cid", ["PUBLIC"], readOne);
-    this.read("/", ["PUBLIC"], readByUserId);
-    this.update("/:cid", ["PUBLIC"], update);
-    this.destroy("/:cid", ["PUBLIC"], deleteCart);
+    this.create("/", ["USER", "ADMIN", "PREM"], create);
+    this.read("/cart", ["USER", "ADMIN", "PREM"], read);
+    this.read("/:cid", ["USER", "ADMIN", "PREM"], readOne);
+    this.read("/", ["USER", "ADMIN", "PREM"], readByUserId);
+    this.update("/:cid", ["USER", "ADMIN", "PREM"], update);
+    this.destroy("/:cid", ["USER", "ADMIN", "PREM"], deleteCart);
   }
 }
 

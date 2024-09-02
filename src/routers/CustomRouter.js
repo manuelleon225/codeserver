@@ -58,8 +58,9 @@ class CustomRouter {
           token = verifyToken(token);
           const { role, email } = token
           if (
-            (policie.includes("USER") && role === 0) ||
-            (policie.includes("ADMIN") && role === 1)
+            (policie.includes("ADMIN") && role === 0) ||
+            (policie.includes("USER") && role === 1) || 
+            (policie.includes("PREM") && role === 2)
           ) {
             const user = await userManager.readByEmail(email);
             req.user = user;

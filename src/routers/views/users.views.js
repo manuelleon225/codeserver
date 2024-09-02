@@ -25,7 +25,7 @@ class UsersRouter extends CustomRouter {
         return next(error)
       }
     });
-    this.read("/:uid", ["USER", "ADMIN"], async (req, res, next) => {
+    this.read("/:uid", ["USER", "ADMIN", "PREM"], async (req, res, next) => {
       try {
         const { uid } = req.params;
         const users = await UsersManager.readOne(uid);

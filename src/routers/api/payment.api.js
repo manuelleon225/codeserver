@@ -3,7 +3,7 @@ import CustomRouter from "../CustomRouter.js";
 
 class PaymentRouter extends CustomRouter {
   init() {
-    this.create("/", ["PUBLIC"], createPayment);
+    this.create("/", ["USER", "PREM", "ADMIN"], createPayment);
   }
 }
 

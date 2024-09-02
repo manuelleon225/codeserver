@@ -40,31 +40,73 @@
             <div class="card">
                 <img src="{{this.photo}}" class="card-img-top" alt="product-photo">
                 <div class="card-body">
-                    <h5 class="card-title">Title: {{this.title}}</h5>
+                    <h5 class="card-title">{{this.title}}</h5>
                     <p class="card-text">Category: {{this.category}}</p>
                     <p class="card-text">Price: ${{this.price}}</p>
                     <p class="card-text">Stock: {{this.stock}}</p>
                     <p class="card-text">ID: {{this._id}}</p>
                 </div>
-                <div class="card-footer">
-                    <a style="text-decoration: none;" href="/search/{{this._id}}">
+                <div class="card-footer d-flex justify-content-between">
+                    <a style="text-decoration: none; width: 50%;" href="/search/{{this._id}}" class="me-2">
                         <button class="btn btn-primary w-100">More details</button>
                     </a>
+                    <div style="width: 50%;">
+                        <button onclick="openModalDelete()" class="btn btn-danger w-100">Delete</button>
+                    </div>
                 </div>
             </div>
         </div>
+        <div id="modal-delete-product" style="display: none; justify-content: center; align-items: center; width: 100%; height: 100vh; position: fixed; z-index: 10; top: 0; background-color: rgba(128, 128, 128, 0.555);">
+        <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 600px; height: 300px; background-color: white; padding: 20px;">
+            <h2 style="margin-bottom: 20px;">Do you want to delete this product?</h2>
+            <div style="display: flex; width: 100%;">
+                <button onclick="closeModalDelete()" class="btn btn-primary w-100 mx-2">Cancel</button>
+                <button onclick="deleteProd('{{this._id}}')" class="btn btn-danger w-100 mx-2">Delete</button>
+            </div>
+        </div>
+    </div>
         {{/each}}
     </div>
 </div>
-<script src="/socket.io/socket.io.js"></script>
 <script>
-    const socket = io()
+    const API_URL = `{{API_URL}}`
     document.getElementById("btn-register-product").addEventListener("click", async ()=> {
         const title = document.getElementById("title").value
         const photo = document.getElementById("photo_url").value
         const category = document.getElementById("category").value
         const price = document.getElementById("price").value
         const stock = document.getElementById("stock").value
-        socket.emit("register-product", { title, photo, category, price, stock })
+        const prodToCreate = {
+            title: title,
+            photo: photo,
+            category: category,
+            price: price,
+            stock: stock
+        }
+        console.log(prodToCreate)
+        const optsPost = { method: "POST", headers: { "Content-Type" : "application/json"}, body: JSON.stringify(prodToCreate)}
+        let resp = await fetch(`${API_URL}/api/products/real`, optsPost);
+        resp = await resp.json()
+        console.log(resp)
+        if(resp.statusCode === 201){
+            window.location.reload()
+        }
     })
+    function openModalDelete() {
+        document.getElementById('modal-delete-product').style.display = 'flex'
+    }
+    function closeModalDelete() {
+        document.getElementById('modal-delete-product').style.display = 'none'
+    }
+    async function deleteProd(prod_id){
+        const optsDelete = { method: "DELETE", headers: { "Content-Type": "application/json" } }
+        let resp = await fetch(`${API_URL}/api/products/del/${prod_id}`, optsDelete)
+        resp = await resp.json()
+        if(resp.statusCode === 200){
+            alert('Product deleted')
+            window.location.reload()
+        } else {
+            alert('Error: ', resp.message)
+        }
+    }
 </script>
