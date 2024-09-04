@@ -2,7 +2,6 @@ import printProductCards from "./printProductCards.js";
 
 export default async function fetchProducts(id, split, page) {
   try {
-    console.log(id, split, page);
     let res = await fetch(`/api/products/paginate?category=${split}&page=${page}`);
     res = await res.json();
 

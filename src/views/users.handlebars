@@ -73,7 +73,6 @@
         })
 
         changePassword = await changePassword.json();
-        console.log(changePassword)
         if (changePassword.statusCode == 200) {
           alert(changePassword.message);
           sessionStorage.setItem('online', 'true');

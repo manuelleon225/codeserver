@@ -29,7 +29,6 @@
             // OBtener cada producto y restarle la cantidad al quantity
             products_cart.message.forEach(async (prod_cart) => {
                 let prodUpdated = {...prod_cart.product_id, stock: (prod_cart.product_id.stock - prod_cart.quantity)}
-                console.log(prodUpdated)
                 let prod = await fetch(`/api/products/upd/${prod_cart.product_id._id}`,
                 { 
                     method: "PUT",

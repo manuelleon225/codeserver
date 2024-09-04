@@ -57,6 +57,7 @@ class CustomRouter {
         try {
           token = verifyToken(token);
           const { role, email } = token
+          console.log(policie);
           if (
             (policie.includes("ADMIN") && role === 0) ||
             (policie.includes("USER") && role === 1) || 
@@ -65,7 +66,9 @@ class CustomRouter {
             const user = await userManager.readByEmail(email);
             req.user = user;
             return next();
-          } else return res.response403();
+          } else {
+            console.log('holaa');
+            return res.response403()};
         } catch (error) {
           return res.response400(error.message);
         }

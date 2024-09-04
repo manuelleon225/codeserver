@@ -83,11 +83,9 @@
             price: price,
             stock: stock
         }
-        console.log(prodToCreate)
         const optsPost = { method: "POST", headers: { "Content-Type" : "application/json"}, body: JSON.stringify(prodToCreate)}
         let resp = await fetch(`${API_URL}/api/products/real`, optsPost);
         resp = await resp.json()
-        console.log(resp)
         if(resp.statusCode === 201){
             window.location.reload()
         }

@@ -89,6 +89,13 @@ Este proyecto es un servidor backend desarrollado con Node.js y Express, enfocad
 
 ### Desafío 15 - Branch `sprint_15`
 - **Descripción**: Implementación de pasarela de pagos utilizando Stripe para el procesamiento de transacciones en el carrito.
+- **Como testear compra**:
+  - **Números de tarjeta  de prueba**:
+    - Pago válido: 4242424242424242
+    - Fondos insuficientes: 4000000000009995
+    - Tarjeta expirada: 4000000000000069
+    - Código de seguridad: 4000000000000127
+    - Error de procesamiento: 4000000000000119
 
 ## Cómo ejecutar el proyecto
 

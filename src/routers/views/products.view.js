@@ -1,13 +1,14 @@
 import productManager from "../../dao/mongo/managers/Products.manager.js";
 import CustomError from "../../utils/errors/CustomError.js";
 import errors from "../../utils/errors/Errors.js";
+import { verifyToken } from "../../utils/token.util.js";
 import CustomRouter from "../CustomRouter.js";
 
 class ProductsRouter extends CustomRouter {
   init() {
     this.read("/", ["PUBLIC"], read);
     this.read("/search/:pid", ["PUBLIC"], readOne);
-    this.read("/products/real", ["ADMIN"], create);
+    this.read("/products/real", ["ADMIN", "PREM"], create);
   }
 }
 
@@ -49,7 +50,15 @@ async function create(req, res, next) {
     if (category) {
       filter.category = category
     }
-    const allProducts = await productManager.read(filter);
+    let allProducts = await productManager.read(filter);
+    let token = req.cookies["token"];
+    if(token){
+      let data = verifyToken(token);
+      const { _id, role } = data;
+      if (role === 2 || role === "PREM") {
+        allProducts = allProducts.filter((prod) => prod.supplier_id === _id)
+      }
+    }
     allProducts.reverse()
     if (allProducts.length !== 0) {
       return res.render("product_register", {

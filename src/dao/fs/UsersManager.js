@@ -91,7 +91,6 @@ class UserManager {
             let allUsers = await this.read()
             const userToUpdate = allUsers.find(user => user.id == uid)
             Object.assign(userToUpdate, data)
-            console.log(userToUpdate);
             allUsers = JSON.stringify(allUsers, null, 2)
             await fs.promises.writeFile(this.path, allUsers)
             return userToUpdate

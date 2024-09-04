@@ -92,7 +92,6 @@ class ProductManager {
             let allProducts = await this.read()
             const productToUpdate = allProducts.find(prod => prod.id == pid) // El find tiene una mutabilidad que permite modificar el objeto y que el cambio se aplique al array de donde se ENCONTRO este objeto
             Object.assign(productToUpdate, data) // Actualiza los campos del producto con los nuevos valores traidos por el body
-            console.log(productToUpdate);
             allProducts = JSON.stringify(allProducts, null, 2)
             await fs.promises.writeFile(this.path, allProducts)
             return productToUpdate

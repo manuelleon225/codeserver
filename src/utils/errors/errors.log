@@ -486,3 +486,112 @@ Expecting 'CLOSE_RAW_BLOCK', 'CLOSE', 'CLOSE_UNESCAPED', 'OPEN_SEXPR', 'CLOSE_SE
 [33mERROR[39m: POST /online _ 401 _ 9:52:13 - Bad auth from policies!
 [33mERROR[39m: PUT /upd/66d5018e401d49d5ef0011d0 _ 403 _ 11:21:05 - FORBIDDEN 403!
 [33mERROR[39m: GET /search/Auriculares%20inal%C3%A1mbricos%20Bluetooth _ undefined _11:36:34   Cast to ObjectId failed for value "{ _id: 'Auriculares inalámbricos Bluetooth' }" (type Object) at path "_id" for model "products"
+[33mERROR[39m: POST /online _ 401 _ 11:42:36 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 11:42:36 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 11:42:38 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 11:42:38 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 11:43:26 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 11:43:26 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 11:44:07 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 11:44:07 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 11:47:25 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 11:47:25 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 11:47:30 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 11:47:30 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 11:48:26 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 11:48:26 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 11:48:33 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 11:48:33 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 11:48:46 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 11:48:46 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 11:48:54 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 11:48:54 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 11:49:05 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 11:49:05 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 11:49:18 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 11:49:19 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 11:49:25 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 11:49:25 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 11:49:35 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 11:49:35 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 11:50:05 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 11:50:05 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 11:50:10 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 11:50:10 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 11:50:24 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 11:50:24 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 11:50:41 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 11:50:41 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 11:50:56 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 11:50:56 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 16:37:48 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 16:37:49 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 16:37:51 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 16:54:35 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 16:54:35 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 16:54:37 - Bad auth from policies!
+[33mERROR[39m: GET /products/real _ 403 _ 16:54:43 - FORBIDDEN 403!
+[33mERROR[39m: GET /products/real _ 403 _ 16:59:46 - FORBIDDEN 403!
+[33mERROR[39m: GET /products/real _ 403 _ 17:04:26 - FORBIDDEN 403!
+[33mERROR[39m: GET /products/real _ 403 _ 17:04:29 - FORBIDDEN 403!
+[33mERROR[39m: GET /products/real _ 403 _ 17:04:57 - FORBIDDEN 403!
+[33mERROR[39m: GET /products/real _ 403 _ 17:05:53 - FORBIDDEN 403!
+[33mERROR[39m: POST /online _ 401 _ 17:06:10 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 17:06:10 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 17:06:12 - Bad auth from policies!
+[33mERROR[39m: GET /products/real _ undefined _17:06:17   verifyToken is not defined
+[33mERROR[39m: GET /products/real _ undefined _17:06:34   verifyToken is not defined
+[33mERROR[39m: GET /products/real _ undefined _17:06:34   verifyToken is not defined
+[33mERROR[39m: GET /products/real _ undefined _17:06:36   verifyToken is not defined
+[33mERROR[39m: POST /online _ 401 _ 17:07:05 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 17:07:05 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 17:07:06 - Bad auth from policies!
+[33mERROR[39m: GET /products/real _ 403 _ 17:07:12 - FORBIDDEN 403!
+[33mERROR[39m: GET /products/real _ 403 _ 17:07:23 - FORBIDDEN 403!
+[33mERROR[39m: GET /products/real _ 403 _ 17:13:22 - FORBIDDEN 403!
+[33mERROR[39m: GET /products/real _ 403 _ 17:13:46 - FORBIDDEN 403!
+[33mERROR[39m: GET /products/real _ 403 _ 17:13:54 - FORBIDDEN 403!
+[33mERROR[39m: GET /products/real _ 403 _ 17:14:51 - FORBIDDEN 403!
+[33mERROR[39m: GET /products/real _ 403 _ 17:14:58 - FORBIDDEN 403!
+[33mERROR[39m: POST /online _ 401 _ 17:15:50 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 17:15:50 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 17:15:51 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 17:15:51 - Bad auth from policies!
+[33mERROR[39m: GET /products/real _ 401 _ 17:15:52 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 17:20:28 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 17:20:28 - Bad auth from policies!
+[33mERROR[39m: GET /products/real _ 401 _ 17:20:29 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 17:20:31 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 17:20:31 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 17:20:32 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 17:20:32 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 17:23:14 - Bad auth from policies!
+[33mERROR[39m: GET /products/real _ 401 _ 17:23:16 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 17:23:17 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 17:23:18 - Bad auth from policies!
+[33mERROR[39m: GET /products/real _ 403 _ 17:23:26 - FORBIDDEN 403!
+[33mERROR[39m: GET /products/real _ 403 _ 17:23:44 - FORBIDDEN 403!
+[33mERROR[39m: GET /products/real _ 403 _ 17:23:49 - FORBIDDEN 403!
+[33mERROR[39m: GET /products/real _ 403 _ 17:24:58 - FORBIDDEN 403!
+[33mERROR[39m: GET /products/real _ 403 _ 17:25:16 - FORBIDDEN 403!
+[33mERROR[39m: GET /products/real _ 403 _ 17:25:37 - FORBIDDEN 403!
+[33mERROR[39m: GET /products/real _ 403 _ 17:26:44 - FORBIDDEN 403!
+[33mERROR[39m: GET /products/real _ 403 _ 17:26:46 - FORBIDDEN 403!
+[33mERROR[39m: GET /products/real _ 403 _ 17:27:24 - FORBIDDEN 403!
+[33mERROR[39m: GET /products/real _ 403 _ 17:27:26 - FORBIDDEN 403!
+[33mERROR[39m: GET /products/real _ 403 _ 17:27:30 - FORBIDDEN 403!
+[33mERROR[39m: GET /products/real _ 403 _ 17:27:40 - FORBIDDEN 403!
+[33mERROR[39m: GET /products/real _ 403 _ 17:27:54 - FORBIDDEN 403!
+[33mERROR[39m: POST /online _ 401 _ 17:29:56 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 17:30:37 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 17:30:37 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 17:30:37 - Bad auth from policies!
+[33mERROR[39m: GET /664e059d20452d2c419c820f _ 401 _ 17:30:38 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 17:30:43 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 17:30:44 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 17:31:11 - Bad auth from policies!
+[33mERROR[39m: GET /products/real _ 403 _ 17:31:18 - FORBIDDEN 403!
+[33mERROR[39m: GET /products/real _ 403 _ 17:32:54 - FORBIDDEN 403!
+[33mERROR[39m: POST /online _ 401 _ 17:34:04 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 17:34:04 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 17:34:05 - Bad auth from policies!

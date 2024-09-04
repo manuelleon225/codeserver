@@ -69,7 +69,6 @@ async function create(req, res, next) {
 async function read(req, res, next) {
   try {
     const read = await readService();
-
     if (read.length > 0) {
       return res.response200(read);
     } else {
@@ -97,7 +96,22 @@ async function readOne(req, res, next) {
 async function destroy(req, res, next) {
   try {
     const { pid } = req.params;
-    const destroy = await destroyService(pid);
+    let prod = await readOne(pid)
+    let token = req.cookies["token"];
+    let destroy;
+    if(token){
+      let data = verifyToken(token);
+      const { _id, role } = data;
+      if(role === 0 || role === "ADMIN"){
+        destroy = await destroyService(pid);
+      } else if (role === 2 || role === "PREM" && prod.supplier_id === _id ) {
+        destroy = await destroyService(pid);
+      } else {
+        return error.response403
+      }
+    } else {
+      return res.response403
+    }
     if (destroy) {
       return res.response200(destroy);
     } else {
