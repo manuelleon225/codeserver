@@ -1,4 +1,33 @@
-export default function createProductCard(product) {
+export default function createProductCard(product, user) {
+    let buttonAdapted;
+    if(user !== undefined){
+      if ((user.role === 2 || user.role === "PREM") && product.supplier_id === user._id) {
+        buttonAdapted = `
+          <a href="/search/${product._id}">
+            <button class="btn btn-secondary w-100">Manage</button>
+          </a>
+        `;
+      } else if((user.role === 0 || user.role === "ADMIN")){
+        buttonAdapted = `
+          <a href="/search/${product._id}">
+            <button class="btn btn-secondary w-100">Manage</button>
+          </a>
+        `;
+      } else if((user.role === 1 || user.role === "USER")){
+        buttonAdapted = `
+          <a href="/search/${product._id}">
+            <button class="btn btn-primary w-100">Add to cart</button>
+          </a>
+        `;
+      }
+    } else {
+      console.log("asdasd");
+      buttonAdapted = `
+        <a href="/search/${product._id}">
+          <button class="btn btn-primary w-100">Add to cart</button>
+        </a>
+      `;
+    }
     return `
     <div class="col mb-4">
     <div class="card">
@@ -11,9 +40,7 @@ export default function createProductCard(product) {
             <p class="card-text">ID: ${product._id}</p>
         </div>
         <div class="card-footer">
-            <a href="/search/${product._id}">
-                <button class="btn btn-primary w-100">Add to cart</button>
-            </a>
+            ${buttonAdapted}
         </div>
     </div>
 </div>

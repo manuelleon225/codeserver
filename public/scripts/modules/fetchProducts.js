@@ -20,7 +20,13 @@ export default async function fetchProducts(id, split, page) {
       next.innerHTML = '';
     }
 
-    printProductCards(res.response, id);
+    const opts = {
+      method: "POST",
+      headers: { "Content-Type" : "application/json"}
+    }
+    let user = await fetch(`/api/sessions/online`, opts)
+    user = await user.json()
+    user.statusCode === 200 ? printProductCards(res.response, id, user.session) : printProductCards(res.response, id, undefined);
 
     const nextButton = document.querySelector("#nextB");
     if (nextButton) {

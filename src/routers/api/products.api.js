@@ -10,7 +10,7 @@ class ProductsRouter extends CustomRouter {
     this.read("/paginate", ["PUBLIC"], paginate);
     this.read("/:pid",["PUBLIC"], readOne);
     this.create("/real",["ADMIN"], create);
-    this.update("/upd/:pid",["ADMIN"], update);
+    this.update("/upd/:pid",["ADMIN", "PREM"], update);
     this.destroy("/del/:pid",["ADMIN"], destroy);
   }
 }

@@ -459,3 +459,30 @@ Expecting 'CLOSE_RAW_BLOCK', 'CLOSE', 'CLOSE_UNESCAPED', 'OPEN_SEXPR', 'CLOSE_SE
 [33mERROR[39m: PUT /new_password _ 401 _ 8:25:14 - Bad auth from policies!
 [33mERROR[39m: POST /online _ 401 _ 8:25:58 - Bad auth from policies!
 [33mERROR[39m: POST /online _ 401 _ 8:25:59 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 8:41:17 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 8:41:18 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 8:41:20 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 8:44:48 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 8:44:50 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 9:13:18 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 9:13:18 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 9:13:44 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 9:15:22 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 9:15:22 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 9:16:41 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 9:16:41 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 9:16:48 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 9:16:50 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 9:16:52 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 9:20:44 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 9:20:45 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 9:20:45 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 9:23:26 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 9:23:26 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 9:23:27 - Bad auth from policies!
+[33mERROR[39m: PUT /upd/66d5018e401d49d5ef0011d2 _ 403 _ 9:29:52 - FORBIDDEN 403!
+[33mERROR[39m: POST /online _ 401 _ 9:52:11 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 9:52:12 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 9:52:13 - Bad auth from policies!
+[33mERROR[39m: PUT /upd/66d5018e401d49d5ef0011d0 _ 403 _ 11:21:05 - FORBIDDEN 403!
+[33mERROR[39m: GET /search/Auriculares%20inal%C3%A1mbricos%20Bluetooth _ undefined _11:36:34   Cast to ObjectId failed for value "{ _id: 'Auriculares inalámbricos Bluetooth' }" (type Object) at path "_id" for model "products"
