@@ -11,6 +11,7 @@ export class ProductDTO {
         this.category = data.category;
         this.price = data.price || 1;
         this.stock = data.stock || 1;
+        this.supplier_id = data.supplier_id || '66a1a6eecf4455f3f932aea2';
         this.createdAt = data.createdAt;
         this.updatedAt = data.updatedAt;
     }

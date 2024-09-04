@@ -16,6 +16,7 @@ class ProductManager {
           category: data.category || "undefined",
           price: data.price || 1,
           stock: data.stock || 1,
+          supplier_id: data.supplier_id,
         };
         ProductManager.#products.push(newProduct);
         console.log("Product created (memory)");

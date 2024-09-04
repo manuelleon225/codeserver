@@ -96,7 +96,7 @@ passport.use(
         const verificationCode = Math.floor(100000 + Math.random() * 900000); 
         await sendVerificationEmail(email, verificationCode);
         req.session.verificationCode = verificationCode;
-        console.log(verificationCode, ' recover pass ');
+        console.log(verificationCode, ' recover pass verification code ');
         return done(null, user, { message: 'Verification email sent' });
       } catch (error) {
         return done(error);

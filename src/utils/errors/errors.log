@@ -434,3 +434,28 @@ Expecting 'CLOSE_RAW_BLOCK', 'CLOSE', 'CLOSE_UNESCAPED', 'OPEN_SEXPR', 'CLOSE_SE
 [33mERROR[39m: POST /online _ 401 _ 20:52:28 - Bad auth from policies!
 [33mERROR[39m: POST /online _ 401 _ 20:52:30 - Bad auth from policies!
 [33mERROR[39m: POST /online _ 401 _ 20:52:35 - Bad auth from policies!
+[33mERROR[39m: GET /66a1a6eecf4455f3f932aea2 _ 400 _ 15:42:03 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 15:42:06 - jwt expired
+[33mERROR[39m: POST /online _ 400 _ 15:42:07 - jwt expired
+[33mERROR[39m: POST /online _ 401 _ 15:42:09 - Bad auth from policies!
+[33mERROR[39m: GET /api/products/paginate?category=&page=1 _ undefined _18:11:16   filteredDocs.length is not a function
+[33mERROR[39m: POST /online _ 401 _ 18:15:10 - Bad auth from policies!
+[33mERROR[39m: GET /api/products/paginate?category=&page=1 _ undefined _18:15:10   jwt must be provided
+[33mERROR[39m: GET /api/products/paginate?category=&page=1 _ undefined _18:15:40   token is not defined
+[33mERROR[39m: POST /online _ 401 _ 18:15:40 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 18:18:31 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 18:18:35 - Bad auth from policies!
+[33mERROR[39m: GET /api/products/paginate?category=&page=1 _ undefined _8:17:50   Assignment to constant variable.
+[33mERROR[39m: POST /online _ 401 _ 8:22:45 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 8:22:46 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 8:23:01 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 8:23:03 - Bad auth from policies!
+[33mERROR[39m: POST /api/sessions/login _ 400 _8:23:07   Invalid credentials
+[33mERROR[39m: POST /online _ 401 _ 8:23:10 - Bad auth from policies!
+[33mERROR[39m: POST /recover-password _ 401 _ 8:23:12 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 8:23:44 - Bad auth from policies!
+[33mERROR[39m: POST /recover-password _ 401 _ 8:24:09 - Bad auth from policies!
+[33mERROR[39m: POST /verify_code _ 401 _ 8:24:42 - Bad auth from policies!
+[33mERROR[39m: PUT /new_password _ 401 _ 8:25:14 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 8:25:58 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 8:25:59 - Bad auth from policies!

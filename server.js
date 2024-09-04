@@ -1,13 +1,11 @@
 import environment from "./src/utils/env.util.js";
 import express from "express";
 import { createServer } from "http";
-import { Server } from "socket.io";
 import morgan from "morgan";
 import exphbs from "express-handlebars";
 import { engine } from "express-handlebars";
 import session from 'express-session'
 import indexRouter from "./src/routers/index.router.js";
-import socketCb from "./src/routers/index.socket.js"
 import errorHandler from "./src/middlewares/errorHandler.mid.js";
 import pathHandler from "./src/middlewares/pathHandler.mid.js";
 import __dirname from "./utils.js";
@@ -32,8 +30,6 @@ const ready = async () => {
     console.log("server ready on port " + port)
 };
 const nodeServer = createServer(server)
-const socketServer = new Server(nodeServer)
-socketServer.on("connection", socketCb);
 if(cluster.isPrimary){
   for(let i=0; i < cpus().length; i++){
     cluster.fork()

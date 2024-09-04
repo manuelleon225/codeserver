@@ -29,7 +29,8 @@ class ProductManager {
                     photo: data.photo || "https://back.tiendainval.com/backend/admin/backend/web/archivosDelCliente/items/images/20210108100138no_image_product.png",
                     category: data.category || "undefined",
                     price: data.price || 1,
-                    stock: data.stock || 1
+                    stock: data.stock || 1,
+                    supplier_id: data.supplier_id,
                 }
                 let fileProducts = await fs.promises.readFile(this.path, "utf-8")
                 fileProducts = JSON.parse(fileProducts)

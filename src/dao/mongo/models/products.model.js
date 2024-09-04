@@ -8,6 +8,7 @@ const schema = new Schema({
     category: {type: String},
     price: {type: Number},
     stock: {type: Number},
+    supplier_id: {type: String, required: true},
 },{
     timestamps: true
 })
