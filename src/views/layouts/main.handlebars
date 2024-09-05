@@ -38,7 +38,7 @@
           <li class="nav-item">
             <a class="nav-link" href="/users/register">Users</a>
           </li>
-          <li class="nav-item">
+          <li id="register-product" class="nav-item">
             <a class="nav-link" href="/products/real">Register a product</a>
           </li>
         </ul>
@@ -117,6 +117,11 @@
                   <i class="fas fa-user"></i>Login</a>
             </li>
           `
+        }
+        if(user && user.role !== 1){
+          document.getElementById('register-product').style.display = 'flex'
+        } else {
+          document.getElementById('register-product').style.display = 'none'
         }
       } catch(error){
         sessionStorage.setItem("online", "false")
