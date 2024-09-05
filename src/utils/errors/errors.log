@@ -649,3 +649,23 @@ Expecting 'CLOSE_RAW_BLOCK', 'CLOSE', 'CLOSE_UNESCAPED', 'OPEN_SEXPR', 'CLOSE_SE
 [33mERROR[39m: POST /online _ 401 _ 10:27:46 - Bad auth from policies!
 [33mERROR[39m: POST /online _ 401 _ 10:27:47 - Bad auth from policies!
 [33mERROR[39m: POST /online _ 401 _ 10:27:48 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 10:32:43 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 10:32:44 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 10:32:45 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 10:32:52 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 10:32:52 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 10:32:54 - Bad auth from policies!
+[33mERROR[39m: POST /api/payment _ 400 _10:33:05   Invalid integer: 7998.999999999999
+[33mERROR[39m: POST /api/payment _ 400 _10:33:14   Invalid integer: 7998.999999999999
+[33mERROR[39m: POST /api/payment _ 400 _10:33:18   Invalid integer: 7998.999999999999
+[33mERROR[39m: POST /api/payment _ 400 _10:33:18   Invalid integer: 7998.999999999999
+[33mERROR[39m: POST /api/payment _ 400 _10:33:19   Invalid integer: 7998.999999999999
+[33mERROR[39m: POST /api/payment _ 400 _10:33:19   Invalid integer: 7998.999999999999
+[33mERROR[39m: POST /api/payment _ 400 _10:33:19   Invalid integer: 7998.999999999999
+[33mERROR[39m: POST /api/payment _ 400 _10:33:20   Invalid integer: 7998.999999999999
+[33mERROR[39m: POST /api/payment _ 400 _10:34:00   Invalid integer: 7998.999999999999
+[33mERROR[39m: POST /api/payment _ 400 _10:37:09   Invalid integer: 7998.999999999999
+[33mERROR[39m: POST /api/payment _ 400 _10:37:54   Invalid integer: 7998.999999999999
+[33mERROR[39m: POST /api/payment _ 400 _10:39:36   Invalid integer: 7999.00
+[33mERROR[39m: POST /online _ 401 _ 10:41:54 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 10:41:54 - Bad auth from policies!

@@ -13,6 +13,7 @@ const createPaymentRepository = async (user_id) => {
   try {
     let productsOnCart = await cartManager.read({ user_id });
     const line_items = productsOnCart.map((prod) => new PaymentProduct(prod));
+    console.log(line_items);
     const mode = "payment";
     const success_url = `${API_URL}/cart/successful_purchase`;
     const intent = await stripe.checkout.sessions.create({
