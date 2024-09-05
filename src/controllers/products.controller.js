@@ -30,19 +30,19 @@ async function paginate(req, res, next) {
 
     let all = await paginateService({ filter, opts });
     let filteredDocs = all.docs;
-    // let token = req.cookies["token"];
-    // if(token){
-    //   let data = verifyToken(token);
-    //   const { _id, role } = data;
-    //   if (role === 2 || role === "PREM") {
-    //     filteredDocs = all.docs.filter((prod) => prod.supplier_id !== _id)
-    //   }
-    //   while (filteredDocs.length === 0 && all.hasNextPage) {
-    //     opts.page++;
-    //     all = await paginateService({ filter, opts });
-    //     filteredDocs = all.docs.filter((prod) => prod.supplier_id !== _id);
-    //   }
-    // }
+    let token = req.cookies["token"];
+    if(token){
+      let data = verifyToken(token);
+      const { _id, role } = data;
+      if (role === 2 || role === "PREM") {
+        filteredDocs = all.docs.filter((prod) => prod.supplier_id !== _id)
+      }
+      while (filteredDocs.length === 0 && all.hasNextPage) {
+        opts.page++;
+        all = await paginateService({ filter, opts });
+        filteredDocs = all.docs.filter((prod) => prod.supplier_id !== _id);
+      }
+    }
     const info = {
       totalDocs: all.totalDocs,
       page: all.page,

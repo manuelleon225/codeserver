@@ -595,3 +595,16 @@ Expecting 'CLOSE_RAW_BLOCK', 'CLOSE', 'CLOSE_UNESCAPED', 'OPEN_SEXPR', 'CLOSE_SE
 [33mERROR[39m: POST /online _ 401 _ 17:34:04 - Bad auth from policies!
 [33mERROR[39m: POST /online _ 401 _ 17:34:04 - Bad auth from policies!
 [33mERROR[39m: POST /online _ 401 _ 17:34:05 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 17:45:02 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 17:45:03 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 17:45:04 - Bad auth from policies!
+[33mERROR[39m: POST /api/sessions/login _ 401 _17:46:55   Bad auth
+[33mERROR[39m: POST /online _ 401 _ 17:47:03 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 17:47:03 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 21:09:52 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 21:10:47 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 21:10:47 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 21:10:51 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 21:10:53 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 21:10:53 - Bad auth from policies!
+[33mERROR[39m: POST /online _ 401 _ 21:11:16 - Bad auth from policies!
