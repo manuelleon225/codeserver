@@ -48,15 +48,16 @@
     <div class="prod_details">
       <div class="card">
           <img
-            style="width: 100%; height: 50vh; border: 1px solid black; border-radius: 10px;"
+            style="width: 100%; height: 50vh; border: 1px solid rgba(0,0,0,0.3); border-radius: 5px;"
             src="{{productById.photo}}"
             alt="{{productById._id}}"
           />
           <div class="card-body">
             <h5 class="card-title">{{productById.title}}</h5>
-            <p class="card-text">ID: {{productById._id}}</p>
+            <p class="m-2">Category: ${{productById.category}}</p>
             <p class="card-text">Price: ${{productById.price}}</p>
             <p class="card-text">Stock: {{productById.stock}}</p>
+            <p class="card-text">ID: {{productById._id}}</p>
           </div>
         </div>
     </div>
